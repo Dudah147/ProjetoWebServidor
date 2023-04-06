@@ -7,12 +7,11 @@
             </h1>
 
             <div id="Header01" style=" justify-content: space-between; display: flex; flex-direction: row; ">
-            <a href="Cardapio.php" style="padding-right: 20px;">cardápio</a>
-            <a href="index.php#sobre" style="padding-right: 20px;">sobre</a>
+            <a href="cardapio.php" style="padding-right: 20px;">cardápio</a>
             <a href="index.php#promocoes" style="padding-right: 20px;">promoções</a>
             <a href="index.php#contato" style="padding-right: 20px;">contato</a>
             <button style="width: 120px; height: 40px; float: right; margin-top: 50px; background-color: gold; border: none;" >
-                <a href="Pedido.html" style="color: black;">Pedidos Online</a>
+                <a href="pedido.php" style="color: black;">Pedidos Online</a>
             </button>
             <div id="container_img">
                 <img id="user" src="img/usuario.png">

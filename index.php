@@ -13,7 +13,7 @@
 <body style=" margin: 0; padding: 0; font-size: 16px;font-family: Verdana, Geneva, Tahoma, sans-serif; margin-left: 10;">
  
     <?php 
-        require("header.controller.php");
+        require("views/header.view.php");
     ?>
     
     <div id="container_home">
@@ -54,18 +54,7 @@
             </div>
         </div>
         <br><br><br><br>
-        <div id="sobre" style="color: aliceblue;">
-            <p style=" width: 6em; margin-left: auto; margin-right: auto; font-size: 26px;color: aliceblue;"><b>SOBRE</b></p>
-            <p style="width: 500px; text-align: justify; margin-left: 200px;">&emsp; Somos uma pizzaria fictícia inventada no segundo semestre de 2022 com o intuito de adquirir nota na disciplina de Projeto De Software. Nosso sistema concentra-se em apresentar uma interface para o cliente ( o qual está fazendo o pedido da pizza, e outra interface dedicada ao funcionário da loja, que pode controlar o caixa, gerar pedidos, cadastrar itens e entregadores etc... </p>
-            <br>
-            <p  style="width: 500px; text-align: justify; margin-left: 700px;">&emsp; O sistema foi desenvolvido utilizando HTML , CSS e um pouco de JavaScript. Os integrantes do grupo são: Maria Eduarda, Indiana Vanilla , Luis Salache , Murilo e Ronaldo</p>
-            <br>
-            <br><br><br><br>
-        </div>
-
-
-
-    
+ 
     
         <div id="contato" style="display: flex; flex-direction: row;">
             <div style=" width: 100%;color:aliceblue ;margin-top: 100px;  display: flex; flex-direction: column;background-color: #000000; align-items: center;">
@@ -106,54 +95,11 @@
             </div><!--Class Formulario-->
         </div>
     </div>
-          <!-- --- carrinho --- -->
-      <div id="carrinho_container">
-        <div class="carrinho-row" style="width: 95%">
-            <h1 style="margin: 0;font-weight: normal;">Meu Pedido</h1>
-            <img src="img/close.png" id="close" style="width: 20px; height: 20px; cursor: pointer;">
-        </div>
-        <hr>
 
-        <div id="itens_carrinho">
-
-        </div>      
-
-        <div class="carrinho-row" id="adicionarMais" style="color: orange; justify-content: center; margin-top: 1.4rem; margin-bottom: 1.4rem;">
-            <strong style="cursor: pointer">ADICIONAR MAIS ITENS</strong>
-        </div>
-
-        <div class="carrinho-row" id="totalPedido" style="justify-content: center;">
-            <h2 style="font-weight: normal;">Total Pedido: <strong>R$34.90</strong></h2>
-        </div>
-
-        <div class="carrinho-row" style="justify-content: center; flex-direction: column;">
-            <button type="button" id="finalizar_pedido_btn" >Finalizar Pedido</button>
-        </div>
-    </div>
-    <!-- --- Fim carrinho --- -->
-
-    <!-- --- usuario --- -->
-    <div id="user_container">
-        <div id="header_user">
-            <h2>Olá visitante</h2>
-            <a href="Login.html">Cadastre-se ou Entre</a>
-        </div>
-        <div class="column">
-            <div class="row">
-                <img src="img/inicio.png" class="imgs_user">
-                <a href="HomePage.php">Início</a>
-            </div>
-            <div class="row">
-                <img src="img/endereco.png" class="imgs_user">
-                <a href="Enderecos.html">Meus Endereços</a>
-            </div>
-            <div class="row">
-                <img src="img/pedido.png" class="imgs_user">
-                <a href="PedidosRealizados.html">Meus Pedidos</a>
-            </div>
-        </div>
-    </div>
-    <!-- --- fim usuario --- -->
+    <?php require("views/carrinho.view.php");?>
+    
+    <?php require("views/usuario.view.php");?>
+    
 
   <script type="text/javascript" src="JS/HomePage.js"></script>
 </body>

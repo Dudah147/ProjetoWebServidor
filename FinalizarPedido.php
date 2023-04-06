@@ -6,32 +6,36 @@
     <title> Finalizar Pedido </title>
     <link rel="stylesheet" href="CSS/FinalizarPedido.css">
 </head>
+
 <body id="body">
     <header style="background-color: black; height: 100px;">
-        
-       <div style="display: flex; ">
-            <h1 style="color: aliceblue; align-items: flex-start; width: 850px;font-family: 'Norican', cursive;font-size: 42px;">
+
+        <div style="display: flex; ">
+            <h1
+                style="color: aliceblue; align-items: flex-start; width: 850px;font-family: 'Norican', cursive;font-size: 42px;">
                 <a href="index.html">&emsp;&emsp; PizzariaMMVRS</a>
             </h1>
 
             <div id="Header01" style=" justify-content: space-between; display: flex; flex-direction: row; ">
-            <a href="Cardapio.html" style="padding-right: 20px;">cardápio</a>
-            <a href="index.html#sobre" style="padding-right: 20px;">sobre</a>
-            <a href="index.html#promocoes" style="padding-right: 20px;">promoções</a>
-            <a href="index.html#contato" style="padding-right: 20px;">contato</a>
-            <button style="width: 120px; height: 40px; float: right; margin-top: 50px; background-color: gold; border: none;" >
-                <a href="Pedido.html" style="color: black;">Pedidos Online</a>
-            </button>
-            <div id="container_img">
-                <img id="user" src="img/usuario.png">
-                <div style="display: flex; flex-direction: row; align-items:flex-end;">
-                    <img id="carrinho" src="img/carrinho.png">
-                    <span style="flex: block;color: black; background-color: white; border-radius: 2rem; width: 1rem; height: 1rem; text-align: center; font-size: .8rem; visibility: hidden;">1</span>
+                <a href="Cardapio.html" style="padding-right: 20px;">cardápio</a>
+                <a href="index.html#sobre" style="padding-right: 20px;">sobre</a>
+                <a href="index.html#promocoes" style="padding-right: 20px;">promoções</a>
+                <a href="index.html#contato" style="padding-right: 20px;">contato</a>
+                <button
+                    style="width: 120px; height: 40px; float: right; margin-top: 50px; background-color: gold; border: none;">
+                    <a href="pedido.php" style="color: black;">Pedidos Online</a>
+                </button>
+                <div id="container_img">
+                    <img id="user" src="img/usuario.png">
+                    <div style="display: flex; flex-direction: row; align-items:flex-end;">
+                        <img id="carrinho" src="img/carrinho.png">
+                        <span
+                            style="flex: block;color: black; background-color: white; border-radius: 2rem; width: 1rem; height: 1rem; text-align: center; font-size: .8rem; visibility: hidden;">1</span>
+                    </div>
                 </div>
             </div>
-        </div>
     </header>
-    
+
     <div id="container_finalPedido">
         <span id="text_finalPedido">Endereço para entrega</span>
         <hr id="underline">
@@ -44,7 +48,8 @@
                 </div>
 
                 <div class="row ou">
-                    <hr><span>OU</span><hr>
+                    <hr><span>OU</span>
+                    <hr>
                 </div>
 
                 <div id="CadastrarEnd" class="row">
@@ -65,9 +70,10 @@
 
         <div id="itens_carrinho">
 
-        </div>      
+        </div>
 
-        <div class="carrinho-row" id="adicionarMais" style="color: orange; justify-content: center; margin-top: 1.4rem; margin-bottom: 1.4rem;">
+        <div class="carrinho-row" id="adicionarMais"
+            style="color: orange; justify-content: center; margin-top: 1.4rem; margin-bottom: 1.4rem;">
             <strong style="cursor: pointer">ADICIONAR MAIS ITENS</strong>
         </div>
 
@@ -76,7 +82,7 @@
         </div>
 
         <div class="carrinho-row" style="justify-content: center; flex-direction: column;">
-            <button type="button" id="finalizar_pedido_btn" >Finalizar Pedido</button>
+            <button type="button" id="finalizar_pedido_btn">Finalizar Pedido</button>
         </div>
     </div>
     <!-- --- Fim carrinho --- -->
@@ -107,4 +113,5 @@
 
     <script type="text/javascript" src="JS/FinalizarPedido.js"></script>
 </body>
+
 </html>
