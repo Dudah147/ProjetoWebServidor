@@ -9,13 +9,12 @@
     <style>
      @import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
     </style>
-
-
-
 </head>
 <body style=" margin: 0; padding: 0; font-size: 16px;font-family: Verdana, Geneva, Tahoma, sans-serif; margin-left: 10;">
  
-    <?php echo "AAAAAAAAAA"; require("controllers/header.controller.php");?>
+    <?php 
+        require("header.controller.php");
+    ?>
     
     <div id="container_home">
         <br>
