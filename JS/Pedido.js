@@ -750,7 +750,7 @@ function finalizarPedido() {
     console.log(btn_entregar);
 
     btn_entregar.addEventListener("click", () => {
-        window.location.href = "Finalizarpedido.php";
+        window.location.href = "finalizar_pedido.php";
     })
 }
 

@@ -15,7 +15,7 @@
         </div>
         <div class="row">
             <img src="img/pedido.png" class="imgs_user">
-            <a href="pedidos_realizados.php">Meus Pedidos</a>
+            <a href="meus_pedidos.php">Meus Pedidos</a>
         </div>
     </div>
 </div>

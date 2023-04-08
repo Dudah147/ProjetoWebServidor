@@ -1,7 +1,7 @@
 const carrinho_icone = document.getElementById("carrinho")
 const user = document.getElementById("user")
 const user_container = document.getElementById("user_container")
-const container_endereco = document.getElementById("container_endereco")
+const container_meus_pedidos = document.getElementById("container_meus_pedidos")
 
 var carrinho = JSON.parse(localStorage.getItem('carrinho'))
 var clientes = JSON.parse(localStorage.getItem('clientes'))
@@ -10,7 +10,7 @@ carrinho_icone.addEventListener("click", abrirCarrinho)
 
 user.addEventListener("click", abrirUsuario)
 
-container_endereco.addEventListener("click", fecharUsuario)
+container_meus_pedidos.addEventListener("click", fecharUsuario)
 
 mudaQuantCar()
 
@@ -26,9 +26,9 @@ function abrirCarrinho() {
     let id_carrinho = document.getElementById("carrinho_container")
 
     id_carrinho.style.visibility = "visible"
-    container_endereco.style.filter = "blur(5px)"
+    container_meus_pedidos.style.filter = "blur(5px)"
 
-    console.log(container_endereco)
+    console.log(container_meus_pedidos)
 
     if (!carrinho || !carrinho[0]) {
         id_carrinho.style.padding = 0;
@@ -40,9 +40,9 @@ function abrirCarrinho() {
             </div>
         `
 
-        container_endereco.addEventListener("click", () => {
+        container_meus_pedidos.addEventListener("click", () => {
             id_carrinho.style.visibility = "hidden"
-            container_endereco.style.filter = "blur(0px)"
+            container_meus_pedidos.style.filter = "blur(0px)"
             mudaQuantCar()
         })
 
@@ -63,7 +63,7 @@ function abrirCarrinho() {
 
     close.addEventListener("click", () => {
         id_carrinho.style.visibility = "hidden"
-        container_endereco.style.filter = "blur(0px)"
+        container_meus_pedidos.style.filter = "blur(0px)"
         mudaQuantCar()
     })
 
@@ -208,9 +208,9 @@ function diminuirQuantCar() {
                 <a href="pedido.php" style="color:black; padding: 0; margin-top: 5rem">Fazer um pedido</a>
             </div>`
 
-            container_endereco.addEventListener("click", () => {
+            container_meus_pedidos.addEventListener("click", () => {
                 document.getElementById("carrinho_container").style.visibility = "hidden"
-                container_endereco.style.filter = "blur(0px)"
+                container_meus_pedidos.style.filter = "blur(0px)"
                 mudaQuantCar()
                 window.location.reload()
             })
@@ -256,12 +256,12 @@ function finalizarPedido() {
 
 function abrirUsuario() {
     user_container.style.visibility = "visible"
-    container_endereco.style.filter = "blur(5px)"
+    container_meus_pedidos.style.filter = "blur(5px)"
 }
 
 function fecharUsuario() {
     user_container.style.visibility = "hidden"
-    container_endereco.style.filter = "blur(0)"
+    container_meus_pedidos.style.filter = "blur(0)"
 }
 
 function mudaUser() {
@@ -276,129 +276,9 @@ function descobrirCliente() {
     }
     for (el of clientes) {
         if (el.login == true) {
+            console.log(el)
             return el
         }
     }
     return false
-}
-
-
-/* -------- Endereço ------- */
-
-var enderecoStorage = JSON.parse(localStorage.getItem('enderecosU'))
-
-var continuar = false
-
-const nao_possui = document.getElementById("nao_possui")
-const infos_enderecos = document.getElementById("infos_enderecos")
-const btn_cadastrarEnd = document.getElementById("btn_cadastrarEnd")
-
-
-btn_cadastrarEnd.addEventListener("click", () => {
-    window.location.href = "cadastrar_endereco.php";
-})
-
-var clienteLogado = verifica()
-
-
-if (clienteLogado) {
-
-    infos_enderecos.style = "visibility: visible; display: block;"
-
-    addEnd()
-
-}
-
-
-function verifica() {
-
-    if (clientes) {
-        for (el of clientes) {
-            if (el.login == true) {
-                if (enderecoStorage) {
-                    for (end of enderecoStorage) {
-                        if (end.cpf == el.cpf) {
-
-                            nao_possui.style = "visibility: hidden; display: none;"
-                            return el;
-                        }
-                    }
-                }
-                nao_possui.textContent = "Você não possui endereços cadastrado!"
-                return false;
-            }
-        }
-        nao_possui.parentNode.innerHTML = `<a href="login.php" style="font-size: 2rem;color: red; padding: 0; margin: 4rem;">Faça login</a>`
-    }
-}
-
-function addEnd() {
-    let i = 0
-
-    infos_enderecos.innerHTML = ""
-
-    for (el of enderecoStorage) {
-        
-
-        if (el.cpf == clienteLogado.cpf) {
-            infos_enderecos.innerHTML +=
-                `
-            <div class="novoEnd" name="${i}">
-                <div class="row">
-                    <div class="column">
-                        <div class="row">
-                            <span>CEP: ${el.cep}</span>
-                            <span>Bairro: ${el.bairro}</span>
-                        </div>
-                        <div class="row">
-                            <span>Rua: ${el.rua}</span>
-                            <span>N°: ${el.numero}</span>
-                        </div>
-                        <div class="row">
-                            <span>Cidade: ${el.cidade}</span>
-                            <span>Estado: ${el.estado}</span>
-                        </div>
-                    </div>
-                    <img src="img/lixeira.png" class="lixeira">
-                </div>
-            </div>
-            `
-        }
-
-        i++
-    }
-
-    const lixeira = document.querySelectorAll(".lixeira")
-
-    for (el of lixeira) {
-        el.addEventListener("click", removeEnd)
-    }
-}
-
-function removeEnd() {
-
-
-    let attStorage = []
-
-    for (i = 0; i < enderecoStorage.length; i++) {
-        if (i != this.parentNode.parentNode.getAttribute("name")) {
-            attStorage.push(enderecoStorage[i])
-        }
-    }
-
-    enderecoStorage = attStorage
-
-    localStorage.setItem('enderecosU', JSON.stringify(enderecoStorage))
-
-    addEnd()
-
-    for (end of enderecoStorage) {
-        if (end.cpf == clienteLogado.cpf) {
-            return
-        }
-    }
-
-    nao_possui.style = "visibility: visible; display: block;"
-    nao_possui.textContent = "Você não possui endereços cadastrado!"
-
 }

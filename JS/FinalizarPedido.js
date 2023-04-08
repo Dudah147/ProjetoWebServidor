@@ -44,7 +44,7 @@ if (clienteLogado == false) {
 endCadas.addEventListener("click", modalEndCadastrados)
 
 document.getElementById("CadastrarEnd").addEventListener("click", () => {
-    window.location.href = "CadastrarEnd.html"
+    window.location.href = "cadastrar_endereco.php"
 })
 
 
@@ -410,7 +410,7 @@ function pedidoFinalizado() {
         `
         <h1>Pedido finalizado com Sucesso!</h1>
         <hr>
-        <a href="PedidosRealizados.html" style="color:black">Acesse seus pedidos</a>
+        <a href="meus_pedidos.php" style="color:black">Acesse seus pedidos</a>
 
     `
 
@@ -673,7 +673,7 @@ function finalizarPedido() {
 
 
     btn_entregar.addEventListener("click", () => {
-        window.location.href = "Finalizarpedido.php";
+        window.location.href = "finalizar_pedido.php";
     })
 }
 

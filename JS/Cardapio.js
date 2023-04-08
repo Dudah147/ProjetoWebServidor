@@ -382,7 +382,7 @@ function finalizarPedido() {
 
 
     btn_entregar.addEventListener("click", () => {
-        window.location.href = "Finalizarpedido.php";
+        window.location.href = "finalizar_pedido.php";
     })
 }
 
