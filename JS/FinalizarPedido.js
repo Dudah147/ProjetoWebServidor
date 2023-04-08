@@ -36,7 +36,7 @@ if (clienteLogado == false) {
     `
 
     document.getElementById("logar_finalizar").addEventListener("click", () => {
-        window.location.href = "Login.html";
+        window.location.href = "login.php";
     })
 }
 
