@@ -1,16 +1,124 @@
-const tipo_selecionar = document.querySelectorAll(".tipos")
-const info_container = document.getElementById("container_info")
+
+
 
 const carrinho_icone = document.getElementById("carrinho")
 const user = document.getElementById("user")
 const user_container = document.getElementById("user_container")
 const container_cardapio = document.getElementById("container_cardapio")
 
+async function pega_dados() {
+    const dados = await fetch("models/cardapio.model.php")
+    const resposta = await dados.json()
+
+    const tamanhos = await resposta['tamanhos']
+    const massa = await resposta['massa']
+    const bordas = await resposta['bordas']
+    const sabores = await resposta['sabores']
+
+    const tipo_selecionar = document.querySelectorAll(".tipos")
+    const info_container = document.getElementById("container_info")
+
+    for (el of tipo_selecionar) {
+        el.addEventListener("click", mudacor)
+        el.addEventListener("click", mudaDiv)
+    }
+
+    function mudacor() {
+
+        for (el of tipo_selecionar) {
+            el.style.color = "white"
+        }
+        this.style.color = "orange"
+    }
+    
+    function mudaDiv() {
+    
+        if (this.textContent == "TAMANHO") {
+    
+            info_container.innerHTML = ""
+            for (i = 0; i < tamanhos.length; i++) {
+                info_container.innerHTML +=
+                    `<div class="info">
+                    <span>${tamanhos[i].tamanho}</span>
+                    <span>${tamanhos[i].info}</span>
+                </div>`
+            }
+    
+        }
+    
+        else if (this.textContent == "MASSA") {
+    
+            info_container.innerHTML = ""
+            for (i = 0; i < massa.length; i++) {
+                info_container.innerHTML +=
+                    `<div class="info">
+                    <span>${massa[i].massa}</span>
+                    <span>${massa[i].info}</span>
+                </div>`
+            }
+    
+        }
+    
+        else if (this.textContent == "BORDA RECHEADA") {
+    
+            info_container.innerHTML = ""
+            for (i = 0; i < bordas.length; i++) {
+                info_container.innerHTML +=
+                    `<div class="info">
+                    <span>${bordas[i].borda}</span>
+                </div>`
+            }
+        }
+    
+        else if (this.textContent == "TRADICIONAIS") {
+            info_container.innerHTML = ""
+            for (i = 0; i < sabores.length; i++) {
+                if (sabores[i].tipo == "Tradicional") {
+                    info_container.innerHTML +=
+                        `<div class="info">
+                        <span>${sabores[i].sabor}</span>
+                        <span>${sabores[i].info}</span>
+                    </div>`
+                }
+            }
+        }
+    
+        else if (this.textContent == "ESPECIAIS") {
+            info_container.innerHTML = ""
+            for (i = 0; i < sabores.length; i++) {
+                if (sabores[i].tipo == "Especial") {
+                    info_container.innerHTML +=
+                        `<div class="info">
+                        <span>${sabores[i].sabor}</span>
+                        <span>${sabores[i].info}</span>
+                    </div>`
+                }
+            }
+        }
+    
+        else if (this.textContent == "PREMIUM") {
+            info_container.innerHTML = ""
+            for (i = 0; i < sabores.length; i++) {
+                if (sabores[i].tipo == "Premium") {
+                    info_container.innerHTML +=
+                        `<div class="info">
+                        <span>${sabores[i].sabor}</span>
+                        <span>${sabores[i].info}</span>
+                    </div>`
+                }
+            }
+        }
+    
+    }
+
+}
+
+//PHP
+pega_dados()
+
+
 //resgatar localStorage
-var tamanhos = JSON.parse(localStorage.getItem('tamanhos'))
-var massa = JSON.parse(localStorage.getItem('massa'))
-var bordas = JSON.parse(localStorage.getItem('bordas'))
-var sabores = JSON.parse(localStorage.getItem('sabores'))
+
 
 var carrinho = JSON.parse(localStorage.getItem('carrinho'))
 var clientes = JSON.parse(localStorage.getItem('clientes'))
@@ -36,19 +144,6 @@ if (clienteLogado != false) {
 
 
 
-for (el of tipo_selecionar) {
-    el.addEventListener("click", mudacor)
-    el.addEventListener("click", mudaDiv)
-}
-
-
-//remover depois
-/* localStorage.removeItem('tamanhos')
-localStorage.removeItem('massa')
-localStorage.removeItem('bordas')
-localStorage.removeItem('sabores') */
-
-
 
 
 
@@ -62,93 +157,7 @@ container_cardapio.addEventListener("click", fecharUsuario)
 mudaQuantCar()
 
 
-function mudacor() {
 
-    for (el of tipo_selecionar) {
-        el.style.color = "white"
-    }
-    this.style.color = "orange"
-}
-
-function mudaDiv() {
-
-    if (this.textContent == "TAMANHO") {
-
-        info_container.innerHTML = ""
-        for (i = 0; i < tamanhos.length; i++) {
-            info_container.innerHTML +=
-                `<div class="info">
-                <span>${tamanhos[i].tamanho}</span>
-                <span>${tamanhos[i].info}</span>
-            </div>`
-        }
-
-    }
-
-    if (this.textContent == "MASSA") {
-
-        info_container.innerHTML = ""
-        for (i = 0; i < massa.length; i++) {
-            info_container.innerHTML +=
-                `<div class="info">
-                <span>${massa[i].massa}</span>
-                <span>${massa[i].info}</span>
-            </div>`
-        }
-
-    }
-
-    if (this.textContent == "BORDA RECHEADA") {
-
-        info_container.innerHTML = ""
-        for (i = 0; i < bordas.length; i++) {
-            info_container.innerHTML +=
-                `<div class="info">
-                <span>${bordas[i].borda}</span>
-            </div>`
-        }
-    }
-
-    if (this.textContent == "TRADICIONAIS") {
-        info_container.innerHTML = ""
-        for (i = 0; i < sabores.length; i++) {
-            if (sabores[i].tipo == "Tradicional") {
-                info_container.innerHTML +=
-                    `<div class="info">
-                    <span>${sabores[i].sabor}</span>
-                    <span>${sabores[i].info}</span>
-                </div>`
-            }
-        }
-    }
-
-    if (this.textContent == "ESPECIAIS") {
-        info_container.innerHTML = ""
-        for (i = 0; i < sabores.length; i++) {
-            if (sabores[i].tipo == "Especial") {
-                info_container.innerHTML +=
-                    `<div class="info">
-                    <span>${sabores[i].sabor}</span>
-                    <span>${sabores[i].info}</span>
-                </div>`
-            }
-        }
-    }
-
-    if (this.textContent == "PREMIUM") {
-        info_container.innerHTML = ""
-        for (i = 0; i < sabores.length; i++) {
-            if (sabores[i].tipo == "Premium") {
-                info_container.innerHTML +=
-                    `<div class="info">
-                    <span>${sabores[i].sabor}</span>
-                    <span>${sabores[i].info}</span>
-                </div>`
-            }
-        }
-    }
-
-}
 
 
 
