@@ -2,7 +2,7 @@
     <span id="text_cadastro">Cadastro</span>
     <hr id="underline">
     <div id="cadastro">
-        <form id="form" action="Login.html"></form>
+        <form id="form" action="cadastro.php?acao=cadastro" method="POST"></form>
         <div class="input-group">
             <div class="input-box">
                 <label>Nome:</label>

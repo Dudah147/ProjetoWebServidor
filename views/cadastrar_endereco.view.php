@@ -3,7 +3,7 @@
     <hr id="underline">
 
     <div id="cadEnd">
-        <form id="form" action="Enderecos.html">
+        <form id="form" action="cadastrar_endereco.php?acao=cadastrar" method="POST">
             <div class="input-group">
                 <div class="input-box">
                     <label>CEP:</label>
