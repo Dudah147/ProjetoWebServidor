@@ -20,7 +20,6 @@
     
     <?php require("controllers/usuario.controller.php");?>
     
-
   <script type="text/javascript" src="JS/HomePage.js"></script>
 </body>
 </html>

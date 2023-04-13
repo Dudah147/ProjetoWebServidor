@@ -9,9 +9,13 @@
 
 <body id="body">
     <?php require("controllers/header.controller.php");?>
-    
-    <?php require("controllers/cadastro.controller.php");?>
-    
+    <div id="container_cadastro">
+        <span id="text_cadastro">Cadastro</span>
+        <hr id="underline">
+        <div id="cadastro">
+            <?php require("controllers/cadastro.controller.php");?>
+        </div>
+    </div>
     <?php require("controllers/carrinho.controller.php");?>
     
     <?php require("controllers/usuario.controller.php");?>

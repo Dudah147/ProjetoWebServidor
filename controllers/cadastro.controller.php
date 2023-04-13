@@ -1,10 +1,7 @@
 <?php 
 
-$acao = $_GET['acao'] ?? 'variavel';
-
-if($acao == 'cadastro'){
+if(isset($_GET['acao'])){
     require('controllers/validar_cadastro.controller.php');
-
 }else{
     require("views/cadastro.view.php");
 }

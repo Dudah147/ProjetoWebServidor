@@ -1,14 +1,8 @@
 <?php
-    
-    $nome = $_POST['nome']??'';
-    $cpf = $_POST['cpf'] ?? '';
-    $nascimento = $_POST['nascimento'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $senha = $_POST['senha'] ?? '';
-    
-    if($nome=='' || $cpf=='' || $nascimento=='' || $email=='' ||$senha==''){
+
+    if(!isset($_POST['nome']) || !isset($_POST['cpf']) || !isset($_POST['nascimento']) || !isset($_POST['email']) || !isset($_POST['senha'])){
         echo 'Erro! Preencha todos os campos!';
     } else {
         echo 'Cadastro realizado com sucesso!';
-        require("controllers/transformar_json.controller.php");
+        require("controllers/transforma_json.controller.php");
     }
