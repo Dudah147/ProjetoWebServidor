@@ -10,4 +10,5 @@
         echo 'Erro! Preencha todos os campos!';
     } else {
         echo 'Cadastro realizado com sucesso!';
+        require("controllers/transformar_json.controller.php");
     }
