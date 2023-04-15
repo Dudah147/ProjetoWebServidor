@@ -1,15 +1,20 @@
 <?php 
-    $dados = [
-        "nome" => $_POST['nome'],
-        "cpf" => $_POST['cpf'],
-        "nascimento" => $_POST['nascimento'],
-        "email" => $_POST['email'],
-        "senha" => $_POST['senha']
-    ];
 
-    $arquivo = 'models/usuarios.model.json';
-    $json = json_encode($dados, JSON_PRETTY_PRINT);
+$arquivo = 'models/usuarios.model.json';
+if(file_exists($arquivo)){ 
+    $json = json_decode(file_get_contents($arquivo), true);
+} else { 
+    $json = [];
+}
 
-    file_put_contents($arquivo, $json, FILE_APPEND);
+$json[] = [
+    "nome" => $_POST['nome'],
+    "cpf" => $_POST['cpf'],
+    "nascimento" => $_POST['nascimento'],
+    "email" => $_POST['email'],
+    "senha" => $_POST['senha']
+];
+
+file_put_contents($arquivo, json_encode($json, JSON_PRETTY_PRINT));
 
 ?>

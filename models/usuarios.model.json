@@ -1,0 +1,16 @@
+[
+    {
+        "nome": "Alexandre Rosas Costa",
+        "cpf": "114.379.909-75",
+        "nascimento": "16\/12\/1999",
+        "email": "alexandrerosascosta@gmail.com",
+        "senha": "123456789"
+    },
+    {
+        "nome": "Maria Eduarda Macedo",
+        "cpf": "115.392.999-61",
+        "nascimento": "06\/02\/2001",
+        "email": "teste@teste.com",
+        "senha": "123456789"
+    }
+]
