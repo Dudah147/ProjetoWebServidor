@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Pedidos</title>
-    <link rel="stylesheet" type="text/css" href="CSS/meus_pedidos.css" media="screen" />
-    <style>
-     @import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
-    </style>
+    <link rel="stylesheet" href="CSS/meus_pedidos.css">
+
 </head>
 <body>
     <?php require("controllers/header.controller.php");?>
     
     <?php require("controllers/meus_pedidos.controller.php");?>
-    
-    
+
     <?php require("controllers/carrinho.controller.php");?>
     
     <?php require("controllers/usuario.controller.php");?> 

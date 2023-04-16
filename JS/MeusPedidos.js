@@ -276,9 +276,18 @@ function descobrirCliente() {
     }
     for (el of clientes) {
         if (el.login == true) {
-            console.log(el)
+
             return el
         }
     }
     return false
+}
+
+//MEUS PEDIDOS
+const ver_detalhes = document.querySelectorAll(".ver_detalhes")
+console.log("Teste")
+for(el of ver_detalhes){
+    el.addEventListener( "click" , () =>{
+        window.el
+    })
 }
