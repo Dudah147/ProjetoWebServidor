@@ -228,3 +228,39 @@ a{
     width: 80%;
     
 }
+
+#meus_pedidos{
+    background-color: white;
+    width: 80%;
+    display: flex;
+    margin: 2rem auto 1rem auto;
+    justify-content: center;
+    padding: 0 0 2rem 0;
+}
+
+.pedido{
+    padding: .7rem 1.2rem;
+    margin-top: 1rem;
+    border: 10px solid #c2c2c2;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.pedido div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pedido h3{
+    padding: 0;
+    margin: 0;
+}
+.pedido button{
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #545454;
+    padding: .2rem;
+    cursor:pointer;
+}
