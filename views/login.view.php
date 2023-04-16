@@ -7,7 +7,7 @@
                 require("controllers/validar_login.controller.php");
                 echo $error ?? '';
             ?>
-            <form id="form" action="" method="POST">
+            <form id="form" action="login.php?action=logar" method="POST">
                 <div class="input-group">
                     <div class="input-box">
                         <label>E-mail:</label>
@@ -36,11 +36,11 @@
                 </div>
             </form>
         </div>
-
+        <!--
         <div class="logado">
             <h1 id="boas-vindas" style="text-align: center;">Olá,</h1>
             <h3 style="text-align: center;">Você já está logado!</h3>
             <button type="button" id="sair">Sair</button>
-        </div>
+        </div> -->
     </div>
 </div>

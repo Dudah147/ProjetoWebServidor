@@ -1,4 +1,6 @@
 <?php
+
+
     if(isset($_SESSION['email'], $_SESSION['senha'], $_SESSION['cpf'])){
         $cep = $_POST['cep'] ?? '';
         $rua = $_POST['rua'] ?? '';
