@@ -283,7 +283,7 @@ function descobrirCliente() {
     return false
 }
 
-const entrar = document.getElementById('entrar');
+/* const entrar = document.getElementById('entrar');
 const principal = document.querySelector('.cadastro');
 const alternado = document.querySelector('.logado');
 const form = document.getElementById('form');
@@ -320,9 +320,9 @@ if (clientes) {
             alternado.style.display = 'none';
         }
     }
-}
+} */
 
-//Ao pressionar botão sair atribui todos os cliente.login como false
+/* //Ao pressionar botão sair atribui todos os cliente.login como false
 document.getElementById('sair').addEventListener('click', evt => {
     if (clientes) {
         for (cliente of clientes) {
@@ -382,3 +382,4 @@ function setSuccessFor(input) {
     //Adiciona a classe de sucesso.
     formcontrol.className = 'input-box success';
 }
+ */

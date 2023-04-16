@@ -295,7 +295,7 @@ const email = document.getElementById('email');
 const senha = document.getElementById('passwords');
 let cont = 0;
 
-btnEnviar.addEventListener("click", (e) => {
+/* btnEnviar.addEventListener("click", (e) => {
     //Chama a função e passa o formulário como parâmetro e o evento de click no botão enviar
     checkInputs("form", e);
 
@@ -516,3 +516,4 @@ function validarCPF(cpfValue) {
     }
 }
 
+ */
