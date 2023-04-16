@@ -1,11 +1,13 @@
 <div id="container_login">
     <span id="text_login">Login</span>
     <hr id="underline">
-
     <div id="login">
-        <div class="cadastro">
-            <form id="form" action="pedido.php">
-
+        <div class="cadastro">  
+            <?php 
+                require("controllers/validar_login.controller.php");
+                echo $error ?? '';
+            ?>
+            <form id="form" action="login.php?action=logar" method="POST">
                 <div class="input-group">
                     <div class="input-box">
                         <label>E-mail:</label>
@@ -24,7 +26,7 @@
                         <small>Error message</small>
                     </div>
                     <div class="botoes">
-                        <button id="entrar" type="button">ENTRAR</button>
+                        <button id="entrar" type="submit">ENTRAR</button>
                         <div class="row">
                             <hr>
                             <a href="cadastro.php" id="cadastrar">Ainda não tenho cadastro</a>
@@ -34,11 +36,11 @@
                 </div>
             </form>
         </div>
-
+        <!--
         <div class="logado">
             <h1 id="boas-vindas" style="text-align: center;">Olá,</h1>
             <h3 style="text-align: center;">Você já está logado!</h3>
             <button type="button" id="sair">Sair</button>
-        </div>
+        </div> -->
     </div>
 </div>

@@ -55,7 +55,7 @@
                     <small>Error message</small>
                 </div>
                 <div class="botoes">
-                    <button id="btnEnviar" type="button">Enviar</button>
+                    <button id="btnEnviar" type="submit">Enviar</button>
                     <button type="reset">Excluir</button>
                 </div>
             </div>
