@@ -10,9 +10,10 @@
             $pedido_id = $pedido["id_pedido"];
             $pedido_data = $pedido["data"];
             $pedido_total = $pedido["valor_total"];
+            $win[] = $pedido;
             echo "<div class='pedido'>
                 <div>
-                    <h3>Pedido  $pedido_id </h3>
+                    <h3 id_pedido=$pedido_id>Pedido  $pedido_id </h3>
                     <span style='color:grey; font-size: .8rem'>$pedido_data</span>
                     <button class='ver_detalhes'>Ver detalhes</button>
                 </div>
@@ -21,11 +22,15 @@
                 </div>
             </div>";
             $verifica = true;
-            $win[] = $pedido;
+            
         }
     }
 
 
     if($verifica == false){
         echo "Você não possui pedidos";
+    }
+    else{
+        $win = json_encode($win);
+        echo "<script>let pedidos = $win</script>";
     }

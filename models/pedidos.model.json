@@ -13,7 +13,9 @@
                     "Alho e Oleo",
                     "Caipira",
                     "Calabresa"
-                ]
+                ],
+                "preco": 50.00,
+                "quantidade":1
             },
             {
                 "tamanho": "Pequena",
@@ -21,7 +23,39 @@
                 "massa": "Tradicional",
                 "sabores": [
                     "Alho e Oleo"
-                ]
+                ],
+                "preco": 30.00,
+                "quantidade":1
+            }
+        ]
+    },
+    {
+        "id_pedido" : 2,
+        "cpf" : "115.392.999-61",
+        "valor_total" : 100.0,
+        "data" : "15/04/2023 22:56",
+        "itens" : [
+            {
+                "tamanho": "Gigante",
+                "borda": "Fina",
+                "massa": "Tradicional",
+                "sabores": [
+                    "Alho e Oleo",
+                    "Caipira",
+                    "Calabresa"
+                ],
+                "preco": 60.00,
+                "quantidade":1
+            },
+            {
+                "tamanho": "Pequena",
+                "borda": "Fina",
+                "massa": "Tradicional",
+                "sabores": [
+                    "Alho e Oleo"
+                ],
+                "preco": 40.00,
+                "quantidade":1
             }
         ]
     }
