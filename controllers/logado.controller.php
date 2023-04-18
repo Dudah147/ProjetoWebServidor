@@ -1,2 +1,3 @@
 <?php 
-    require("views/logado.view.php");
+   require("views/logado.view.php");
+        

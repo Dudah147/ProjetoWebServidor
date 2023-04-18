@@ -1,9 +1,4 @@
-<div id="container_cadEnd">
-    <span id="text_cadEnd">Cadastrar Endereço</span>
-    <hr id="underline">
-
-    <div id="cadEnd">
-        <form id="form" action="cadastrar_endereco.php?acao=cadastrar" method="POST">
+<form id="form" action="cadastrar_endereco.php?acao=cadastrar" method="POST">
             <div class="input-group">
                 <div class="input-box">
                     <label>CEP:</label>
@@ -59,6 +54,9 @@
                     <button type="reset">Excluir</button>
                 </div>
             </div>
-        </form>
-    </div>
-</div>
+</form>
+
+<!-- <form action="cadastrar_endereco.php?acao=cadastrar" method="POST">
+    <input type="text" name="cep">
+    <button type="submit">Enviar</button>
+</form> -->
