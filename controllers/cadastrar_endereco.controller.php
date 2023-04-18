@@ -1,14 +1,7 @@
 <?php 
 
-$acao = $_GET['acao'] ?? 'variavel';
-
-$cep = $_POST['cep'] ?? '';
-
-echo "$cep";
-
-if ($acao == 'cadastrar'){
+if(isset($_GET['acao'])){
     require('controllers/validar_endereco.controller.php');
-} else {
-    
+}else{
     require("views/cadastrar_endereco.view.php");
 }
