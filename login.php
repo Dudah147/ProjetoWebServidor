@@ -21,6 +21,7 @@
 
 
     <script type="text/javascript" src="JS/Login.js"></script>
+    <script type="text/javascript" src="JS/usuario.js"></script>
 </body>
 
 </html>

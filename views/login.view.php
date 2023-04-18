@@ -1,4 +1,4 @@
-<div id="container_login">
+<div id="container">
     <span id="text_login">Login</span>
     <hr id="underline">
     <div id="login">

@@ -1,16 +1,11 @@
 const carrinho_icone = document.getElementById("carrinho")
-const user = document.getElementById("user")
-const user_container = document.getElementById("user_container")
-const container_pedido = document.getElementById("container_login")
+const container_pedido = document.getElementById("container")
 
 var carrinho = JSON.parse(localStorage.getItem('carrinho'))
 var clientes = JSON.parse(localStorage.getItem('clientes'))
 
 carrinho_icone.addEventListener("click", abrirCarrinho)
 
-user.addEventListener("click", abrirUsuario)
-
-container_pedido.addEventListener("click", fecharUsuario)
 
 mudaQuantCar()
 
@@ -252,36 +247,7 @@ function finalizarPedido() {
     })
 }
 
-/* --------- USUARIO ------------ */
 
-function abrirUsuario() {
-    user_container.style.visibility = "visible"
-    container_pedido.style.filter = "blur(5px)"
-}
-
-function fecharUsuario() {
-    user_container.style.visibility = "hidden"
-    container_pedido.style.filter = "blur(0)"
-}
-
-function mudaUser() {
-    let pai = document.getElementById("header_user")
-    pai.children[0].textContent = `Olá ${clienteLogado.nome}`
-    pai.children[1].textContent = `Deseja sair? Clique aqui`
-}
-
-function descobrirCliente() {
-    if (!clientes) {
-        return false
-    }
-    for (el of clientes) {
-        if (el.login == true) {
-            console.log(el)
-            return el
-        }
-    }
-    return false
-}
 
 /* const entrar = document.getElementById('entrar');
 const principal = document.querySelector('.cadastro');
