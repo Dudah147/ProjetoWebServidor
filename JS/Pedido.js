@@ -3,11 +3,9 @@ var flag2 = 0
 var flag3 = 0
 var flag4 = 0
 
-const container_pedido = document.getElementById("container_pedido")
+const container_pedido = document.getElementById("container")
 const body = document.getElementById("body")
 const carrinho_icone = document.getElementById("carrinho")
-const user = document.getElementById("user")
-const user_container = document.getElementById("user_container")
 
 
 var novoPedido = {
@@ -23,15 +21,14 @@ var novoPedido = {
 //localStorage.removeItem('carrinho')
 
 //resgatar localStorage
-var tamanhos = JSON.parse(localStorage.getItem('tamanhos'))
-var massa = JSON.parse(localStorage.getItem('massa'))
-var bordas = JSON.parse(localStorage.getItem('bordas'))
-var sabores = JSON.parse(localStorage.getItem('sabores'))
+const tamanhos = resposta['tamanhos']
+const massa = resposta['massa']
+const bordas = resposta['bordas']
+const sabores = resposta['sabores']
+
 var carrinho = JSON.parse(localStorage.getItem('carrinho'))
-var clientes = JSON.parse(localStorage.getItem('clientes'))
 
 modalTamanhos(document.getElementById("tamanho").children[2])
-
 
 var label = document.querySelectorAll(".rad-label")
 
@@ -40,13 +37,6 @@ for (el of label) {
 }
 
 carrinho_icone.addEventListener("click", abrirCarrinho)
-
-user.addEventListener("click", abrirUsuario)
-
-var clienteLogado = descobrirCliente()
-if (clienteLogado != false) {
-    mudaUser()
-}
 
 
 
@@ -752,38 +742,4 @@ function finalizarPedido() {
     btn_entregar.addEventListener("click", () => {
         window.location.href = "finalizar_pedido.php";
     })
-}
-
-/* --------- USUARIO ------------ */
-
-function abrirUsuario() {
-    user_container.style.visibility = "visible"
-    container_pedido.style.filter = "blur(5px)"
-
-    container_pedido.addEventListener("click", fecharUsuario)
-
-}
-
-function fecharUsuario() {
-    user_container.style.visibility = "hidden"
-    container_pedido.style.filter = "blur(0)"
-}
-
-function mudaUser() {
-    let pai = document.getElementById("header_user")
-    pai.children[0].textContent = `Olá ${clienteLogado.nome}`
-    pai.children[1].textContent = `Deseja sair? Clique aqui`
-}
-
-function descobrirCliente() {
-    if (!clientes) {
-        return false
-    }
-    for (el of clientes) {
-        if (el.login == true) {
-            console.log(el)
-            return el
-        }
-    }
-    return false
 }

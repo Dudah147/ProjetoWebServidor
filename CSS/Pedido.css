@@ -2,43 +2,44 @@
 
 @font-face {
     font-family: "Adlery Pro";
-    src: url("//db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.woff2") format("woff2"); 
+    src: url("//db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.woff2") format("woff2");
 }
 
 /* -- header -- */
 
-body{
+body {
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0; 
+    padding: 0;
     font-size: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 10;
     background-color: #545454;
-    
-    
+
+
 }
 
-a{
+a {
     color: aliceblue;
-    text-decoration:none;
+    text-decoration: none;
     padding-top: 60px;
 }
 
 
-#container_img{
+#container_img {
 
     margin: 1rem;
     display: flex;
     flex-direction: column;
 
     justify-content: space-between;
-    
+
     padding-bottom: .6rem;
 }
 
 
-#carrinho, #user{
+#carrinho,
+#user {
     cursor: pointer;
     width: 30px;
     height: 30px;
@@ -49,7 +50,7 @@ a{
 
 /* -- Carrinho -- */
 
-#carrinho_container{
+#carrinho_container {
 
     width: 30vw;
     height: 100%;
@@ -69,25 +70,25 @@ a{
     box-shadow: 10px 5px 5px black;
 }
 
-.carrinho-row{
+.carrinho-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 0;
-    
+
 }
 
-#carrinho_container span{
-    color:grey;
+#carrinho_container span {
+    color: grey;
 }
 
-#carrinho_container hr{
+#carrinho_container hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
-#carrinho_container button{
+#carrinho_container button {
     background-color: green;
     border: none;
     border-radius: 1px;
@@ -103,7 +104,7 @@ a{
 /* xx /carrinho xx */
 
 /* ---- usuario ------ */
-#user_container{
+#user_container {
     width: 30vw;
     height: 100%;
     position: fixed;
@@ -121,7 +122,7 @@ a{
     border: 1px solid #2c2c2c;
 }
 
-#header_user{
+#header_user {
     background-color: black;
     color: white;
     height: 6rem;
@@ -136,12 +137,13 @@ a{
     padding: 2rem 2rem 2.5rem 3rem;
 }
 
-#header_user h2, #header_user a{
+#header_user h2,
+#header_user a {
     margin: 1rem;
     padding: 0;
 }
 
-.column{
+.column {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -149,7 +151,7 @@ a{
 
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: row;
 
@@ -163,7 +165,7 @@ a{
     padding: 0;
 }
 
-.imgs_user{
+.imgs_user {
     width: 30px;
     height: 30px;
     margin-right: 2rem;
@@ -172,54 +174,54 @@ a{
 
 /* xx /user xx */
 
-#container_pedido{
-    
+#container {
+
     background-color: black;
     margin: 1rem auto 0ch auto;
-    
-    
+
+
     padding: .5rem 1rem 3rem 1rem;
-    
+
 
     width: 85%;
     height: auto;
 }
 
-#text_pedido{
-    color: aliceblue; 
-    align-items: flex-start; 
+#text_pedido {
+    color: aliceblue;
+    align-items: flex-start;
     width: 850px;
     font-family: "Adlery Pro";
     font-size: 3.2rem;
 }
 
-#underline{
+#underline {
     margin-top: 0;
     display: block;
-    
+
     background-color: white;
     height: .1rem;
     width: 80%;
 }
 
-#pedido{
+#pedido {
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
 
     background-color: white;
-    
+
     width: 90%;
 }
 
-.tipo{
+.tipo {
     color: #ffa500;
     margin: 0;
     padding: 1rem;
     cursor: pointer;
 }
 
-.seta{
+.seta {
     width: 15px;
     height: 15px;
     margin-right: 1rem;
@@ -227,68 +229,68 @@ a{
     filter: invert(79%) sepia(61%) saturate(4392%) hue-rotate(360deg) brightness(101%) contrast(107%);
 }
 
-hr{
+hr {
     border-color: rgba(232, 232, 232, 0.705);
     margin: 0;
 }
 
 
-.rad-label{
-  display: flex;
-  align-items: center;
+.rad-label {
+    display: flex;
+    align-items: center;
 
-  border-radius: 100px;
-  padding: 14px 16px;
-  margin: 0;
-  margin-left: 1rem;
+    border-radius: 100px;
+    padding: 14px 16px;
+    margin: 0;
+    margin-left: 1rem;
 
-  cursor: pointer;
-  transition: .3s;
+    cursor: pointer;
+    transition: .3s;
 }
 
 .rad-label:hover,
-.rad-label:focus-within{
-  background: rgba(207, 207, 207, 0.226);
+.rad-label:focus-within {
+    background: rgba(207, 207, 207, 0.226);
 }
 
-.rad-input{
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
+.rad-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
 }
 
-.rad-design{
-  width: 22px;
-  height: 22px;
-  border-radius: 100px;
+.rad-design {
+    width: 22px;
+    height: 22px;
+    border-radius: 100px;
 
-  background-color: orange;
-  position: relative;
+    background-color: orange;
+    position: relative;
 }
 
-.rad-design::before{
-  content: '';
+.rad-design::before {
+    content: '';
 
-  display: inline-block;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
 
-  background: hsl(0, 0%, 90%);
-  transform: scale(1.1);
-  transition: .3s;
+    background: hsl(0, 0%, 90%);
+    transform: scale(1.1);
+    transition: .3s;
 }
 
-.rad-input:checked+.rad-design::before{
-  transform: scale(0);
+.rad-input:checked+.rad-design::before {
+    transform: scale(0);
 }
 
-.rad-text{
+.rad-text {
     color: hsl(0, 0%, 0%);
     margin-left: 14px;
-    
+
     font-size: 1.2rem;
     transition: .3s;
 }
@@ -297,14 +299,14 @@ hr{
     color: hsl(0, 0%, 2%);
 }
 
-.infos span{
+.infos span {
     margin: 0 2rem 1rem 2rem;
     display: block;
 
     color: gray;
 }
 
-.row-infos{
+.row-infos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -312,61 +314,65 @@ hr{
     padding: 0;
 }
 
-.row-infos span{
+.row-infos span {
     margin: 1rem;
     margin-bottom: 0;
     display: block;
 }
 
-.sabor_quant, .tipo_sabor{
+.sabor_quant,
+.tipo_sabor {
     display: flex;
     align-items: center;
 }
 
-.sabor_info{
+.sabor_info {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.quant_container{
+.quant_container {
     display: flex;
     background-color: rgb(221, 221, 221);
     border-radius: 20px;
     width: 5rem;
-    
+
     padding: .5rem 1rem .5rem 1rem;
     justify-content: space-between;
     align-items: center;
 }
 
-.quantImg{
+.quantImg {
     width: 15px;
     height: 15px;
 }
 
-.mais, .maisCar{
+.mais,
+.maisCar {
     filter: invert(24%) sepia(63%) saturate(5204%) hue-rotate(113deg) brightness(90%) contrast(106%);
     cursor: pointer;
 }
 
-.menos, .menosCar{
+.menos,
+.menosCar {
     filter: invert(16%) sepia(100%) saturate(5740%) hue-rotate(357deg) brightness(111%) contrast(124%);
     cursor: pointer;
 }
 
-.pizza_img{
+.pizza_img {
     width: 5rem;
     height: 5rem;
 }
 
-.obs_input, obs_input:focus{
+.obs_input,
+obs_input:focus {
     border: none;
     border-bottom: solid 1px rgba(185, 185, 185, 0.74);
     outline: 0;
 }
 
-#adicionarPedido{
+#adicionarPedido {
     cursor: pointer;
     margin-top: 2rem;
     background-color: orange;
@@ -378,7 +384,7 @@ hr{
 
 
 
-#feedback{
+#feedback {
     position: fixed;
     top: 1rem;
     display: flex;
@@ -400,7 +406,7 @@ hr{
     animation: notifica 2s, desaparece 5s;
 }
 
-#feedback div{
+#feedback div {
     margin-top: .5rem;
     background-color: red;
 
@@ -412,36 +418,39 @@ hr{
     animation: diminui 5s;
 }
 
-@keyframes notifica{
+@keyframes notifica {
     0% {
         transform: translateX(-200px);
     }
+
     100% {
         transform: translateX(0);
     }
 }
 
-@keyframes desaparece{
+@keyframes desaparece {
     0% {
         visibility: visible;
     }
-    90%{
+
+    90% {
         opacity: 100%;
     }
+
     100% {
         opacity: 10%;
         visibility: hidden;
     }
 }
 
-@keyframes diminui{
+@keyframes diminui {
     0% {
         visibility: visible;
         width: 96%;
     }
+
     100% {
         width: 0;
         visibility: hidden;
     }
 }
-

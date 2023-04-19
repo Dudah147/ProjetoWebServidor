@@ -1,6 +1,6 @@
 <main>
 
-    <div id="container_cardapio">
+    <div id="container">
 
         <span id="text_cardapio">Cardápio</span>
         <hr id="underline">

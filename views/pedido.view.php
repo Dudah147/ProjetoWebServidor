@@ -1,4 +1,4 @@
-<div id="container_pedido">
+<div id="container">
     <span id="text_pedido">Pedido Online</span>
     <hr id="underline">
 

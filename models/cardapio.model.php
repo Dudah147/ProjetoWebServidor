@@ -30,4 +30,4 @@ $sabores = [
     ['sabor' => "Mignon crispy",'info' => "Muçarela, filé mignon e cebola crispy", 'tipo' => "Premium", 'preco' => 15, 'img' => "img/pizza.jpg"]
 ];
 
-echo json_encode(['massa' => $massa, 'tamanhos' => $tamanhos, 'bordas' => $bordas,'sabores' => $sabores]);
+$cardapio = json_encode(['massa' => $massa, 'tamanhos' => $tamanhos, 'bordas' => $bordas,'sabores' => $sabores]);

@@ -1,4 +1,4 @@
-<div id="container_meus_pedidos">
+<div id="container">
     <span id="text_meus_pedidos">Meus Pedidos</span>
     <hr id="underline">
 

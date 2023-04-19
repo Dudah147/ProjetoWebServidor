@@ -2,68 +2,69 @@
 
 @font-face {
     font-family: "Adlery Pro";
-    src: url("//db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.woff2") format("woff2"); 
+    src: url("//db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.woff2") format("woff2");
 }
 
 /* -- header -- */
 
-body{
+body {
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0; 
+    padding: 0;
     font-size: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 10;
     background-color: #545454;
-    
-    
+
+
 }
 
-a{
+a {
     color: aliceblue;
-    text-decoration:none;
+    text-decoration: none;
     padding-top: 60px;
 }
 
 
-#container_img{
+#container_img {
 
     margin: 1rem;
     display: flex;
     flex-direction: column;
 
     justify-content: space-between;
-    
+
     padding-bottom: .6rem;
 }
 
-.quant_container{
+.quant_container {
     display: flex;
     background-color: rgb(221, 221, 221);
     border-radius: 20px;
     width: 5rem;
-    
+
     padding: .5rem 1rem .5rem 1rem;
     justify-content: space-between;
     align-items: center;
 }
 
-.quantImg{
+.quantImg {
     width: 15px;
     height: 15px;
 }
 
-.maisCar{
+.maisCar {
     filter: invert(24%) sepia(63%) saturate(5204%) hue-rotate(113deg) brightness(90%) contrast(106%);
     cursor: pointer;
 }
 
-.menosCar{
+.menosCar {
     filter: invert(16%) sepia(100%) saturate(5740%) hue-rotate(357deg) brightness(111%) contrast(124%);
     cursor: pointer;
 }
 
-#carrinho, #user{
+#carrinho,
+#user {
     cursor: pointer;
     width: 30px;
     height: 30px;
@@ -74,7 +75,7 @@ a{
 
 /* -- Carrinho -- */
 
-#carrinho_container{
+#carrinho_container {
 
     width: 30vw;
     height: 100%;
@@ -94,25 +95,25 @@ a{
     box-shadow: 10px 5px 5px black;
 }
 
-.carrinho-row{
+.carrinho-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 0;
-    
+
 }
 
-#carrinho_container span{
-    color:grey;
+#carrinho_container span {
+    color: grey;
 }
 
-#carrinho_container hr{
+#carrinho_container hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
-#carrinho_container button{
+#carrinho_container button {
     background-color: green;
     border: none;
     border-radius: 1px;
@@ -128,7 +129,7 @@ a{
 /* xx /carrinho xx */
 
 /* ---- usuario ------ */
-#user_container{
+#user_container {
     width: 30vw;
     height: 100%;
     position: fixed;
@@ -146,7 +147,7 @@ a{
     border: 1px solid #2c2c2c;
 }
 
-#header_user{
+#header_user {
     background-color: black;
     color: white;
     height: 6rem;
@@ -161,12 +162,13 @@ a{
     padding: 2rem 2rem 2.5rem 3rem;
 }
 
-#header_user h2, #header_user a{
+#header_user h2,
+#header_user a {
     margin: 1rem;
     padding: 0;
 }
 
-.column{
+.column {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -174,7 +176,7 @@ a{
 
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: row;
 
@@ -188,7 +190,7 @@ a{
     padding: 0;
 }
 
-.imgs_user{
+.imgs_user {
     width: 30px;
     height: 30px;
     margin-right: 2rem;
@@ -196,15 +198,15 @@ a{
 }
 
 /* xx /user xx */
-#text_meus_pedidos{
-    color: aliceblue; 
-    align-items: flex-start; 
+#text_meus_pedidos {
+    color: aliceblue;
+    align-items: flex-start;
     width: 850px;
     font-family: "Adlery Pro";
     font-size: 4rem;
 }
 
-#container_meus_pedidos{
+#container {
     padding-left: 3rem;
     padding-right: 3rem;
     padding-top: .5rem;
@@ -215,37 +217,38 @@ a{
 
     width: 80%;
     height: 45rem;
-    
+
     background-color: black;
 }
 
-#underline{
+#underline {
     margin-top: 0;
     display: block;
-    
+
     background-color: white;
     height: .1rem;
     width: 80%;
-    
+
 }
 
-#meus_pedidos, .div_pedido{
+#meus_pedidos,
+.div_pedido {
     background-color: white;
     width: 80%;
     display: flex;
     margin: 2rem auto 1rem auto;
     justify-content: center;
-    
+
     flex-direction: column;
-    
+
 }
 
-#meus_pedidos{
+#meus_pedidos {
     padding: 0 0 2rem 0;
     align-items: center;
 }
 
-.pedido{
+.pedido {
     padding: .7rem 1.2rem;
     margin-top: 1rem;
     border: 10px solid #c2c2c2;
@@ -254,53 +257,58 @@ a{
     flex-direction: row;
     justify-content: space-between;
 }
-.pedido div{
+
+.pedido div {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.pedido h3{
+
+.pedido h3 {
     padding: 0;
     margin: 0;
 }
-.pedido button{
+
+.pedido button {
     margin-top: 1rem;
     background-color: white;
     border-radius: 3px;
     border: 1px solid #545454;
     padding: .2rem;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.div_pedido{
+.div_pedido {
     padding: 2rem;
     padding-top: 1rem;
 }
 
-.div_pedido hr{
+.div_pedido hr {
     margin-top: 2rem;
     margin-bottom: 2rem;
     color: grey;
     width: 100%;
 }
 
-.div_pedido h2, .div_pedido h3{
+.div_pedido h2,
+.div_pedido h3 {
     padding: 0;
     margin: 0;
 }
 
-.item{
+.item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: .5rem;
 }
-#botao_voltar{
+
+#botao_voltar {
     width: 20%;
     margin-bottom: 1rem;
     font-size: 1.2rem;
-    background:linear-gradient(to bottom, #dddddd 5%, #bdbaba 100%);
-	background-color:#f9f9f9;
+    background: linear-gradient(to bottom, #dddddd 5%, #bdbaba 100%);
+    background-color: #f9f9f9;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     border: none;
     cursor: pointer;
