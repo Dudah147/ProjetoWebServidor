@@ -1,8 +1,8 @@
 <!-- --- usuario --- -->
 <div id="user_container">
     <div id="header_user">
-        <h2>Olá visitante</h2>
-        <a href="login.php">Cadastre-se ou Entre</a>
+        <h2>Olá, <?=$usuario?></h2>
+        <a href="login.php"><?=$msg?></a>
     </div>
     <div class="column">
         <div class="row">
