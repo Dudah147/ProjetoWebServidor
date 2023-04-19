@@ -1,15 +1,15 @@
 [
     {
-        "nome": "Alexandre Rosas Costa",
-        "cpf": "114.379.909-75",
-        "nascimento": "16\/12\/1999",
+        "nome": "Alexandre",
+        "cpf": "11437990975",
+        "nascimento": "16121999",
         "email": "alexandrerosascosta@gmail.com",
         "senha": "123456789"
     },
     {
         "nome": "Maria Eduarda Macedo",
-        "cpf": "115.392.999-61",
-        "nascimento": "06\/02\/2001",
+        "cpf": "11539299961",
+        "nascimento": "06022001",
         "email": "teste@teste.com",
         "senha": "123456789"
     },
@@ -18,6 +18,13 @@
         "cpf": "09430110942",
         "nascimento": "17101995",
         "email": "email@email.com",
-        "senha": "123456879"
+        "senha": "123456789"
+    },
+    {
+        "nome": "Teste",
+        "cpf": "12345678910",
+        "nascimento": "16121999",
+        "email": "teste@email.com",
+        "senha": "123456789"
     }
 ]

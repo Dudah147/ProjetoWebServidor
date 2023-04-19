@@ -13,7 +13,12 @@
         <span id="text_cadastro">Cadastro</span>
         <hr id="underline">
         <div id="cadastro">
-            <?php require("controllers/cadastro.controller.php");?>
+            <?php 
+                if(isset($_GET['signin_error'])){
+                    echo "Cadastro já realizado";
+                }
+                require("controllers/cadastro.controller.php");
+            ?>
         </div>
     </div>
     <?php require("controllers/carrinho.controller.php");?>

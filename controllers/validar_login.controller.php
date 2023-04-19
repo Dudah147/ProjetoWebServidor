@@ -7,11 +7,11 @@
         if(isset($_GET['error'])){
             echo "Não foi possível validar a sessão";
         }
+        
         if(isset($arquivo)){
             fopen($arquivo, 'r');   
             $json = json_decode(file_get_contents($arquivo), true);
             for ($i=0; $i < count($json); $i++) {
-
                 if($email == $json[$i]['email'] && $senha == $json[$i]['senha']){
                     $_SESSION['logado']= true;
                     $_SESSION['senha'] = $json[$i]['senha'];
@@ -28,6 +28,8 @@
             if(!isset($flag) && !isset($_GET['error'])){
                 echo "Usuário incorreto, tente novamente!";
             }
+        }else{
+            require('controller/transformar_json.controller.php');
         }
     }
     validar_sessao();
