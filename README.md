@@ -44,10 +44,10 @@
 ## Atividades:
 
 ### *Maria Eduarda*
-- 
+- construção do MVC, página meus pedidos, criação das interfaces, visualização de meus endereços, visualização de meus pedidos;
 
 ### *Alexandre*
-- Realizou a validação e autenticação de páginas;
+- Construção da lógica de login e cadastro de clientes utilizando autenticação e session e arquivo JSON construído para fim de validação destas páginas e organização de códigos para melhor visualização por parte do avaliador;
 
 ### *Jeferson* 
 - 
