@@ -20,7 +20,11 @@
         <span id="text_cadEnd">Cadastrar Endereço</span>
         <hr id="underline">
         <div id="cadEnd">
-            <?php require("controllers/cadastrar_endereco.controller.php");?>
+            <span><?php
+                if(isset($_GET['error'])){
+                   echo 'Endereço já cadastrado';
+                }?></span>
+             <?= require("controllers/cadastrar_endereco.controller.php");?>
         </div>
 </div>
         
