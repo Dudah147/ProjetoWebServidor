@@ -1,24 +1,24 @@
 <?php
-    $flag = null;
+    $flag1 = null;
     $arquivo = 'models/enderecos.model.json';
 
     if(isset($arquivo)){
         if(isset($_SESSION['senha'], $_SESSION['cpf'])){
-            if(!isset($_POST['cep'], $_POST['rua'], $_POST['bairro'], $_POST['cidade'], $_POST['estado'], $_POST['numero'])){           
+            if(empty($_POST['cep']) || empty($_POST['rua']) || empty($_POST['bairro']) || empty($_POST['cidade']) || empty($_POST['estado']) || empty($_POST['numero'])){           
                 echo 'Erro! Preencha todos os dados';
             }else {
                 fopen($arquivo, 'r');   
                 $json = json_decode(file_get_contents($arquivo), true);
                 for ($i=0; $i < count($json); $i++) {
-                    if($_SESSION['cpf']!==$json[$i]['cpf'] && $_POST['cep']!==$json[$i]['cep'] && $_POST['rua']!==$json[$i]['rua'] && $_POST['numero']!==$json[$i]['numero'] ){
-                        $flag = 1;
+                    if($_SESSION['cpf']==$json[$i]['cpf'] && $_POST['numero']!==$json[$i]['numero'] ){
+                        $flag1 = 1;
                     }else{
-                        $flag = 0;
+                        $flag1 = 0;
                         break;
                     }
                 }
-                if($flag==0){
-                    header("Location: ./cadastrar_endereco.php?error=true");
+                if($flag1==0){
+                    header("Location: ./cadastrar_endereco.php?error-end=true");
                 }else{
                     echo 'Cadastro realizado com sucesso!';
                     require("controllers/transforma_endereco_json.controller.php");

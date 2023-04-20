@@ -21,7 +21,7 @@
         <hr id="underline">
         <div id="cadEnd">
             <?php
-                if(isset($_GET['error'])){
+                if(isset($_GET['error-end'])){
                    echo 'Endereço já cadastrado';
                 }
                 require("controllers/cadastrar_endereco.controller.php");
