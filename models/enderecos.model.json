@@ -1,0 +1,12 @@
+[
+    {
+        "id_endereco": 1,
+        "cpf": "115.392.999-61",
+        "cep": "84033590",
+        "rua": "Rua Santo Agostinho",
+        "bairro": "Cará-Cará",
+        "cidade": "Ponta Grossa",
+        "estado": "Parana",
+        "numero": "212"
+    }
+]
