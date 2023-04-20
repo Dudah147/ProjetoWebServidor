@@ -36,5 +36,68 @@
         "cidade": "Ponta Grossa",
         "estado": "PR",
         "numero": "222"
+    },
+    {
+        "cpf": "11539299961",
+        "cep": "84010045",
+        "rua": "Rua Padre Jo\u00e3o Lux",
+        "bairro": "Centro",
+        "cidade": "Ponta Grossa",
+        "estado": "PR",
+        "numero": "1244"
+    },
+    {
+        "cpf": "11539299961",
+        "cep": "84010045",
+        "rua": "Rua Padre Jo\u00e3o Lux",
+        "bairro": "Centro",
+        "cidade": "Ponta Grossa",
+        "estado": "PR",
+        "numero": "1245"
+    },
+    {
+        "cpf": "11539299961",
+        "cep": "84036000",
+        "rua": "Rua Dom Pedro I",
+        "bairro": "Oficinas",
+        "cidade": "Ponta Grossa",
+        "estado": "PR",
+        "numero": "1245"
+    },
+    {
+        "cpf": "09430110942",
+        "cep": "84045250",
+        "rua": "Rua Padre Anchieta",
+        "bairro": "Col\u00f4nia Dona Lu\u00edza",
+        "cidade": "Ponta Grossa",
+        "estado": "PR",
+        "numero": "644"
+    },
+    {
+        "cpf": "09430110942",
+        "cep": "84045010",
+        "rua": "Avenida Nossa Senhora Aparecida",
+        "bairro": "Car\u00e1-car\u00e1",
+        "cidade": "Ponta Grossa",
+        "estado": "PR",
+        "numero": "1234"
+    },
+    {
+        "cpf": "09430110942",
+        "cep": "84045010",
+        "rua": "Avenida Nossa Senhora Aparecida",
+        "bairro": "Car\u00e1-car\u00e1",
+        "cidade": "Ponta Grossa",
+        "estado": "PR",
+        "numero": "1233"
+    },
+    {
+        "cpf": "09430110942",
+        "cep": "84010045",
+        "rua": "Rua Padre Jo\u00e3o Lux",
+        "bairro": "Centro",
+        "cidade": "Ponta Grossa",
+        "estado": "PR",
+        "numero": "1245"
     }
 ]

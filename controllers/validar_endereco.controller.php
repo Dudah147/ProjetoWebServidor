@@ -3,16 +3,16 @@
     $arquivo = 'models/enderecos.model.json';
 
     if(isset($arquivo)){
-        if(isset($_SESSION['senha'], $_SESSION['cpf'])){
+        if(isset($_SESSION['senha'], $_SESSION['cpf'])&& $_SESSION['logado']==true){
             if(empty($_POST['cep']) || empty($_POST['rua']) || empty($_POST['bairro']) || empty($_POST['cidade']) || empty($_POST['estado']) || empty($_POST['numero'])){           
                 echo 'Erro! Preencha todos os dados';
             }else {
                 fopen($arquivo, 'r');   
                 $json = json_decode(file_get_contents($arquivo), true);
                 for ($i=0; $i < count($json); $i++) {
-                    if($_SESSION['cpf']==$json[$i]['cpf'] && $_POST['numero']!==$json[$i]['numero'] ){
+                    if(($_POST['numero']!==$json[$i]['numero'])|| ($_POST['numero']==$json[$i]['numero']&&$_POST['cep']!==$json[$i]['cep'])){
                         $flag1 = 1;
-                    }else if($_POST['numero']==$json[$i]['numero']&&$_POST['cep']!==$json[$i]['cep']){
+                    }else if($_POST['numero']==$json[$i]['numero']&&$_POST['cep']==$json[$i]['cep'] && $_SESSION['cpf']!==$json[$i]['cpf']){
                         $flag1 = 1;
                     }else {
                         $flag1 = 0;
