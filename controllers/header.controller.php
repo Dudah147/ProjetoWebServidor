@@ -1,3 +1,2 @@
 <?php 
-
-require("views/header.view.php");   
+    require("views/header.view.php");   

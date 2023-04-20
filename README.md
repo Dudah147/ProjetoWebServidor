@@ -11,8 +11,8 @@
 
 ### Features
 
-- [x] Cadastro de cliente
-- [x] Cadastro de endereço
-- [x] Cadastro de pedido
+- [x] Cadastro de Cliente
+- [x] Cadastro de Endereço
+- [x] Cadastro de Pedido
 
-- [ ] Cadastro de produtos
+- [ ] Cadastro de Produtos

@@ -9,11 +9,11 @@
 
 <body id="body">
     <?php
-
-    require("controllers/header.controller.php");
-    require("controllers/finalizar_pedido.controller.php");
-    require("controllers/carrinho.controller.php");
-    require("controllers/usuario.controller.php");
+        session_start();
+        require("controllers/header.controller.php");
+        require("controllers/finalizar_pedido.controller.php");
+        require("controllers/carrinho.controller.php");
+        require("controllers/usuario.controller.php");
     
     ?>
 

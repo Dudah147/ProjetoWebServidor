@@ -12,13 +12,13 @@
 </head>
 <body style=" margin: 0; padding: 0; font-size: 16px;font-family: Verdana, Geneva, Tahoma, sans-serif; margin-left: 10;">
  
-    <?php require("controllers/header.controller.php");?>
-    
-    <?php require("controllers/index.controller.php");?>
-    
-    <?php require("controllers/carrinho.controller.php");?>
-    
-    <?php require("controllers/usuario.controller.php");?>
+    <?php
+      session_start();
+      require("controllers/header.controller.php");
+      require("controllers/index.controller.php");
+      require("controllers/carrinho.controller.php");
+      require("controllers/usuario.controller.php");
+    ?>
     
   <script type="text/javascript" src="JS/usuario.js"></script>
   <script type="text/javascript" src="JS/carrinho.js"></script>

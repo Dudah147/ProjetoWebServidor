@@ -9,14 +9,12 @@
 
 <body id="body">
 
-    <?php require("controllers/header.controller.php");?>
-    
-    <?php require("controllers/enderecos.controller.php");?>
-    
-    <?php require("controllers/carrinho.controller.php");?>
-    
-    <?php require("controllers/usuario.controller.php");?>
-
+    <?php
+        require("controllers/header.controller.php");
+        require("controllers/enderecos.controller.php");
+        require("controllers/carrinho.controller.php");
+        require("controllers/usuario.controller.php");
+    ?>
 
     <script type="text/javascript" src="JS/Enderecos.js"></script>
     <script type="text/javascript" src="JS/usuario.js"></script>

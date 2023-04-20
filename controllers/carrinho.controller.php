@@ -1,3 +1,2 @@
 <?php 
-
-require("views/carrinho.view.php");
+    require("views/carrinho.view.php");

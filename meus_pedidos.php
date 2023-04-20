@@ -7,13 +7,13 @@
 
 </head>
 <body>
-    <?php require("controllers/header.controller.php");?>
-    
-    <?php require("controllers/meus_pedidos.controller.php");?>
-
-    <?php require("controllers/carrinho.controller.php");?>
-    
-    <?php require("controllers/usuario.controller.php");?> 
+    <?php 
+        session_start();
+        require("controllers/header.controller.php");
+        require("controllers/meus_pedidos.controller.php");
+        require("controllers/carrinho.controller.php");
+        require("controllers/usuario.controller.php");
+    ?> 
 
     <script type="text/javascript" src="JS/MeusPedidos.js"></script>
     <script type="text/javascript" src="JS/usuario.js"></script>
