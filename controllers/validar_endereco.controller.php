@@ -1,30 +1,33 @@
 <?php
 
-    // if(isset($_POST['cep'])){
-    //     $test = $_POST['cep'];
-    //     echo "$test";
-    // }else{
-    //     echo 'nah';
-    // }
+    $flag = null;
+    $arquivo = 'models/enderecos.model.json';
 
-
-    if(isset($_SESSION['senha'], $_SESSION['cpf'])){
-         $cep = $_POST['cep'] ?? '';
-         $rua = $_POST['rua'] ?? '';
-         $bairro = $_POST['bairro'] ?? '';
-         $cidade = $_POST['cidade'] ?? '';
-         $estado = $_POST['estado'] ?? '';
-         $numero = $_POST['numero'] ?? '';
-
+    if(isset($arquivo)){
+        if(isset($_SESSION['senha'], $_SESSION['cpf'])){
+            if(!isset($_POST['cep'], $_POST['rua'], $_POST['bairro'], $_POST['cidade'], $_POST['estado'], $_POST['numero'])){           
+                echo 'Erro! Preencha todos os dados';
+                }else {
+                    fopen($arquivo, 'r');   
+                    $json = json_decode(file_get_contents($arquivo), true);
+                    for ($i=0; $i < count($json); $i++) {
+                        if($_SESSION['cpf']!==$json[$i]['cpf'] && $_POST['cep']!==$json[$i]['cep'] && $_POST['rua']!==$json[$i]['rua'] && $_POST['numero']!==$json[$i]['numero'] ){
+                            $flag = 1;
+                        }else{
+                            $flag = 0;
+                            break;
+                        }
+                    }
+                    if($flag==0){
+                        header("Location: ./cadastrar_endereco.php?error=true");
+                    }else{
+                        echo 'Cadastro realizado com sucesso!';
+                        require("controllers/transforma_endereco_json.controller.php");
+                    }
+                }
+            }
         
-         echo "$cep";
-        
-         if($cep ==''){
-             echo 'Erro! Preencha todos os dados';
-         }else {
-             echo 'cadastrar no banco';
-            
-         }
-     }else{
-         header("Location: login.php?error=true");
-     }
+        }else
+        {
+            header("Location: login.php?error=true");
+        }
