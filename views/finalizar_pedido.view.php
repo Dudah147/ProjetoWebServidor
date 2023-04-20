@@ -3,9 +3,6 @@
     <hr id="underline">
     
     <div id="finalPedido">
-        <div class= "row">
-            <h3>Resumo Pedido</h3>
-        </div>
 
         <div class="column" id="end">
             <?php 
