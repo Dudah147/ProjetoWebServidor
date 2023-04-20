@@ -1,5 +1,4 @@
 <?php
-// ARRAY TEMPORARIO ATÉ PODER RESGATAR O SESSION
     $arquivo = "models/pedidos.model.json";
     $pedidos = json_decode(file_get_contents($arquivo), true);
     $verifica = false;
@@ -25,7 +24,6 @@
             
         }
     }
-
 
     if($verifica == false){
         echo "Você não possui pedidos";

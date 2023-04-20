@@ -1,5 +1,4 @@
 <?php 
-    
     function validar_sessao(){
         $email = $_POST['email'] ?? '';
         $senha = $_POST['senha'] ?? '';

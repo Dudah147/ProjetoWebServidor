@@ -10,7 +10,6 @@
 <body id="body">
 
     <?php
-        session_start();
         require("controllers/header.controller.php");
         require("controllers/enderecos.controller.php");
         require("controllers/carrinho.controller.php");

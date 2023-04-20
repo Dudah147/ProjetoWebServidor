@@ -1,7 +1,8 @@
 <?php 
-   
-      if(!isset($_SESSION['cpf'])){
+    if(!isset($_SESSION['cpf'])){
        header("Location: login.php?error=true");
        exit;
-   }else require("views/finalizar_pedido.view.php");
+    }else{
+            require("views/finalizar_pedido.view.php");
+    }
 
