@@ -27,5 +27,14 @@
         "cidade": "Rio Branco",
         "estado": "AC",
         "numero": "222"
+    },
+    {
+        "cpf": "11539299961",
+        "cep": "84033590",
+        "rua": "Rua Santo Agostinho",
+        "bairro": "Car\u00e1-car\u00e1",
+        "cidade": "Ponta Grossa",
+        "estado": "PR",
+        "numero": "222"
     }
 ]
