@@ -4,4 +4,4 @@
 
 ## Trabalho realizado para a matéria de Web-Servidor com o intuito de apresentar o primeiro projeto para avaliação. 
 
-<img src="https://img.shields.io/static/v1?label=Linguagem&message=PHP&color=7159c1&style= for-the-badge&logo=GHOST"/>
+<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"/>
