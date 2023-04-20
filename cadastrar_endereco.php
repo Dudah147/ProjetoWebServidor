@@ -16,7 +16,7 @@
 
 <body id="body">
     <?php require("controllers/header.controller.php");?>
-    <div id="container_cadEnd">
+    <div id="container">
         <span id="text_cadEnd">Cadastrar Endereço</span>
         <hr id="underline">
         <div id="cadEnd">
@@ -35,6 +35,8 @@
 
 
     <script type="text/javascript" src="JS/CadastrarEnd.js"></script>
+    <script type="text/javascript" src="JS/usuario.js"></script>
+    <script type="text/javascript" src="JS/carrinho.js"></script>
 </body>
 
 </html>
