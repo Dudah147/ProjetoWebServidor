@@ -12,7 +12,9 @@
                 for ($i=0; $i < count($json); $i++) {
                     if($_SESSION['cpf']==$json[$i]['cpf'] && $_POST['numero']!==$json[$i]['numero'] ){
                         $flag1 = 1;
-                    }else{
+                    }else if($_POST['numero']==$json[$i]['numero']&&$_POST['cep']!==$json[$i]['cep']){
+                        $flag1 = 1;
+                    }else {
                         $flag1 = 0;
                         break;
                     }
