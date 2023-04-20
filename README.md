@@ -9,6 +9,7 @@
    * [Descrição](#descrição)
    * [Documentação](#documentação)
    * [Features](#features)
+   * [Não implementados](#não-implementados)
    * [Atividades](#atividades)
       * [Maria Eduarda](#maria-eduarda)
       * [Alexandre](#alexandre)
