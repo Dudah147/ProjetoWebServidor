@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_SESSION['cpf'], $_SESSION['senha'])){
     $usuario = $_SESSION['nome'];
     $msg = "Deseja sair? Clique aqui";

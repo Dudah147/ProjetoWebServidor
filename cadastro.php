@@ -14,6 +14,7 @@
         <hr id="underline">
         <div id="cadastro">
             <?php 
+                session_start();
                 if(isset($_GET['signin_error'])){
                     echo "Cadastro já realizado";
                 }

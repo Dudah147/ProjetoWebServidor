@@ -8,13 +8,13 @@
 </head>
 <body>
     
-    <?php require("controllers/header.controller.php");?>
-    
-    <?php require("controllers/cardapio.controller.php");?>
-
-    <?php require("controllers/carrinho.controller.php");?>
-    
-    <?php require("controllers/usuario.controller.php");?>
+    <?php 
+        session_start();
+        require("controllers/header.controller.php");
+        require("controllers/cardapio.controller.php");
+        require("controllers/carrinho.controller.php");
+        require("controllers/usuario.controller.php");
+    ?>
 
     
     <script type="text/javascript" src="JS/Cardapio.js"></script>
