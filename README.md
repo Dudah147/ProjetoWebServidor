@@ -22,7 +22,7 @@
 
 
 ## Descrição:
-### Trabalho realizado para a matéria de Web-Servidor com o intuito de apresentar o primeiro projeto para avaliação. 
+### Trabalho realizado para a matéria de Web-Servidor com o intuito de apresentar o primeiro projeto para avaliação. O site em questão trata-se de um sistema de pizzaria, o qual é possível encomendar a pizza com os sabores e tamanhos desejados. 
 
 
 
@@ -33,13 +33,17 @@
 
 ## Features:
 
-- :white_check_mark: Cadastro de Cliente
-- :white_check_mark: Cadastro de Endereço
-- :white_check_mark: Cadastro de Pedido
-- :white_check_mark: Tela de Login com autenticação
-- :white_check_mark: Tela de Cadastro com validação
-- :white_check_mark: Listagem de Itens em arquivo JSON
-- :white_check_mark: Validação de Sessão
+- :heavy_check_mark: Cadastro de Cliente
+- :heavy_check_mark: Cadastro de Endereço
+- :heavy_check_mark: Tela de Login com autenticação
+- :heavy_check_mark: Tela de Cadastro com validação
+- :heavy_check_mark: Tela de listagem de Endereços 
+- :heavy_check_mark: Listagem de Itens em arquivo JSON
+- :heavy_check_mark: Validação de Sessão
+
+## Não implementados:
+- :x: Finalizar Pedido
+- :x: Cadastro de Pedido
 
 ## Atividades:
 
