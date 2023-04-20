@@ -19,6 +19,8 @@
 
 
     <script type="text/javascript" src="JS/FinalizarPedido.js"></script>
+    <script type="text/javascript" src="JS/carrinho.js"></script>
+    <script type="text/javascript" src="JS/usuario.js"></script>
 </body>
 
 </html>
