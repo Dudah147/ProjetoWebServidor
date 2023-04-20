@@ -99,5 +99,14 @@
         "cidade": "Ponta Grossa",
         "estado": "PR",
         "numero": "1245"
+    },
+    {
+        "cpf": "11437990975",
+        "cep": "84020420",
+        "rua": "Rua Oleg\u00e1rio Mariano",
+        "bairro": "Neves",
+        "cidade": "Ponta Grossa",
+        "estado": "PR",
+        "numero": "439"
     }
 ]

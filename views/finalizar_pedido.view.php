@@ -10,9 +10,10 @@
                 echo '<h2 style="margin: 3rem; color: gray;">Você não possui endereço cadastrado!</h2>';
             
             else:
+                $i = 0;
                 foreach($enderecos_usuario as $endereco):?>
                     <div style="width: 80%">
-                        <label class="rad-label" name="<?=$endereco['id_endereco']?>">
+                        <label class="rad-label" name="<?=$i?>">
                             <input type="radio" class="rad-input" name="rad">
                             <div class="rad-design"></div>
                             <div class="rad-text">
@@ -33,7 +34,8 @@
                             </div>
                         </label>
                     </div>
-                <?php endforeach;
+                    
+                <?php $i +=1; endforeach;
             endif;?>
             
             <div class="row ou">

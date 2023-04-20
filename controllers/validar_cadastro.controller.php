@@ -2,7 +2,7 @@
     $flag = null;
     $arquivo = 'models/usuarios.model.json';
     if(isset($arquivo)){    
-        if(!isset($_POST['nome']) || !isset($_POST['cpf']) || !isset($_POST['nascimento']) || !isset($_POST['email']) || !isset($_POST['senha'])){
+        if(empty($_POST['nome']) || empty($_POST['cpf']) || empty($_POST['nascimento']) || empty($_POST['email']) || empty($_POST['senha'])){
             echo 'Erro! Preencha todos os campos!';
         } else {
             fopen($arquivo, 'r');   

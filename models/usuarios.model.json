@@ -26,12 +26,5 @@
         "nascimento": "16121999",
         "email": "teste@email.com",
         "senha": "123456789"
-    },
-    {
-        "nome": "Jeferson 2",
-        "cpf": "09876543210",
-        "nascimento": "17101995",
-        "email": "teste@jeferson.com",
-        "senha": "123456789"
     }
 ]
