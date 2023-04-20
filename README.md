@@ -49,9 +49,12 @@
 
 ### *Maria Eduarda*
 - Construção do MVC, página meus pedidos, criação das interfaces, visualização de meus endereços, visualização de meus pedidos, auxílio em melhorias no código para melhorar o desempenho e desenvolvimento das funcionalidades;
+- Testes das funcionalidades;
 
 ### *Alexandre*
 - Construção da lógica de login e cadastro de clientes utilizando autenticação e session e arquivo JSON construído para fim de validação destas páginas e organização de códigos para melhor visualização por parte do avaliador;
+- Testes das funcionalidades;
 
 ### *Jeferson* 
-- 
+- Construção da lógica de cadastro de endereço com validação dos dados enviados, validação de session e replicação de arquivo JSON para a estrutura de endereços;
+- Testes das funcionalidades;
