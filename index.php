@@ -18,6 +18,9 @@
       require("controllers/index.controller.php");
       require("controllers/carrinho.controller.php");
       require("controllers/usuario.controller.php");
+      require('controllers/conectarBanco.controller.php');
+      $con = new conectarBanco("localhost", "root", "", "usuarios_cadastrados");
+      $con->conectarBanco();
     ?>
     
   <script type="text/javascript" src="JS/usuario.js"></script>
