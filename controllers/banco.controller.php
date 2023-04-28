@@ -1,5 +1,5 @@
 <?php
-    class conectarBanco{
+    class ManipularBanco{
         var $host;
         var $user;
         var $senha;
@@ -25,7 +25,8 @@
                     throw new Exception('Não foi possível conectar com o banco de dados');
                 }
             }catch (Exception $e) {
-                echo $e->getMessage();
+                $log = date('d.m.Y h:i:s')." - Erro ao criar o banco: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
             }
         }
         function removerBanco($user, $senha){
@@ -33,10 +34,10 @@
                 if($user == "root" && $senha == ""){
                     if($con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
                         $query="DROP DATABASE $this->dbase";
-                        if(mysqli_query($con, $query)){
-                            echo "Exclusão realizada com sucesso";
-                        }else{
+                        if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível excluir a base de dados');
+                        }else{
+                            mysqli_query($con, $query);
                         }
                     }else{
                         throw new Exception('Não foi possível conectar com o banco de dados');
@@ -45,23 +46,25 @@
                     throw new Exception("Não foi possível conectar com o banco de dados: Permissão insuficiente");
                 }
             } catch (Exception $e) {
-                $e->getMessage();
+                $log = date('d.m.Y h:i:s')." - Erro ao remover o banco: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
             }
         }
 
-        function desconectarBanco($con){
+        function desconectarBanco(){
             try{
-                if($this->conexao == true){
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
                     mysqli_close($con);
                     $this->conexao = false;
-                    echo "Conexão encerrada com sucesso";
                 }else{
                     throw new Exception("Você já está desconectado!");
                 }
             }catch(Exception $e){
-                $e->getMessage();
+                $log = date('d.m.Y h:i:s')." - Erro ao desconectar: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
             }
         }
+        
         function conectarBanco(){
             try {
                 if($con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
