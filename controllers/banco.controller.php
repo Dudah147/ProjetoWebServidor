@@ -64,7 +64,18 @@
                 error_log($log . PHP_EOL, 3, './error/db_error.log');
             }
         }
-        
+        function criarTabelas(){
+            try {
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    $query = "";
+                }else{
+                    throw new Exception("Não foi possível conectar ao banco");
+                }
+            } catch (Exception $e) {
+                $log = date('d.m.Y h:i:s')." - Erro ao desconectar: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
+            }
+        }
         function conectarBanco(){
             try {
                 if($con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
