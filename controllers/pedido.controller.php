@@ -1,4 +1,8 @@
 <?php 
-    require("views/pedido.view.php");
     require("models/cardapio.model.php");
-    echo "<script>const resposta = $cardapio</script>";
+    $cardapio = json_decode($cardapio, true);
+    $tamanhos = $cardapio['tamanhos'];
+    $bordas = $cardapio['bordas'];
+    $massas = $cardapio['massa'];
+    $sabores = $cardapio['sabores'];
+    require("views/pedido.view.php");
