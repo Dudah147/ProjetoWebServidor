@@ -9,7 +9,7 @@
             $this->host = $host;
             $this->user = $user;
             $this->senha = $senha;
-            $this->dbase = $dbase;
+            $this->dbase = strtolower($dbase);
             $this->conexao = false;
         }
         function criarBanco($dbase){
@@ -73,7 +73,7 @@
                     throw new Exception('Não foi possível conectar com o banco de dados');
                 }
             } catch (Exception $e) {
-                if($e->getMessage()=="Unknown database $this->dbase"){
+                if($e->getMessage()=="Unknown database '".$this->dbase."'"){
                     $this->criarBanco($this->dbase);
                 }
             }

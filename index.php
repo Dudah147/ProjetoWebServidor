@@ -19,7 +19,7 @@
       require("controllers/carrinho.controller.php");
       require("controllers/usuario.controller.php");
       require('controllers/conectarBanco.controller.php');
-      $con = new conectarBanco("localhost", "root", "", "usuarios_cadastrados");
+      $con = new conectarBanco("localhost", "root", "", "ProjetoWebServidor");
       $con->conectarBanco();
     ?>
     
