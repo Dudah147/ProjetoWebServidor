@@ -373,6 +373,7 @@ obs_input:focus {
 }
 
 #adicionarPedido {
+    width: 100%;
     cursor: pointer;
     margin-top: 2rem;
     background-color: orange;
