@@ -18,6 +18,10 @@
       require("controllers/index.controller.php");
       require("controllers/carrinho.controller.php");
       require("controllers/usuario.controller.php");
+      require('controllers/banco.controller.php');
+      $con = new ManipularBanco("localhost", "root", "", "ProjetoWebServidor");
+      $con->conectarBanco();
+      $con->desconectarBanco();
     ?>
     
   <script type="text/javascript" src="JS/usuario.js"></script>
