@@ -65,12 +65,15 @@
             }
         }
 
-        function pesquisarUsuario($usuario){
+        function pesquisarUsuario($cpf){
             try {
                 if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
-                    $sql = "SELECT * FROM usuarios WHERE cpf='$usuario' LIMIT 1";
-                    if(mysqli_query($con, $sql)){
-                        throw new Exception("Não foi possível encontrar o usuário");
+                    $sql = "SELECT * FROM usuarios WHERE cpf='".$cpf."'";
+                    $dados = mysqli_query($con, $sql);
+                    if(!mysqli_fetch_all($dados)){
+                        return False;
+                    }else{
+                        return True;
                     }
                 }
             } catch (Exception $e) {
@@ -84,6 +87,7 @@
                 if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
                     $sql = "SELECT * FROM `".$tabela."` LIMIT 1";
                     mysqli_query($con, $sql);
+                    return True;
                 }
             } catch (Exception $e) {
                 if($e->getMessage() == "Table 'projetowebservidor.".$tabela."' doesn't exist"){
@@ -233,14 +237,24 @@
             try {
                 if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
                     if($this->pesquisarTabela('usuarios')){
-                        $sql = "SELECT * FROM usuarios u WHERE u.cpf='".$cpf."'";
-                        if(!mysqli_query($con, $sql)){
-                            echo "FALSE";
+                        if(!$this->pesquisarUsuario($cpf)){ //Usuário ainda não cadastrado
+                            echo "a";
+                            $sql="INSERT INTO usuarios (cpf,nome,nascimento,email,senha) 
+                            VALUES ('{$cpf}','{$nome}','{$nascimento}','{$email}','{$senha}');";
+
+                            if(mysqli_query($con, $sql)){
+                                echo "Inseriu";
+                            }else{
+                                echo "Não inseriu";
+                            }
+
+                        }else{
+                            throw new Exception("Usuário já cadastrado");
                         }
                     }
                 }
             } catch (Exception $e) {
-                $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
+                $log = date('d.m.Y h:i:s')." - Erro ao cadastrar usuário: ".$e->getMessage();
                 error_log($log . PHP_EOL, 3, './error/db_error.log');
             }
         }
@@ -271,8 +285,8 @@
                     //$this->removerBanco($this->user, $this->senha);
                     //$this->desconectarBanco($con);
                     //$this->criarTabelas();
-                    //$this->adicionarUsuario('11437990975','Alexandre Rosas Costa','1999-12-16','alexandrerosascosta@gmail.com','123456789');
-                    $this->pesquisarUsuario('11437990975');
+                    $this->adicionarUsuario('1143790975',"AlexandreRosasCosta",'1999-12-16',"alexandrerosascosta@gmail.com",'123456789');
+                    //$this->pesquisarUsuario('11539299961');
                 }else{
                     throw new Exception('Não foi possível conectar com o banco de dados');
                 }
