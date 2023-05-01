@@ -1,8 +1,1 @@
-28.04.2023 03:38:12 - Erro ao desconectar: Você já está desconectado!
-28.04.2023 03:38:12 - Erro ao desconectar: Você já está desconectado!
-28.04.2023 03:38:12 - Erro ao desconectar: Você já está desconectado!
-28.04.2023 03:38:24 - Erro ao remover o banco: Can't drop database 'projetowebservidor'; database doesn't exist
-28.04.2023 03:38:24 - Erro ao desconectar: Unknown database 'projetowebservidor'
-28.04.2023 03:38:24 - Erro ao desconectar: Você já está desconectado!
-28.04.2023 03:38:24 - Erro ao remover o banco: Can't drop database 'projetowebservidor'; database doesn't exist
-28.04.2023 03:38:24 - Erro ao desconectar: Unknown database 'projetowebservidor'
+01.05.2023 02:36:45 - Erro ao criar as tabelas: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 8
