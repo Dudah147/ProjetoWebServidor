@@ -129,7 +129,7 @@
                             tipo VARCHAR(60) NOT NULL,
                             preco VARCHAR(60) NOT NULL,
                             imagem VARCHAR(60) NOT NULL,
-                            PRIMARY KEY (id_sabores)";
+                            PRIMARY KEY (id_sabores))";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela sabores desejada');
@@ -142,7 +142,7 @@
                             massa VARCHAR(60) NOT NULL,
                             informacao VARCHAR(60) NOT NULL,
                             preco VARCHAR(60) NOT NULL,
-                            PRIMARY KEY (id_massa)";
+                            PRIMARY KEY (id_massa))";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela massa desejada');
@@ -154,7 +154,7 @@
                             id_borda INT NOT NULL,
                             borda VARCHAR(60) NOT NULL,
                             preco VARCHAR(60) NOT NULL,
-                            PRIMARY KEY (id_borda)";
+                            PRIMARY KEY (id_borda))";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela borda desejada');
@@ -168,7 +168,7 @@
                             informacao VARCHAR(60) NOT NULL,
                             qtd_sabor INT NOT NULL,
                             preco VARCHAR(60) NOT NULL,
-                            PRIMARY KEY (id_tamanho)";
+                            PRIMARY KEY (id_tamanho))";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela tamanho desejada');
@@ -187,7 +187,7 @@
                             FOREIGN KEY (id_tamanho) REFERENCES tamanho(id_tamanho),
                             FOREIGN KEY (id_borda) REFERENCES borda(id_borda),
                             FOREIGN KEY (id_massa) REFERENCES massa(id_massa),
-                            FOREIGN KEY (id_sabores) REFERENCES sabores(id_sabores)";
+                            FOREIGN KEY (id_sabores) REFERENCES sabores(id_sabores))";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela item_pedido');
@@ -203,7 +203,7 @@
                             id_item_pedido INT NOT NULL,
                             PRIMARY KEY (id_pedido),
                             FOREIGN KEY (cpf) REFERENCES usuarios(cpf),
-                            FOREIGN KEY (id_item_pedido) REFERENCES item_pedido(id_item_pedido)";
+                            FOREIGN KEY (id_item_pedido) REFERENCES item_pedido(id_item_pedido))";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela pedidos desejada');
