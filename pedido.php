@@ -18,5 +18,6 @@
 
     <script type="text/javascript" src="JS/Pedido.js"></script>
     <script type="text/javascript" src="JS/usuario.js"></script>
+    <script type="text/javascript" src="JS/carrinho.js"></script>
 </body>
 </html>

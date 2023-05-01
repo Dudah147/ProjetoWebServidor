@@ -5,7 +5,7 @@
     $win = [];
     // print("<pre>".print_r($pedidos,true)."</pre>");
     foreach($pedidos as $pedido){
-        if($pedido['cpf'] == "115.392.999-61"){
+        if($pedido['cpf'] == $_SESSION['cpf']){
             $pedido_id = $pedido["id_pedido"];
             $pedido_data = $pedido["data"];
             $pedido_total = $pedido["valor_total"];
