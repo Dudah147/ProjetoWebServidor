@@ -21,7 +21,6 @@
       require('controllers/manipularBanco.controller.php');
       $con = new ManipularBanco("localhost", "root", "", "ProjetoWebServidor");
       $con->conectarBanco();
-      //$con->desconectarBanco();
     ?>
     
   <script type="text/javascript" src="JS/usuario.js"></script>
