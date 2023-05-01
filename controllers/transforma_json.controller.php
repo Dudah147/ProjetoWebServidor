@@ -14,6 +14,6 @@
         "senha" => $_POST['senha']
     ];
 
-    file_put_contents($arquivo, json_encode($json, JSON_PRETTY_PRINT));
+    file_put_contents($arquivo, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
 ?>

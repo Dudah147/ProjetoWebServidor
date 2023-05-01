@@ -1,4 +1,3 @@
-const carrinho = JSON.parse(localStorage.getItem('carrinho'))
 
 const carrinho_icone = document.getElementById("carrinho")
 const id_carrinho = document.getElementById("carrinho_container")
@@ -56,14 +55,6 @@ function abrirCarrinho() {
         mudaQuantCar()
     })
 
-    for (el of maisCar) {
-        el.addEventListener("click", aumentarQuantCar)
-    }
-
-    for (el of menosCar) {
-        el.addEventListener("click", diminuirQuantCar)
-    }
-
     finalizar_pedido_btn.addEventListener("click", finalizarPedido)
 }
 
@@ -73,20 +64,14 @@ function itensCarrinho() {
     let totalPedido = 0
     itens_carrinho.innerHTML = ""
 
+    console.log(carrinho[0])
+
     if (carrinho) {
         for (i = 0; i < carrinho.length; i++) {
             let sec = document.createElement("section")
             itens_carrinho.appendChild(sec)
             sec.innerHTML +=
                 `
-                <div class="carrinho-row" id="pizzas" name="${i}">
-                    <strong>${carrinho[i].tamanho.tamanho}</strong>
-                    <div class="quant_container">
-                        <img src="img/menos.png" class="quantImg menosCar">
-                        <span style="color: black;margin: 0;">${carrinho[i].quantidade}</span>
-                        <img src="img/mais.png" class="quantImg maisCar" >
-                    </div>
-                </div>
 
                 <div class="carrinho-row" style="flex-direction: column; justify-content: normal; align-items: normal; font-size: 10px;">
                     <div class="carrinho-row" style="width: 60%">
@@ -108,7 +93,7 @@ function itensCarrinho() {
                 <div class="carrinho-row" style="width: 97%; font-size: 10px;">
                     <div class="carrinho-row" style="width: 60%">
                         <span style="margin: 0;">${el.sabor}</span>
-                        <span>adicional de R$${el.adicional}</span>
+                        <span>adicional de R$${el.preco}</span>
                     </div>
                 </div>
                 `
@@ -117,10 +102,10 @@ function itensCarrinho() {
 
             sec.innerHTML +=
                 `
-                <h2 name="total" style="margin-top: 1rem; color: #03e703; display: flex; justify-content: center;">R$${(carrinho[i].total * carrinho[i].quantidade).toFixed(2)}</h2>
+                <h2 name="total" style="margin-top: 1rem; color: #03e703; display: flex; justify-content: center;">R$${(carrinho[i].total).toFixed(2)}</h2>
                 <hr>
             `
-            totalPedido += (carrinho[i].total * carrinho[i].quantidade)
+            totalPedido += (carrinho[i].total)
 
         }
     }
@@ -136,90 +121,6 @@ function mudaQuantCar() {
             quant_carrinho.textContent = carrinho.length
         }
     }
-}
-
-function aumentarQuantCar() {
-    carrinho[this.parentNode.parentNode.getAttribute("name")].quantidade += 1
-
-    localStorage.setItem('carrinho', JSON.stringify(carrinho)) //att nova quantidade
-
-    let pai = this.parentNode.parentNode.parentNode
-
-    for (el of pai.children) {
-        if (el.getAttribute("name") == "total") {
-            let novoPreco = carrinho[this.parentNode.parentNode.getAttribute("name")].total * carrinho[this.parentNode.parentNode.getAttribute("name")].quantidade
-
-
-            this.parentNode.children[1].textContent = parseInt(this.parentNode.children[1].textContent) + 1 //att quantidade
-
-            el.innerHTML = `R$${novoPreco.toFixed(2)}` //att total pizza
-
-        }
-    }
-
-
-
-    atualizarTotal()
-}
-
-function diminuirQuantCar() {
-    let aux = carrinho[this.parentNode.parentNode.getAttribute("name")].quantidade
-    let diminui = carrinho[this.parentNode.parentNode.getAttribute("name")].quantidade - 1
-    let pai = this.parentNode.parentNode.parentNode
-
-    if (diminui != 0) {
-        carrinho[this.parentNode.parentNode.getAttribute("name")].quantidade = diminui
-
-        localStorage.setItem('carrinho', JSON.stringify(carrinho))
-
-        for (el of pai.children) {
-            if (el.getAttribute("name") == "total") {
-
-                let novoPreco = carrinho[this.parentNode.parentNode.getAttribute("name")].total * aux
-                novoPreco = novoPreco - carrinho[this.parentNode.parentNode.getAttribute("name")].total
-                this.parentNode.children[1].textContent = parseInt(this.parentNode.children[1].textContent) - 1
-
-                el.innerHTML = `R$${novoPreco.toFixed(2)}`
-            }
-        }
-    }
-    else {
-        carrinho.splice(this.parentNode.parentNode.getAttribute("name"))
-        localStorage.setItem('carrinho', JSON.stringify(carrinho))
-        if (carrinho.length != 0) {
-            pai.remove()
-        }
-        else {
-            document.getElementById("carrinho_container").innerHTML =
-                `
-            <div style="font-size: 2rem;display: flex; flex-direction: column; align-items:center;margin: auto">
-                <span>Carrinho Vazio</span>
-                <a href="pedido.php" style="color:black; padding: 0; margin-top: 5rem">Fazer um pedido</a>
-            </div>`
-
-            container.addEventListener("click", () => {
-                document.getElementById("carrinho_container").style.visibility = "hidden"
-                container.style.filter = "blur(0px)"
-                mudaQuantCar()
-                window.location.reload()
-            })
-
-            return
-        }
-    }
-    atualizarTotal()
-
-}
-
-function atualizarTotal() {
-    let totalPedido_id = document.getElementById("totalPedido")
-    let aux = 0
-    for (el of carrinho) {
-        aux += el.total * el.quantidade
-    }
-
-
-    totalPedido_id.children[0].innerHTML = `Total Pedido: <strong>R${aux.toFixed(2)}</strong>`
 }
 
 

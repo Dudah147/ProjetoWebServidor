@@ -16,13 +16,20 @@ for (el of mais) {
 }
 
 for (el of menos) {
-    el.addEventListener("click", ()=>{
-
-    })
+    el.addEventListener("click", remover)
 }
 
 function verificaQuant(){
     max_sabores = this.getAttribute("tamanho")
+}
+
+function remover(){
+    let quant = this.parentNode.children[1]
+
+    if(quantTotal > 0){
+        quantTotal--
+        quant.innerHTML = parseInt(quant.innerText) - 1
+    }
 }
 
 function armazena(){
@@ -36,7 +43,7 @@ function armazena(){
     if(max_sabores == 0){
         document.body.appendChild(feedback)
         feedback.innerHTML =
-        `<span>Escolha o sabor</span>
+        `<span>Escolha o tamanho</span>
         <div></div>`
     }
     else{

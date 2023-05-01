@@ -1,15 +1,10 @@
-<?php 
-    if (isset($_POST)){
-        
-        echo "deu boa";
-    }
-?>
+
 
 <div id="container">
     <span id="text_pedido">Pedido Online</span>
     <hr id="underline">
     <div id="pedido">
-        <form action="pedido.php" method="POST">
+        <form action="pedido.php?cadastrar=pedido" method="POST">
         <div id="tamanho">
             <div class="tipo">
                 <img src="img/setaCima.png" class="seta" name="setaCima">
@@ -21,7 +16,7 @@
                 if ($tamanho['quantSabor'] == 1):?>
                     <div class="row-infos">
                         <label class="rad-label" tamanho="<?=$tamanho['quantSabor']?>">
-                            <input type="radio" class="rad-input" name="rad" value="<?=$tamanho['tamanho']?>">
+                            <input type="radio" class="rad-input" name="tamanho" value="<?=$tamanho['tamanho']?>">
                             <div class="rad-design"></div>
                             <div class="rad-text"><?=$tamanho['tamanho']?></div>
                         </label>
@@ -34,7 +29,7 @@
                 <?php else: ?>
                     <div class="row-infos">
                         <label class="rad-label" tamanho="<?=$tamanho['quantSabor']?>">
-                            <input type="radio" class="rad-input" name="rad" value="<?=$tamanho['tamanho']?>">
+                            <input type="radio" class="rad-input" name="tamanho" value="<?=$tamanho['tamanho']?>">
                             <div class="rad-design"></div>
                             <div class="rad-text"><?=$tamanho['tamanho']?></div>
                         </label>
@@ -60,7 +55,7 @@
                     if ($borda['preco']> 0):?>
                         <div class="row-infos" >
                             <label class="rad-label">
-                                <input type="radio" class="rad-input" name="rad2" value="<?=$borda['borda']?>">
+                                <input type="radio" class="rad-input" name="borda" value="<?=$borda['borda']?>">
                                 <div class="rad-design"></div>
                                 <div class="rad-text"><?=$borda['borda']?></div>
                             </label>
@@ -72,7 +67,7 @@
                     <?php else: ?>
                         <div class="row-infos">
                             <label class="rad-label">
-                                <input type="radio" class="rad-input" name="rad2" value="<?=$borda['borda']?>">
+                                <input type="radio" class="rad-input" name="borda" value="<?=$borda['borda']?>">
                                 <div class="rad-design"></div>
                                 <div class="rad-text"><?=$borda['borda']?></div>
                             </label>
@@ -93,7 +88,7 @@
                     if ($massa['preco']> 0):?>
                         <div class="row-infos">
                             <label class="rad-label">
-                                <input type="radio" class="rad-input" name="rad3" value="<?=$massa['massa']?>">
+                                <input type="radio" class="rad-input" name="massa" value="<?=$massa['massa']?>">
                                 <div class="rad-design"></div>
                                 <div class="rad-text"><?=$massa['massa']?></div>
                             </label>
@@ -105,7 +100,7 @@
                     <?php else: ?>
                         <div class="row-infos">
                             <label class="rad-label">
-                                <input type="radio" class="rad-input" name="rad3" value="<?=$massa['massa']?>">
+                                <input type="radio" class="rad-input" name="massa" value="<?=$massa['massa']?>">
                                 <div class="rad-design"></div>
                                 <div class="rad-text"><?=$massa['massa']?></div>
                             </label>
@@ -116,7 +111,7 @@
             </div>
         </div>
 
-
+        <!-- name = sabores -->
         <div id="sabores_id">
             <div class="tipo">
                 <img src="img/setaCima.png" class="seta">

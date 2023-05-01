@@ -1,10 +1,10 @@
 [
     {
-        "id_pedido" : 1,
-        "cpf" : "115.392.999-61",
-        "valor_total" : 80.0,
-        "data" : "15/04/2023 22:56",
-        "itens" : [
+        "id_pedido": 1,
+        "cpf": "11539299961",
+        "valor_total": 80,
+        "data": "15\/04\/2023 22:56",
+        "itens": [
             {
                 "tamanho": "Gigante",
                 "borda": "Fina",
@@ -14,8 +14,8 @@
                     "Caipira",
                     "Calabresa"
                 ],
-                "preco": 50.00,
-                "quantidade":1
+                "preco": 50,
+                "quantidade": 1
             },
             {
                 "tamanho": "Pequena",
@@ -24,17 +24,18 @@
                 "sabores": [
                     "Alho e Oleo"
                 ],
-                "preco": 30.00,
-                "quantidade":1
+                "preco": 30,
+                "quantidade": 1
             }
-        ]
+        ],
+        "finalizado": true
     },
     {
-        "id_pedido" : 2,
-        "cpf" : "115.392.999-61",
-        "valor_total" : 100.0,
-        "data" : "15/04/2023 22:56",
-        "itens" : [
+        "id_pedido": 2,
+        "cpf": "11539299961",
+        "valor_total": 100,
+        "data": "15\/04\/2023 22:56",
+        "itens": [
             {
                 "tamanho": "Gigante",
                 "borda": "Fina",
@@ -44,8 +45,8 @@
                     "Caipira",
                     "Calabresa"
                 ],
-                "preco": 60.00,
-                "quantidade":1
+                "preco": 60,
+                "quantidade": 1
             },
             {
                 "tamanho": "Pequena",
@@ -54,9 +55,10 @@
                 "sabores": [
                     "Alho e Oleo"
                 ],
-                "preco": 40.00,
-                "quantidade":1
+                "preco": 40,
+                "quantidade": 1
             }
-        ]
+        ],
+        "finalizado": true
     }
 ]
