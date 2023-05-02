@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
 
+
 @font-face {
     font-family: "Adlery Pro";
     src: url("//db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.woff2") format("woff2");
 }
+
+@font-face {
+    font-family: "Arnold Regular";
+    src: url("//db.onlinewebfonts.com/t/f796adbcb3e0463184ab45c5afc332ab.eot");
+    src: url("//db.onlinewebfonts.com/t/f796adbcb3e0463184ab45c5afc332ab.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f796adbcb3e0463184ab45c5afc332ab.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f796adbcb3e0463184ab45c5afc332ab.woff") format("woff"), url("//db.onlinewebfonts.com/t/f796adbcb3e0463184ab45c5afc332ab.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f796adbcb3e0463184ab45c5afc332ab.svg#Arnold Regular") format("svg");
+}
+
 
 /* -- header -- */
 
@@ -215,11 +223,12 @@ a {
     background-color: black;
 }
 
+
 #text_finalPedido {
+    font-family: "Adlery Pro";
     color: aliceblue;
     align-items: flex-start;
     width: 850px;
-    font-family: "Adlery Pro";
     font-size: 4rem;
 }
 
@@ -238,8 +247,9 @@ a {
     width: 80%;
     display: flex;
     margin: 2rem auto 1rem auto;
-    justify-content: center;
-    padding: 2rem 0 2rem 0;
+    align-items: center;
+    padding: 2rem;
+    flex-direction: column;
 }
 
 #finalPedido .column,
@@ -366,7 +376,7 @@ a {
     align-items: center;
 
     border-radius: 100px;
-    padding: 14px 16px;
+    padding: 5px 16px;
     margin: 0;
     margin-left: 1rem;
 
@@ -416,7 +426,7 @@ a {
 .rad-text {
     color: hsl(0, 0%, 0%);
 
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: .3s;
     margin-left: 1rem;
     width: 100%;
@@ -587,4 +597,17 @@ a {
     width: 10%;
     font-size: 1rem;
     cursor: pointer;
+}
+
+.info {
+    border: solid 3px rgba(255, 166, 0, 0.384);
+    padding: 2rem !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.title {
+    font-size: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+    margin-bottom: .5rem;
 }

@@ -21,3 +21,5 @@
 01.05.2023 05:50:13 - Erro ao cadastrar usuário: Usuário já cadastrado
 01.05.2023 05:50:32 - Erro ao cadastrar usuário: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Rosas Costa,1999-12-16,alexandrerosascosta@gmail.com,123456789)' at line 2
 01.05.2023 05:50:49 - Erro ao cadastrar usuário: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@gmail.com,123456789)' at line 2
+02.05.2023 11:06:56 - Erro ao desconectar: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+02.05.2023 11:07:18 - Erro ao desconectar: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente

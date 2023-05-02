@@ -11,6 +11,9 @@
     <?php 
         session_start();
         require("controllers/header.controller.php");
+
+        
+
         if(isset($_SESSION['cpf'], $_SESSION['senha'])){
             require("controllers/logado.controller.php");
         }else{

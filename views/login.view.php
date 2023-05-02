@@ -4,8 +4,19 @@
     <div id="login">
         <div class="cadastro">  
             <?php 
-                require("controllers/validar_login.controller.php");
-                echo $error ?? '';
+                if(isset($_GET['error'])){
+                    echo "Não foi possível validar a sessão";
+                }
+        
+                if(isset($_GET['error-login'])){
+                    if($_GET['error-login'] == 'notfound'){
+                        echo "Usuário incorreto, tente novamente!";
+                    }
+                }
+
+                if(isset($_GET['action'])){
+                    require("controllers/validar_login.controller.php");
+                }
             ?>
             <form id="form" action="login.php?action=logar" method="POST">
                 <div class="input-group">

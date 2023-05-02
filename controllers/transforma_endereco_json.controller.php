@@ -6,8 +6,10 @@
         $json = [];
     }
 
+    $id = sizeof($json);
+
     $json[] = [
-        //"id_endereco" => $id_endereco,
+        "id_endereco" => $id,
         "cpf" => $_SESSION['cpf'],
         "cep" => $_POST['cep'],
         "rua" => $_POST['rua'],

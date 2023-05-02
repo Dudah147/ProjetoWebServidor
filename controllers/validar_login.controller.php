@@ -3,9 +3,10 @@
         $email = $_POST['email'] ?? '';
         $senha = $_POST['senha'] ?? '';
         $arquivo = "models/usuarios.model.json";
-        if(isset($_GET['error'])){
-            echo "Não foi possível validar a sessão";
-        }
+        
+        
+
+        $flag = null;
         
         if(isset($arquivo)){
             fopen($arquivo, 'r');   
@@ -24,8 +25,9 @@
                     header("Location: pedido.php");
                 }
             }
-            if(!isset($flag) && !isset($_GET['error'])){
-                echo "Usuário incorreto, tente novamente!";
+            if($flag == null){
+                header("Location: login.php?error-login=notfound");
+                
             }
         }else{
             require('controller/transformar_json.controller.php');

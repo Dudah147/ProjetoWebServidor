@@ -1,10 +1,17 @@
 <div id="container">
-    <span id="text_finalPedido">Endereço para entrega</span>
+    <span id="text_finalPedido" class="fonte">Finalizar Pedido</span>
     <hr id="underline">
     
     <div id="finalPedido">
+        <span class="title">Confira seu pedido</span>
+        <div class="column info">
+            <?php foreach($carrinho['itens'] as $car): ?>
+                <strong><?= $car['tamanho']['tamanho']?></strong>
+            <?php endforeach; ?>
+        </div>
 
-        <div class="column" id="end">
+        <span class="title">Endereço</span>
+        <div class="column info">
             <?php 
             if(!$flag):
                 echo '<h2 style="margin: 3rem; color: gray;">Você não possui endereço cadastrado!</h2>';
@@ -13,7 +20,7 @@
                 $i = 0;
                 foreach($enderecos_usuario as $endereco):?>
                     <div style="width: 80%">
-                        <label class="rad-label" name="<?=$i?>">
+                        <label class="rad-label" name="<?=$endereco['id_endereco']?>">
                             <input type="radio" class="rad-input" name="rad">
                             <div class="rad-design"></div>
                             <div class="rad-text">
@@ -35,7 +42,7 @@
                         </label>
                     </div>
                     
-                <?php $i +=1; endforeach;
+                <?php endforeach;
             endif;?>
             
             <div class="row ou">
