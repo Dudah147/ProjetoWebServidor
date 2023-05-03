@@ -33,8 +33,8 @@ function abre_pedido(pedido) {
     for (item of pedido["itens"]) {
         div_pedido.innerHTML += `
             <div class="item">
-                <span>${item['quantidade']}un - ${item['tamanho']}</span>
-                <strong>R$ ${item['preco']}</strong>
+                <span>${item['tamanho']['tamanho']}</span>
+                <strong>R$ ${item['total']}</strong>
             </div>
         `
     }
