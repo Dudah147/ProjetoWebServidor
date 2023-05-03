@@ -2,63 +2,56 @@
     {
         "id_pedido": 1,
         "cpf": "11539299961",
-        "valor_total": 80,
-        "data": "15\/04\/2023 22:56",
+        "valor_total": "102.8",
+        "data": "02.05.2023, 23:35:19",
+        "forma_pagamento": "Cartao de debito",
         "itens": [
             {
-                "tamanho": "Gigante",
-                "borda": "Fina",
-                "massa": "Tradicional",
+                "tamanho": {
+                    "tamanho": "Pequena",
+                    "preco": 34.9
+                },
+                "borda": {
+                    "borda": "Chocolate Preto",
+                    "preco": 5
+                },
+                "massa": {
+                    "massa": "Fina",
+                    "preco": 0
+                },
                 "sabores": [
-                    "Alho e Oleo",
-                    "Caipira",
-                    "Calabresa"
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    }
                 ],
-                "preco": 50,
-                "quantidade": 1
+                "total": 39.9
             },
             {
-                "tamanho": "Pequena",
-                "borda": "Fina",
-                "massa": "Tradicional",
+                "tamanho": {
+                    "tamanho": "Grande",
+                    "preco": 57.9
+                },
+                "borda": {
+                    "borda": "Chocolate Branco",
+                    "preco": 5
+                },
+                "massa": {
+                    "massa": "Fina",
+                    "preco": 0
+                },
                 "sabores": [
-                    "Alho e Oleo"
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    },
+                    {
+                        "sabor": "Caipira",
+                        "preco": 0
+                    }
                 ],
-                "preco": 30,
-                "quantidade": 1
+                "total": 62.9
             }
-        ],
-        "finalizado": true
-    },
-    {
-        "id_pedido": 2,
-        "cpf": "11539299961",
-        "valor_total": 100,
-        "data": "15\/04\/2023 22:56",
-        "itens": [
-            {
-                "tamanho": "Gigante",
-                "borda": "Fina",
-                "massa": "Tradicional",
-                "sabores": [
-                    "Alho e Oleo",
-                    "Caipira",
-                    "Calabresa"
-                ],
-                "preco": 60,
-                "quantidade": 1
-            },
-            {
-                "tamanho": "Pequena",
-                "borda": "Fina",
-                "massa": "Tradicional",
-                "sabores": [
-                    "Alho e Oleo"
-                ],
-                "preco": 40,
-                "quantidade": 1
-            }
-        ],
-        "finalizado": true
+        ]
     }
 ]

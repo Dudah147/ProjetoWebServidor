@@ -288,7 +288,7 @@ a {
     border: none;
 
     background-color: #b4b4b4;
-    width: 40%;
+    width: 80%;
     height: 1px;
 
 }
@@ -603,11 +603,53 @@ a {
     border: solid 3px rgba(255, 166, 0, 0.384);
     padding: 2rem !important;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
 }
 
 .title {
+    border: solid 3px rgba(255, 166, 0, 0.384);
     font-size: 3rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 200;
-    margin-bottom: .5rem;
+    margin-top: 2rem;
+    background-color: orange;
+    width: 97%;
+    color: white;
+    text-align: center;
+}
+
+.itens_pedido {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.itens_pedido .co {
+    display: flex;
+    flex-direction: column;
+}
+
+#total_pedido {
+    margin-top: 2rem;
+    width: 100%;
+
+}
+
+#total_pedido .ro {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#total_pedido button {
+    background-color: orange;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: .5rem 0;
+
+    color: white;
+    cursor: pointer;
 }
