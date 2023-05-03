@@ -82,6 +82,23 @@
             }
         }
 
+        function pesquisarEndereco($cpf){
+            try {
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    $sql = "SELECT * FROM enderecos WHERE cpf='".$cpf."'";
+                    $dados = mysqli_query($con, $sql);
+                    if(!mysqli_fetch_all($dados)){
+                        return False;
+                    }else{
+                        return True;
+                    }
+                }
+            } catch (Exception $e) {
+                $log = date('d.m.Y h:i:s')." - Erro ao pesquisar o usuário: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
+            }
+        }
+
         function pesquisarTabela(string $tabela){
             try {
                 if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
@@ -103,16 +120,16 @@
             try {
                 if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
                     if($this->pesquisarTabela('enderecos') == False){
-                        $query = "CREATE TABLE enderecos (
-                        id_endereco INT NOT NULL AUTO_INCREMENT,
-                        cpf VARCHAR(60) NOT NULL,
-                        cep VARCHAR(60) NOT NULL,
-                        rua VARCHAR(60) NOT NULL,
-                        bairro VARCHAR(60) NOT NULL,
-                        cidade VARCHAR(60) NOT NULL,
-                        estado VARCHAR(60) NOT NULL,
-                        numero INT(6) NOT NULL,
-                        PRIMARY KEY (id_endereco))";
+                        $query = "CREATE TABLE enderecos(id_endereco INT NOT NULL AUTO_INCREMENT,
+                                    cpf_usuario VARCHAR(60) NOT NULL,
+                                    cidade VARCHAR(60) NOT NULL,
+                                    estado VARCHAR(60) NOT NULL,
+                                    numero INT NOT NULL,
+                                    bairro VARCHAR(60) NOT NULL,
+                                    cep VARCHAR(60) NOT NULL,
+                                    rua VARCHAR(60) NOT NULL,
+                                    PRIMARY KEY (id_endereco)
+                                );";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela enderecos desejada');
@@ -120,31 +137,48 @@
                     }
 
                     if($this->pesquisarTabela('usuarios') == False){
-                        $query = "CREATE TABLE usuarios (
-                            cpf VARCHAR(60) NOT NULL,
-                            nome VARCHAR(30) NOT NULL,
-                            nascimento DATE NOT NULL,
-                            email VARCHAR(60) NOT NULL,
-                            senha VARCHAR(60) NOT NULL,
-                            PRIMARY KEY (cpf))";
+                        $query = "CREATE TABLE usuarios(cpf_usuario VARCHAR(60) NOT NULL,
+                                    nome_usuario VARCHAR(60) NOT NULL,
+                                    senha_usuario VARCHAR(60) NOT NULL,
+                                    email_usuario VARCHAR(60) NOT NULL,
+                                    nasc_usuario DATE NOT NULL,
+                                    PRIMARY KEY (cpf_usuario)
+                                );";
 
                         $sql = "ALTER TABLE `enderecos` 
-                        ADD FOREIGN KEY (cpf) REFERENCES usuarios(cpf)";
+                                ADD FOREIGN KEY (cpf_usuario)
+                                REFERENCES usuarios (cpf_usuario)";
 
                         if(!mysqli_query($con, $query) && !mysqli_query($con, $sql)){
                             throw new Exception('Não foi possível criar a tabela usuarios desejada');
                         }
                     }
 
+                    if($this->pesquisarTabela('pedidos') == False){
+                        $query = "CREATE TABLE pedidos(id_pedido INT NOT NULL AUTO_INCREMENT,
+                            cpf_usuario VARCHAR(60) NOT NULL,
+                            valor_total_pedido DOUBLE NOT NULL,
+                            data_pedido TIMESTAMP NOT NULL,
+                            PRIMARY KEY (id_pedido),
+                            FOREIGN KEY (cpf_usuario)
+                            REFERENCES usuarios(cpf_usuario)
+                            )";
+
+                        if(!mysqli_query($con, $query)){
+                            throw new Exception('Não foi possível criar a tabela pedidos desejada');
+                        }
+                    } 
+                    
+
                     if($this->pesquisarTabela('sabores') == False){
-                        $query = "CREATE TABLE sabores (
-                            id_sabores INT NOT NULL AUTO_INCREMENT,
+                        $query = "CREATE TABLE sabores(id_sabor INT NOT NULL AUTO_INCREMENT,
                             sabores VARCHAR(60) NOT NULL,
-                            informacao VARCHAR(60) NOT NULL,
-                            tipo VARCHAR(60) NOT NULL,
-                            preco VARCHAR(60) NOT NULL,
-                            imagem VARCHAR(60) NOT NULL,
-                            PRIMARY KEY (id_sabores))";
+                            info_sabor VARCHAR(60) NOT NULL,
+                            tipo_sabor VARCHAR(60) NOT NULL,
+                            preco_sabor DOUBLE NOT NULL,
+                            imagem_sabor VARCHAR(60) NOT NULL,
+                            PRIMARY KEY (id_sabor)
+                            );";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela sabores desejada');
@@ -152,12 +186,12 @@
                     }
 
                     if($this->pesquisarTabela('massa') == False){
-                        $query = "CREATE TABLE massa (
-                            id_massa INT NOT NULL AUTO_INCREMENT,
+                        $query = "CREATE TABLE massa(id_massa INT NOT NULL AUTO_INCREMENT,
+                            preco_massa DOUBLE NOT NULL,
+                            info_massa VARCHAR(60) NOT NULL,
                             massa VARCHAR(60) NOT NULL,
-                            informacao VARCHAR(60) NOT NULL,
-                            preco VARCHAR(60) NOT NULL,
-                            PRIMARY KEY (id_massa))";
+                            PRIMARY KEY (id_massa)
+                            );";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela massa desejada');
@@ -165,11 +199,12 @@
                     }
 
                     if($this->pesquisarTabela('borda') == False){
-                        $query = "CREATE TABLE borda (
+                        $query = "CREATE TABLE borda(
                             id_borda INT NOT NULL AUTO_INCREMENT,
+                            preco_borda DOUBLE NOT NULL,
                             borda VARCHAR(60) NOT NULL,
-                            preco VARCHAR(60) NOT NULL,
-                            PRIMARY KEY (id_borda))";
+                            PRIMARY KEY (id_borda)
+                            );";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela borda desejada');
@@ -177,53 +212,56 @@
                     }
 
                     if($this->pesquisarTabela('tamanho') == False){
-                        $query = "CREATE TABLE tamanho (
-                            id_tamanho INT NOT NULL AUTO_INCREMENT,
+                        $query = "CREATE TABLE tamanho(id_tamanho INT NOT NULL AUTO_INCREMENT,
                             tamanho VARCHAR(60) NOT NULL,
-                            informacao VARCHAR(60) NOT NULL,
+                            preco_tamanho DOUBLE NOT NULL,
                             qtd_sabor INT NOT NULL,
-                            preco VARCHAR(60) NOT NULL,
-                            PRIMARY KEY (id_tamanho))";
+                            info_tamanho VARCHAR(60) NOT NULL,
+                            PRIMARY KEY (id_tamanho)
+                            );";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela tamanho desejada');
                         }
                     }
 
-                    if($this->pesquisarTabela('item_pedido') == False){
-                        $query = "CREATE TABLE item_pedido (
-                            id_item_pedido INT NOT NULL AUTO_INCREMENT,
-                            id_tamanho INT NOT NULL,
+                    if($this->pesquisarTabela('item') == False){
+                        $query = "CREATE TABLE item(
+                            id_item INT NOT NULL AUTO_INCREMENT,
                             id_borda INT NOT NULL,
+                            id_tamanho INT NOT NULL,
                             id_massa INT NOT NULL,
-                            id_sabores INT NOT NULL,
-                            valor DOUBLE NOT NULL,
-                            PRIMARY KEY (id_item_pedido),
-                            FOREIGN KEY (id_tamanho) REFERENCES tamanho(id_tamanho),
-                            FOREIGN KEY (id_borda) REFERENCES borda(id_borda),
-                            FOREIGN KEY (id_massa) REFERENCES massa(id_massa),
-                            FOREIGN KEY (id_sabores) REFERENCES sabores(id_sabores))";
-
-                        if(!mysqli_query($con, $query)){
-                            throw new Exception('Não foi possível criar a tabela item_pedido');
-                        }
-                    }
-
-                    if($this->pesquisarTabela('pedidos') == False){
-                        $query = "CREATE TABLE pedidos (
-                            id_pedido INT NOT NULL AUTO_INCREMENT,
-                            cpf  VARCHAR(60) NOT NULL,
-                            valor_total DOUBLE NOT NULL,
-                            data_pedido DATE NOT NULL,
-                            id_item_pedido INT NOT NULL,
-                            PRIMARY KEY (id_pedido),
-                            FOREIGN KEY (cpf) REFERENCES usuarios(cpf),
-                            FOREIGN KEY (id_item_pedido) REFERENCES item_pedido(id_item_pedido))";
+                            id_pedido INT NOT NULL,
+                            valor_item DOUBLE NOT NULL,
+                            PRIMARY KEY (id_item));";
 
                         if(!mysqli_query($con, $query)){
                             throw new Exception('Não foi possível criar a tabela pedidos desejada');
                         }
+                        $query="ALTER TABLE item ADD FOREIGN KEY(id_borda) REFERENCES borda(id_borda);";
+                        mysqli_query($con, $query);
+                        $query="ALTER TABLE item ADD FOREIGN KEY(id_tamanho) REFERENCES tamanho(id_tamanho);";
+                        mysqli_query($con, $query);
+                        $query="ALTER TABLE item ADD FOREIGN KEY(id_massa) REFERENCES massa(id_massa);";
+                        mysqli_query($con, $query);
                     } 
+
+                    if($this->pesquisarTabela('item_sabores') == False){
+                        $query = "CREATE TABLE item_sabores(id_item_sabor INT NOT NULL,
+                            id_item INT NOT NULL,
+                            id_sabor INT NOT NULL,
+                            PRIMARY KEY (id_item_sabor));";
+
+                        if(!mysqli_query($con, $query)){
+                            throw new Exception('Não foi possível criar a tabela sabores desejada');
+                        }
+                        
+                        $query = "ALTER TABLE item_sabores ADD FOREIGN KEY(id_item) REFERENCES item(id_item);";
+                        mysqli_query($con, $query);
+                        $query = "ALTER TABLE item_sabores ADD FOREIGN KEY(id_sabor) REFERENCES sabores(id_sabor);";
+                        mysqli_query($con, $query);
+                    }
+
                 }else{
                     throw new Exception("Não foi possível conectar ao banco");
                 }
@@ -239,7 +277,7 @@
                     if($this->pesquisarTabela('usuarios')){
                         if(!$this->pesquisarUsuario($cpf)){ //Usuário ainda não cadastrado
                             echo "a";
-                            $sql="INSERT INTO usuarios (cpf,nome,nascimento,email,senha) 
+                            $sql="INSERT INTO usuarios (cpf_usuario,nome_usuario,nasc_usuario,email_usuario,senha_usuario) 
                             VALUES ('{$cpf}','{$nome}','{$nascimento}','{$email}','{$senha}');";
 
                             if(mysqli_query($con, $sql)){
@@ -259,18 +297,38 @@
             }
         }
 
-        function adicionarEndereco(){
+        function adicionarEndereco($cpf,$cep,$rua,$bairro,$cidade,$estado,$numero){
             try {
-
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    if($this->pesquisarTabela('enderecos')){
+                        $sql="INSERT INTO enderecos (cpf_usuario,cep,rua,bairro,cidade,estado,numero) 
+                        VALUES ('{$cpf}','{$cep}','{$rua}','{$bairro}','{$cidade}','{$estado}','{$numero}');";
+                        if(mysqli_query($con, $sql)){
+                            echo "Inseriu";
+                        }else{
+                            echo "Não inseriu";
+                        }
+                    }
+                }
             } catch (Exception $e) {
                 $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
                 error_log($log . PHP_EOL, 3, './error/db_error.log');
             }
         }
 
-        function adicionarPedido(){
+        function adicionarPedido($cpf,$valor_total,$data){
             try {
-
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    if($this->pesquisarTabela('pedidos')){
+                        $sql="INSERT INTO pedidos (cpf_usuario,valor_total_pedido,data_pedido) 
+                        VALUES ('{$cpf}','{$valor_total}','{$data}');";
+                        if(mysqli_query($con, $sql)){
+                            echo "Inseriu";
+                        }else{
+                            echo "Não inseriu";
+                        }
+                    }
+                }
             } catch (Exception $e) {
                 $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
                 error_log($log . PHP_EOL, 3, './error/db_error.log');
@@ -285,8 +343,11 @@
                     //$this->removerBanco($this->user, $this->senha);
                     //$this->desconectarBanco($con);
                     //$this->criarTabelas();
-                    $this->adicionarUsuario('1143790975',"AlexandreRosasCosta",'1999-12-16',"alexandrerosascosta@gmail.com",'123456789');
+                    //$this->adicionarUsuario('1143790975',"AlexandreRosasCosta",'1999-12-16',"alexandrerosascosta@gmail.com",'123456789');
                     //$this->pesquisarUsuario('11539299961');
+                    //$this->adicionarEndereco('1143790975','84020420','Olegario Mariano','Neves','Ponta Grossa','Paraná',439);
+                    //$this->adicionarPedido('1143790975',12.50,'2023-05-02');
+                    
                 }else{
                     throw new Exception('Não foi possível conectar com o banco de dados');
                 }
