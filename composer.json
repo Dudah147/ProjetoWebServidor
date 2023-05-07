@@ -1,0 +1,14 @@
+{
+    "name": "dudam/projeto-web-servidor",
+    "description": "Prjeto Pizzaria",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    },
+    "require": {
+        "pecee/simple-router": "5.3.0.5"
+    }
+}
