@@ -94,11 +94,11 @@
     </div>
 
     <?php
-    require "layout/carrinho.view.php";
-    require "layout/usuario.view.php";
-    require('./controllers/manipularBanco.controller.php');
-    $con = new ManipularBanco("localhost", "root", "", "ProjetoWebServidor");
-    $con->conectarBanco();
+    require "controllers/carrinho.controller.php";
+    require "controllers/usuario.controller.php";
+    // require('./controllers/manipularBanco.controller.php');
+    // $con = new ManipularBanco("localhost", "root", "", "ProjetoWebServidor");
+    // $con->conectarBanco();
     ?>
 
     <script type="text/javascript" src="JS/usuario.js"></script>

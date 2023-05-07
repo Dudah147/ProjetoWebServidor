@@ -1,17 +1,17 @@
 <header style="background-color: black; height: 100px;">
-    
-        
-       <div style="display: flex; ">
-            <h1 style="color: aliceblue; align-items: flex-start; width: 850px;font-family: 'Norican', cursive;font-size: 42px;">
-                <a href="index.php">&emsp;&emsp; PizzariaMMVRS</a>
-            </h1>
 
-            <div id="Header01" style=" justify-content: space-between; display: flex; flex-direction: row; ">
-            <a href="cardapio.php" style="padding-right: 20px;">cardápio</a>
-            <a href="index.php#promocoes" style="padding-right: 20px;">promoções</a>
-            <a href="index.php#contato" style="padding-right: 20px;">contato</a>
-            <button style="width: 120px; height: 40px; float: right; margin-top: 50px; background-color: gold; border: none;" >
-                <a href="pedido.php" style="color: black;">Pedidos Online</a>
+
+    <div style="display: flex; ">
+        <h1 style="color: aliceblue; align-items: flex-start; width: 850px;font-family: 'Norican', cursive;font-size: 42px;">
+            <a href="/">&emsp;&emsp; PizzariaMMVRS</a>
+        </h1>
+
+        <div id="Header01" style=" justify-content: space-between; display: flex; flex-direction: row; ">
+            <a href="cardapio" style="padding-right: 20px;">cardápio</a>
+            <a href="/#promocoes" style="padding-right: 20px;">promoções</a>
+            <a href="/#contato" style="padding-right: 20px;">contato</a>
+            <button style="width: 120px; height: 40px; float: right; margin-top: 50px; background-color: gold; border: none;">
+                <a href="pedido" style="color: black;">Pedidos Online</a>
             </button>
             <div id="container_img">
                 <img id="user" src="img/usuario.png">
@@ -21,4 +21,4 @@
                 </div>
             </div>
         </div>
-    </header>
+</header>
