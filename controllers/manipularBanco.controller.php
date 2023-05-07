@@ -324,10 +324,8 @@
                     if($this->pesquisarTabela('enderecos')){
                         $sql="INSERT INTO enderecos (cpf_usuario,cep,rua,bairro,cidade,estado,numero) 
                         VALUES ('{$cpf}','{$cep}','{$rua}','{$bairro}','{$cidade}','{$estado}','{$numero}');";
-                        if(mysqli_query($con, $sql)){
-                            echo "Inseriu";
-                        }else{
-                            echo "Não inseriu";
+                        if(!mysqli_query($con, $sql)){
+                            throw new Exception("Não foi possível realizar o cadastro do endereço");
                         }
                     }
                 }
@@ -337,8 +335,20 @@
             }
         }
 
-        function removerEndereco(){
-
+        function removerEndereco($cpf,$cep){
+            try {
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    if($this->pesquisarTabela('enderecos')){
+                        $sql="DELETE FROM enderecos WHERE cpf='{$cpf}' AND cep='{$cep}'";
+                        if(!mysqli_query($con, $sql)){
+                           throw new Exception("Não foi possível remover o endereço");
+                        }
+                    }
+                }
+            } catch (Exception $e) {
+                $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
+            }
         }
 
         function adicionarPedido($cpf,$valor_total,$data){
@@ -347,10 +357,8 @@
                     if($this->pesquisarTabela('pedidos')){
                         $sql="INSERT INTO pedidos (cpf_usuario,valor_total_pedido,data_pedido) 
                         VALUES ('{$cpf}','{$valor_total}','{$data}');";
-                        if(mysqli_query($con, $sql)){
-                            echo "Inseriu";
-                        }else{
-                            echo "Não inseriu";
+                        if(!mysqli_query($con, $sql)){
+                            throw new Exception("Não foi possível adicionar o pedido");
                         }
                     }
                 }
@@ -360,24 +368,88 @@
             }
         }
 
-        function removerPedido(){
-
+        function removerPedido($cpf){
+            try {
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    if($this->pesquisarTabela('pedidos')){
+                        $sql="DELETE FROM pedidos WHERE cpf='{$cpf}'";
+                        if(!mysqli_query($con, $sql)){
+                            throw new Exception("Não foi possível remover o pedido");
+                        }
+                    }
+                }
+            } catch (Exception $e) {
+                $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
+            }
         }
 
-        function adicionarSabor(){
-
+        function adicionarSabor($sabor,$info_sabor,$tipo_sabor,$preco_sabor,$imagem_sabor){
+            try {
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    if($this->pesquisarTabela('sabores')){
+                        $sql="INSERT INTO sabores (sabores,info_sabor,tipo_sabor,preco_sabor,imagem_sabor) 
+                        VALUES ('{$sabor}','{$info_sabor}','{$tipo_sabor}',{$preco_sabor},'{$imagem_sabor}');";
+                        if(!mysqli_querry($con,$sql)){
+                            throw new Exception("Não foi possível adicionar o sabor");
+                        }
+                    }
+                }
+            } catch (Exception $e) {
+                $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
+            }
         }
 
-        function adicionarTamanho(){
-
+        function adicionarTamanho($tamanho,$preco_tamanho){
+            try {
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    if($this->pesquisarTabela('tamanho')){
+                        $sql="INSERT INTO tamanho (tamanho,preco_tamanho,qtd_sabor,info_tamanho) 
+                        VALUES ('{$sabor}','{$info_sabor}','{$tipo_sabor}',{$preco_sabor},'{$imagem_sabor}');";
+                        if(!mysqli_querry($con,$sql)){
+                            throw new Exception("Não foi possível adicionar o sabor");
+                        }
+                    }
+                }
+            } catch (Exception $e) {
+                $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
+            }
         }
 
         function adicionarBorda(){
-
+            try {
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    if($this->pesquisarTabela('sabores')){
+                        $sql="INSERT INTO sabores (sabores,info_sabor,tipo_sabor,preco_sabor,imagem_sabor) 
+                        VALUES ('{$sabor}','{$info_sabor}','{$tipo_sabor}',{$preco_sabor},'{$imagem_sabor}');";
+                        if(!mysqli_querry($con,$sql)){
+                            throw new Exception("Não foi possível adicionar o sabor");
+                        }
+                    }
+                }
+            } catch (Exception $e) {
+                $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
+            }
         }
 
         function adicionarMassa(){
-
+            try {
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    if($this->pesquisarTabela('sabores')){
+                        $sql="INSERT INTO sabores (sabores,info_sabor,tipo_sabor,preco_sabor,imagem_sabor) 
+                        VALUES ('{$sabor}','{$info_sabor}','{$tipo_sabor}',{$preco_sabor},'{$imagem_sabor}');";
+                        if(!mysqli_querry($con,$sql)){
+                            throw new Exception("Não foi possível adicionar o sabor");
+                        }
+                    }
+                }
+            } catch (Exception $e) {
+                $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
+            }
         }
 
         function removerSabor(){
