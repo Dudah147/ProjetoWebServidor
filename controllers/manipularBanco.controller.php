@@ -68,7 +68,7 @@
         function pesquisarUsuario($cpf){
             try {
                 if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
-                    $sql = "SELECT * FROM usuarios WHERE cpf='".$cpf."'";
+                    $sql = "SELECT * FROM usuarios WHERE cpf_usuario='".$cpf."'";
                     $dados = mysqli_query($con, $sql);
                     if(!mysqli_fetch_all($dados)){
                         return False;
@@ -85,7 +85,7 @@
         function pesquisarEndereco($cpf){
             try {
                 if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
-                    $sql = "SELECT * FROM enderecos WHERE cpf='".$cpf."'";
+                    $sql = "SELECT * FROM enderecos WHERE cpf_usuario='".$cpf."'";
                     $dados = mysqli_query($con, $sql);
                     if(!mysqli_fetch_all($dados)){
                         return False;
@@ -147,7 +147,7 @@
 
                         $sql = "ALTER TABLE `enderecos` 
                                 ADD FOREIGN KEY (cpf_usuario)
-                                REFERENCES usuarios (cpf_usuario)";
+                                REFERENCES usuarios (cpf_usuario) ON DELETE CASCADE";
 
                         if(!mysqli_query($con, $query) && !mysqli_query($con, $sql)){
                             throw new Exception('Não foi possível criar a tabela usuarios desejada');
@@ -161,7 +161,7 @@
                             data_pedido TIMESTAMP NOT NULL,
                             PRIMARY KEY (id_pedido),
                             FOREIGN KEY (cpf_usuario)
-                            REFERENCES usuarios(cpf_usuario)
+                            REFERENCES usuarios(cpf_usuario) ON DELETE CASCADE
                             )";
 
                         if(!mysqli_query($con, $query)){
@@ -297,6 +297,27 @@
             }
         }
 
+        function removerUsuario($cpf){
+            try {
+                if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
+                    if($this->pesquisarTabela('usuarios')){
+                        if($this->pesquisarUsuario($cpf)){ //Usuário cadastrado
+                            $sql="DELETE FROM usuarios WHERE cpf_usuario = '{$cpf}'";
+
+                            if(!mysqli_query($con, $sql)){
+                                throw new Exception("Houve um erro ao deletar o usuário com CPF '{$cpf}'.");
+                            }
+                        }else{
+                            throw new Exception("Usuário com CPF '{$cpf}' não está cadastrado.");
+                        }
+                    }
+                }
+            } catch (Exception $e) {
+                $log = date('d.m.Y h:i:s')." - Erro ao remover usuário: ".$e->getMessage();
+                error_log($log . PHP_EOL, 3, './error/db_error.log');
+            }
+        }
+
         function adicionarEndereco($cpf,$cep,$rua,$bairro,$cidade,$estado,$numero){
             try {
                 if($this->conexao == true && $con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
@@ -314,6 +335,10 @@
                 $log = date('d.m.Y h:i:s')." - Erro ao criar as tabelas: ".$e->getMessage();
                 error_log($log . PHP_EOL, 3, './error/db_error.log');
             }
+        }
+
+        function removerEndereco(){
+
         }
 
         function adicionarPedido($cpf,$valor_total,$data){
@@ -335,6 +360,42 @@
             }
         }
 
+        function removerPedido(){
+
+        }
+
+        function adicionarSabor(){
+
+        }
+
+        function adicionarTamanho(){
+
+        }
+
+        function adicionarBorda(){
+
+        }
+
+        function adicionarMassa(){
+
+        }
+
+        function removerSabor(){
+
+        }
+
+        function removerTamanho(){
+
+        }
+
+        function removerBorda(){
+
+        }
+
+        function removerMassa(){
+            
+        }
+
         function conectarBanco(){
             try {
                 if($con = new mysqli($this->host, $this->user, $this->senha, $this->dbase)){
@@ -343,10 +404,11 @@
                     //$this->removerBanco($this->user, $this->senha);
                     //$this->desconectarBanco($con);
                     //$this->criarTabelas();
-                    //$this->adicionarUsuario('1143790975',"AlexandreRosasCosta",'1999-12-16',"alexandrerosascosta@gmail.com",'123456789');
+                    //$this->adicionarUsuario('11437990975',"AlexandreRosasCosta",'1999-12-16',"alexandrerosascosta@gmail.com",'123456789');
                     //$this->pesquisarUsuario('11539299961');
-                    //$this->adicionarEndereco('1143790975','84020420','Olegario Mariano','Neves','Ponta Grossa','Paraná',439);
-                    //$this->adicionarPedido('1143790975',12.50,'2023-05-02');
+                    //$this->adicionarEndereco('11437990975','84020420','Olegario Mariano','Neves','Ponta Grossa','Paraná',439);
+                    //$this->adicionarPedido('11437990975',12.50,'2023-05-02');
+                    $this->removerUsuario('11437990975');
                     
                 }else{
                     throw new Exception('Não foi possível conectar com o banco de dados');
