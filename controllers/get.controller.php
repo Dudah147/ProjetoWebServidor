@@ -33,7 +33,13 @@ class GetController
     public function viewLogin()
     {
         session_start();
-        
-        require "./controllers/login.controller.php";
+
+        if (isset($_SESSION['cpf'], $_SESSION['senha'])) {
+            $logado = true;
+        } else {
+            $logado = false;
+        }
+
+        require "views/login.view.php";
     }
 }

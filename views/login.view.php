@@ -32,16 +32,17 @@
                 //     require("controllers/validar_login.controller.php");
                 // }
                 ?>
-                <form id="form" action="login?action=logar" method="POST">
-                    <div class="input-group">
 
-                        <?php if ($logado == true) : ?>
-                            <h1 id="boas-vindas" style="text-align: center;">Olá, <?php echo $_SESSION['nome']; ?></h1>
-                            <h3 style="text-align: center;">Você já está logado!</h3>
-                            <form action="controllers/deslogar.controller.php?action=deslogar" method="POST">
-                                <button type="submit" id="sair">Sair</button>
-                            </form>
-                        <?php else : ?>
+                <div class="input-group">
+
+                    <?php if ($logado == true) : ?>
+                        <h1 id="boas-vindas" style="text-align: center;">Olá, <?php echo $_SESSION['nome']; ?></h1>
+                        <h3 style="text-align: center;">Você já está logado!</h3>
+                        <form action="deslogar" method="POST">
+                            <button type="submit" id="sair">Sair</button>
+                        </form>
+                    <?php else : ?>
+                        <form id="form" action="login?action=logar" method="POST">
                             <div class="input-box">
                                 <label>E-mail:</label>
                                 <input type="text" name="email" id="email">
@@ -67,7 +68,7 @@
                                 </div>
                             </div>
                         <?php endif; ?>
-                    </div>
+                </div>
                 </form>
             </div>
             <!--

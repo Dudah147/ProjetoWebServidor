@@ -8,11 +8,13 @@ if (file_exists($arquivo)) {
 }
 
 $verifica = false;
-foreach ($carrinho as $car) {
-    if ($car['cpf'] == $_SESSION['cpf']) {
+if (isset($_SESSION['cpf'])) {
+    foreach ($carrinho as $car) {
+        if ($car['cpf'] == $_SESSION['cpf']) {
 
-        $win = $car['itens'];
-        $verifica = true;
+            $win = $car['itens'];
+            $verifica = true;
+        }
     }
 }
 

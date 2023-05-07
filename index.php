@@ -19,4 +19,9 @@ Router::get('/login', 'GetController@viewLogin');
 //POST
 Router::post('/login', 'PostController@cadastrarLogin');
 
+Router::post('/deslogar', 'PostController@deslogar');
+
+Router::post('/cadastrarPedido', 'PostController@cadastrarPedido');
+
+
 Router::start();

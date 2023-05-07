@@ -19,8 +19,7 @@ function validar_sessao()
                 $_SESSION['cpf'] = $json[$i]['cpf'];
                 $_SESSION['nome'] = $json[$i]['nome'];
                 $flag = true;
-                echo "logado";
-                //header("Location: pedido");
+                header("Location: pedido");
             }
         }
         if ($flag == null) {

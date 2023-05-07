@@ -1,1 +1,61 @@
-[]
+[
+    {
+        "cpf": "11539299961",
+        "itens": [
+            {
+                "tamanho": {
+                    "tamanho": "Gigante",
+                    "preco": 70.9
+                },
+                "borda": {
+                    "borda": "Cheddar",
+                    "preco": 5
+                },
+                "massa": {
+                    "massa": "Fina",
+                    "preco": 0
+                },
+                "sabores": [
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    },
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    },
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    }
+                ],
+                "total": 75.9
+            },
+            {
+                "tamanho": {
+                    "tamanho": "Grande",
+                    "preco": 57.9
+                },
+                "borda": {
+                    "borda": "Requeijão",
+                    "preco": 5
+                },
+                "massa": {
+                    "massa": "Tradicional",
+                    "preco": 0
+                },
+                "sabores": [
+                    {
+                        "sabor": "Caipira",
+                        "preco": 0
+                    },
+                    {
+                        "sabor": "Caipira",
+                        "preco": 0
+                    }
+                ],
+                "total": 62.9
+            }
+        ]
+    }
+]

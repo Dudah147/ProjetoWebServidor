@@ -10,12 +10,23 @@
 <body id="body">
 
     <?php require("layout/header.view.php"); ?>
-
+    <?php
+    $msg = $_GET['msg'] ?? '';
+    if ($msg == 'campos') {
+        echo "<div id='feedback'><span>Preencha todos os campos</span><div></div></div>";
+    }
+    else if ($msg == 'login'){
+        echo "<div id='feedback'><span>Faça login para continuar</span><div></div></div>";
+    }
+    ?>
     <div id="container">
         <span id="text_pedido">Pedido Online</span>
         <hr id="underline">
         <div id="pedido">
-            <form action="pedido.php?cadastrar=pedido" method="POST">
+
+
+
+            <form action="cadastrarPedido" method="POST">
                 <div id="tamanho">
                     <div class="tipo">
                         <img src="img/setaCima.png" class="seta" name="setaCima">
