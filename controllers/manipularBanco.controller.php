@@ -6,7 +6,7 @@
         $dbase = "projetowebservidor";
         try{
             if($con = ConexaoBanco::get()){
-                $query= $con->prepare("CREATE DATABASE $dbase");
+                $query= $con->prepare("CREATE DATABASE IF NOT EXISTS $dbase");
                 if($query->execute()){
                     criarTabelas();
                 }else{
