@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite1917fb294655298b98027287d109c69
+class ComposerStaticInit04d866d4aaeac854c43c22625d72ed66
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -23,8 +23,6 @@ class ComposerStaticInite1917fb294655298b98027287d109c69
     public static $classMap = array (
         'BootManagerTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/BootManagerTest.php',
         'ClassLoaderTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/ClassLoaderTest.php',
-        'ComposerAutoloaderInite1917fb294655298b98027287d109c69' => __DIR__ . '/..' . '/composer/autoload_real.php',
-        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInite1917fb294655298b98027287d109c69' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'ConexaoBanco' => __DIR__ . '/../..' . '/models/ConexaoBanco.php',
@@ -115,9 +113,9 @@ class ComposerStaticInite1917fb294655298b98027287d109c69
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite1917fb294655298b98027287d109c69::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite1917fb294655298b98027287d109c69::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite1917fb294655298b98027287d109c69::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit04d866d4aaeac854c43c22625d72ed66::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit04d866d4aaeac854c43c22625d72ed66::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit04d866d4aaeac854c43c22625d72ed66::$classMap;
 
         }, null, ClassLoader::class);
     }

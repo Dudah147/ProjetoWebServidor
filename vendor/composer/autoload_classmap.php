@@ -8,8 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'BootManagerTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/BootManagerTest.php',
     'ClassLoaderTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/ClassLoaderTest.php',
-    'ComposerAutoloaderInite1917fb294655298b98027287d109c69' => $vendorDir . '/composer/autoload_real.php',
-    'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInite1917fb294655298b98027287d109c69' => $vendorDir . '/composer/autoload_static.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'ConexaoBanco' => $baseDir . '/models/ConexaoBanco.php',

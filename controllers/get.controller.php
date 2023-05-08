@@ -126,4 +126,11 @@ class GetController
         }
         require("views/meus_pedidos.view.php");
     }
+
+    public function viewCadastroUsuario()
+    {
+        session_start();
+
+        require("views/cadastro.view.php");
+    }
 }

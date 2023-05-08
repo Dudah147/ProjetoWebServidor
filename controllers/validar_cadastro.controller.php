@@ -16,7 +16,7 @@
                 }
             }
             if($flag==0){
-                header("Location: ./cadastro.php?signin_error=true");
+                header("Location: ./cadastroUsuario.php?signin_error=true");
             }else{
                 echo 'Cadastro realizado com sucesso!';
                 require("controllers/transforma_json.controller.php");

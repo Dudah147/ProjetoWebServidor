@@ -29,6 +29,8 @@ Router::post('/deslogar', 'PostController@deslogar');
 
 Router::post('/cadastrarPedido', 'PostController@cadastrarPedido');
 
+Router::post('/cadastrarUsuario', 'PostController@cadastrarUsuario');
+
 Router::post('/finalizarPedido', 'PostController@finalizarPedido');
 
 Router::start();

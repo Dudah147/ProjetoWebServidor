@@ -60,4 +60,8 @@ class PostController
             header("Location: meus_pedidos?msg=finalizado");
         }
     }
+
+    public function cadastrarUsuario(){
+        require('controllers/validar_cadastro.controller.php');
+    }
 }
