@@ -41,7 +41,7 @@ class GetController
             $query->execute();
             $sabores = $query->fetchAll();
 
-            //
+            //Adicionando valores ao cardapio
             $cardapio = [
                             'tamanho'=>$tamanho,
                             'massa'=>$massa,
