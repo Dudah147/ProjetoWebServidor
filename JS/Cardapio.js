@@ -1,3 +1,4 @@
+console.log(resposta)
 const tamanhos = resposta['tamanhos']
 const massa = resposta['massa']
 const bordas = resposta['bordas']

@@ -17,7 +17,7 @@ class GetController
     public function viewCardapio()
     {
         session_start();
-        require("models/cardapio.model.php");
+
         $cardapio = [];
         if($con = ConexaoBanco::get()){
 
@@ -31,13 +31,29 @@ class GetController
             $query->execute();
             $massa = $query->fetchAll();
 
-            echo "<pre>";
-            print_r($cardapio);
-            echo "</pre>";
+            //Selecionar borda
+            $query = $con->prepare("SELECT * FROM borda");
+            $query->execute();
+            $bordas = $query->fetchAll();
 
-            $cardapio = ['tamanho'=>$tamanho];
+            //Selecionar sabores
+            $query = $con->prepare("SELECT * FROM sabores");
+            $query->execute();
+            $sabores = $query->fetchAll();
+
+            //
+            $cardapio = [
+                            'tamanho'=>$tamanho,
+                            'massa'=>$massa,
+                            'bordas'=>$bordas,
+                            'sabores'=>$sabores
+                        ];
+                
+            
         }
-        
+        echo "<pre>";
+            print_r($cardapio);
+        echo "</pre>";
         require "./views/cardapio.view.php";
     }
 
