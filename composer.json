@@ -1,8 +1,15 @@
 {
-    "name": "dudam/projeto-web-servidor",
-    "description": "Prjeto Pizzaria",
-    "type": "project",
-    "license": "MIT",
+    "name": "alexandre/projeto-web-servidor",
+    "authors": [
+        {
+            "name": "Alexandre",
+            "email": "alexandrerosascosta@gmail.com"
+        },
+        {
+            "name": "Maria Eduarda",
+            "email": "mdudu2213@gmail.com"
+        }
+    ],
     "autoload": {
         "classmap": [
             "./"

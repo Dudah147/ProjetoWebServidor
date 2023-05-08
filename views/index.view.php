@@ -96,9 +96,7 @@
     <?php
     require "controllers/carrinho.controller.php";
     require "controllers/usuario.controller.php";
-    // require('./controllers/manipularBanco.controller.php');
-    // $con = new ManipularBanco("localhost", "root", "", "ProjetoWebServidor");
-    // $con->conectarBanco();
+    require('./controllers/manipularBanco.controller.php');
     ?>
 
     <script type="text/javascript" src="JS/usuario.js"></script>

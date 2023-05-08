@@ -1,14 +1,9 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "26b6a3c8b549d2e4a50f011b7e28c248",
     "packages": [
         {
             "name": "pecee/simple-router",
             "version": "5.3.0.5",
+            "version_normalized": "5.3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/simple-php-router.git",
@@ -32,7 +27,9 @@
                 "phpstan/phpstan-strict-rules": "^1",
                 "phpunit/phpunit": "^8"
             },
+            "time": "2023-05-06T19:11:12+00:00",
             "type": "library",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "Pecee\\": "src/Pecee/"
@@ -67,16 +64,9 @@
                 "issues": "https://github.com/skipperbent/simple-php-router/issues",
                 "source": "https://github.com/skipperbent/simple-php-router/issues"
             },
-            "time": "2023-05-06T19:11:12+00:00"
+            "install-path": "../pecee/simple-router"
         }
     ],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "dev": true,
+    "dev-package-names": []
 }
