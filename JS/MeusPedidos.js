@@ -4,13 +4,15 @@ const container_meus_pedidos = document.getElementById("container")
 //MEUS PEDIDOS
 const meus_pedidos = document.getElementById("meus_pedidos")
 const ver_detalhes = document.querySelectorAll(".ver_detalhes")
-console.log("Teste")
+
 for (el of ver_detalhes) {
     el.addEventListener("click", ver_detalhes_event)
 }
 
 function ver_detalhes_event() {
+
     for (pedido of pedidos) {
+        console.log(this.parentNode.children[0].getAttribute("id_pedido"))
         if (pedido["id_pedido"] == this.parentNode.children[0].getAttribute("id_pedido")) {
             abre_pedido(pedido)
         }
@@ -18,6 +20,7 @@ function ver_detalhes_event() {
 }
 
 function abre_pedido(pedido) {
+
     meus_pedidos.style.display = "none"
     const div_pedido = document.createElement("div")
     div_pedido.setAttribute("class", "div_pedido")

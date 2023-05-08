@@ -63,7 +63,7 @@
                                 <button id="entrar" type="submit">ENTRAR</button>
                                 <div class="row">
                                     <hr>
-                                    <a href="cadastro.php" id="cadastrar">Ainda não tenho cadastro</a>
+                                    <a href="cadastroUsuario" id="cadastrar">Ainda não tenho cadastro</a>
                                     <hr>
                                 </div>
                             </div>

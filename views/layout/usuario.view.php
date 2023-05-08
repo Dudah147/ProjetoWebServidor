@@ -7,7 +7,7 @@
     <div class="column">
         <div class="row">
             <img src="img/inicio.png" class="imgs_user">
-            <a href="index">Início</a>
+            <a href="/">Início</a>
         </div>
         <div class="row">
             <img src="img/endereco.png" class="imgs_user">

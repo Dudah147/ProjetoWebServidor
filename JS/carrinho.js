@@ -17,7 +17,7 @@ container.addEventListener("click", () => {
 
 function abrirCarrinho() {
 
-    
+
 
     id_carrinho.style.visibility = "visible"
     container.style.filter = "blur(5px)"
@@ -33,7 +33,7 @@ function abrirCarrinho() {
             </div>
         `
 
-        
+
         return
     }
 
@@ -138,6 +138,6 @@ function finalizarPedido() {
 
 
     btn_entregar.addEventListener("click", () => {
-        window.location.href = "finalizar_pedido.php";
+        window.location.href = "finalizar_pedido";
     })
 }
