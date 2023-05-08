@@ -51,6 +51,8 @@ class GetController
             ];
         }
 
+        $cardapio = json_encode($cardapio);
+
         require "./views/cardapio.view.php";
     }
 
