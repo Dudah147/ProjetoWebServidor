@@ -219,7 +219,7 @@
                 $query->execute();
                 $query = $con->prepare("INSERT INTO sabores (sabores, info_sabor,tipo_sabor, preco_sabor, imagem_sabor) VALUES ('Camarão', 'Muçarela e camarão', 'Premium', 15, 'img/pizza.jpg')");
                 $query->execute();
-                $query = $con->prepare("INSERT INTO sabores (sabores, info_sabor,tipo_sabor, preco_sabor, imagem_sabor) VALUES ('Mignon crispy', 'Muçarela, filé mignon e cebola crispy', 'Premium'), 15, 'img/pizza.jpg'");
+                $query = $con->prepare("INSERT INTO sabores (sabores, info_sabor,tipo_sabor, preco_sabor, imagem_sabor) VALUES ('Mignon crispy', 'Muçarela, filé mignon e cebola crispy', 'Premium', 15, 'img/pizza.jpg')");
                 $query->execute();
             }else{
                 throw new Exception("Não foi possível conectar ao banco");
