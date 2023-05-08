@@ -25,7 +25,7 @@ function mudaDiv() {
             info_container.innerHTML +=
                 `<div class="info">
                 <span>${tamanhos[i].tamanho}</span>
-                <span>${tamanhos[i].info}</span>
+                <span>${tamanhos[i].info_tamanho}</span>
             </div>`
         }
     }
@@ -35,7 +35,7 @@ function mudaDiv() {
             info_container.innerHTML +=
                 `<div class="info">
                 <span>${massa[i].massa}</span>
-                <span>${massa[i].info}</span>
+                <span>${massa[i].info_massa}</span>
             </div>`
         }
     }
@@ -51,11 +51,11 @@ function mudaDiv() {
     else if (this.textContent == "TRADICIONAIS") {
         info_container.innerHTML = ""
         for (i = 0; i < sabores.length; i++) {
-            if (sabores[i].tipo == "Tradicional") {
+            if (sabores[i].tipo_sabor == "Tradicional") {
                 info_container.innerHTML +=
                     `<div class="info">
-                    <span>${sabores[i].sabor}</span>
-                    <span>${sabores[i].info}</span>
+                    <span>${sabores[i].sabores}</span>
+                    <span>${sabores[i].info_sabor}</span>
                 </div>`
             }
         }
@@ -63,11 +63,11 @@ function mudaDiv() {
     else if (this.textContent == "ESPECIAIS") {
         info_container.innerHTML = ""
         for (i = 0; i < sabores.length; i++) {
-            if (sabores[i].tipo == "Especial") {
+            if (sabores[i].tipo_sabor == "Especial") {
                 info_container.innerHTML +=
                     `<div class="info">
-                    <span>${sabores[i].sabor}</span>
-                    <span>${sabores[i].info}</span>
+                    <span>${sabores[i].sabores}</span>
+                    <span>${sabores[i].info_sabor}</span>
                 </div>`
             }
         }
@@ -75,11 +75,11 @@ function mudaDiv() {
     else if (this.textContent == "PREMIUM") {
         info_container.innerHTML = ""
         for (i = 0; i < sabores.length; i++) {
-            if (sabores[i].tipo == "Premium") {
+            if (sabores[i].tipo_sabor == "Premium") {
                 info_container.innerHTML +=
                     `<div class="info">
-                    <span>${sabores[i].sabor}</span>
-                    <span>${sabores[i].info}</span>
+                    <span>${sabores[i].sabores}</span>
+                    <span>${sabores[i].info_sabor}</span>
                 </div>`
             }
         }

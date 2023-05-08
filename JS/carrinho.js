@@ -29,7 +29,7 @@ function abrirCarrinho() {
             `
             <div style="font-size: 2rem;display: flex; flex-direction: column; align-items:center;margin: auto">
                 <span>Carrinho Vazio</span>
-                <a href="pedido.php" style="color:black; padding: 0; margin-top: 5rem">Fazer um pedido</a>
+                <a href="pedido" style="color:black; padding: 0; margin-top: 5rem">Fazer um pedido</a>
             </div>
         `
 
@@ -46,7 +46,7 @@ function abrirCarrinho() {
     const finalizar_pedido_btn = document.getElementById("finalizar_pedido_btn")
 
     adicionarMais.addEventListener("click", () => {
-        window.location.href = "pedido.php";
+        window.location.href = "pedido";
     })
 
     close.addEventListener("click", () => {

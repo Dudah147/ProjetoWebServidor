@@ -2,7 +2,8 @@
 
 class GetController
 {
-    public function __construct(){
+    public function __construct()
+    {
         require "vendor/autoload.php";
     }
 
@@ -19,41 +20,37 @@ class GetController
         session_start();
 
         $cardapio = [];
-        if($con = ConexaoBanco::get()){
+        if ($con = ConexaoBanco::get()) {
 
             //Selecionar os tamanhos
             $query = $con->prepare("SELECT * FROM tamanho");
             $query->execute();
-            $tamanho = $query->fetchAll();
+            $tamanho = $query->fetchAll(PDO::FETCH_OBJ);
 
             //Selecionar as massas
             $query = $con->prepare("SELECT * FROM massa");
             $query->execute();
-            $massa = $query->fetchAll();
+            $massa = $query->fetchAll(PDO::FETCH_OBJ);
 
             //Selecionar borda
             $query = $con->prepare("SELECT * FROM borda");
             $query->execute();
-            $bordas = $query->fetchAll();
+            $bordas = $query->fetchAll(PDO::FETCH_OBJ);
 
             //Selecionar sabores
             $query = $con->prepare("SELECT * FROM sabores");
             $query->execute();
-            $sabores = $query->fetchAll();
+            $sabores = $query->fetchAll(PDO::FETCH_OBJ);
 
             //Adicionando valores ao cardapio
             $cardapio = [
-                            'tamanho'=>$tamanho,
-                            'massa'=>$massa,
-                            'bordas'=>$bordas,
-                            'sabores'=>$sabores
-                        ];
-                
-            
+                'massa' => $massa,
+                'tamanhos' => $tamanho,
+                'bordas' => $bordas,
+                'sabores' => $sabores
+            ];
         }
-        echo "<pre>";
-            print_r($cardapio);
-        echo "</pre>";
+
         require "./views/cardapio.view.php";
     }
 
