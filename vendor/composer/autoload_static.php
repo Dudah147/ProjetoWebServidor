@@ -46,7 +46,6 @@ class ComposerStaticInite1917fb294655298b98027287d109c69
         'InputHandlerTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/InputHandlerTest.php',
         'IpRestrictMiddleware' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Middleware/IpRestrictMiddleware.php',
         'LoadableRouteTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/LoadableRouteTest.php',
-        'ManipularBanco' => __DIR__ . '/../..' . '/controllers/manipularBanco.controller.php',
         'MiddlewareLoadedException' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Exception/MiddlewareLoadedException.php',
         'MiddlewareTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/MiddlewareTest.php',
         'MyNamespace\\NSController' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/NSController.php',

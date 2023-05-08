@@ -17,8 +17,6 @@
                 }else{
                     throw new Exception('Não foi possível executar o SQL de criação do banco');
                 }
-            }else{
-                throw new Exception('Não foi possível conectar ao banco');
             }
         }catch (Exception $e) {
             $log = date('d.m.Y h:i:s')." - Erro ao criar o banco: ".$e->getMessage();

@@ -31,7 +31,6 @@ return array(
     'InputHandlerTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/InputHandlerTest.php',
     'IpRestrictMiddleware' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Middleware/IpRestrictMiddleware.php',
     'LoadableRouteTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/LoadableRouteTest.php',
-    'ManipularBanco' => $baseDir . '/controllers/manipularBanco.controller.php',
     'MiddlewareLoadedException' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Exception/MiddlewareLoadedException.php',
     'MiddlewareTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/MiddlewareTest.php',
     'MyNamespace\\NSController' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/NSController.php',
