@@ -2,6 +2,9 @@
 
 class GetController
 {
+    public function __construct(){
+        require "vendor/autoload.php";
+    }
 
     public function viewIndex()
     {
@@ -15,10 +18,27 @@ class GetController
     {
         session_start();
         require("models/cardapio.model.php");
-        require "./views/cardapio.view.php";
+        $cardapio = [];
+        if($con = ConexaoBanco::get()){
 
+            //Selecionar os tamanhos
+            $query = $con->prepare("SELECT * FROM tamanho");
+            $query->execute();
+            $tamanho = $query->fetchAll();
+
+            //Selecionar as massas
+            $query = $con->prepare("SELECT * FROM massa");
+            $query->execute();
+            $massa = $query->fetchAll();
+
+            echo "<pre>";
+            print_r($cardapio);
+            echo "</pre>";
+
+            $cardapio = ['tamanho'=>$tamanho];
+        }
         
-        echo "";
+        require "./views/cardapio.view.php";
     }
 
     public function viewPedido()

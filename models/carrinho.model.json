@@ -6,5 +6,35 @@
                 "total": 0
             }
         ]
+    },
+    {
+        "cpf": "12345678910",
+        "itens": [
+            {
+                "tamanho": {
+                    "tamanho": "Grande",
+                    "preco": 57.9
+                },
+                "borda": {
+                    "borda": "Cheddar",
+                    "preco": 5
+                },
+                "massa": {
+                    "massa": "Fina",
+                    "preco": 0
+                },
+                "sabores": [
+                    {
+                        "sabor": "Caipira",
+                        "preco": 0
+                    },
+                    {
+                        "sabor": "Caipira",
+                        "preco": 0
+                    }
+                ],
+                "total": 62.9
+            }
+        ]
     }
 ]

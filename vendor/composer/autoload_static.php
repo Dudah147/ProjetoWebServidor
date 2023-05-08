@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit04d866d4aaeac854c43c22625d72ed66
+class ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -23,8 +23,9 @@ class ComposerStaticInit04d866d4aaeac854c43c22625d72ed66
     public static $classMap = array (
         'BootManagerTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/BootManagerTest.php',
         'ClassLoaderTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/ClassLoaderTest.php',
-        'ComposerAutoloaderInit04d866d4aaeac854c43c22625d72ed66' => __DIR__ . '/..' . '/composer/autoload_real.php',
-        'Composer\\Autoload\\ComposerStaticInit04d866d4aaeac854c43c22625d72ed66' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'ComposerAutoloaderInit42e0b5bc2006fd159cc09a88e9c55ef4' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
+        'Composer\\Autoload\\ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'ConexaoBanco' => __DIR__ . '/../..' . '/models/ConexaoBanco.php',
         'CsrfVerifierTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/CsrfVerifierTest.php',
@@ -114,9 +115,9 @@ class ComposerStaticInit04d866d4aaeac854c43c22625d72ed66
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit04d866d4aaeac854c43c22625d72ed66::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit04d866d4aaeac854c43c22625d72ed66::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit04d866d4aaeac854c43c22625d72ed66::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4::$classMap;
 
         }, null, ClassLoader::class);
     }
