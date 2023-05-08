@@ -53,10 +53,13 @@
     <?php
     require("controllers/carrinho.controller.php");
     require("controllers/usuario.controller.php"); ?>
-
+    <script>
+        const resposta = <?= $cardapio ?>
+    </script>
     <script type="text/javascript" src="JS/Cardapio.js"></script>
     <script type="text/javascript" src="JS/usuario.js"></script>
     <script type="text/javascript" src="JS/carrinho.js"></script>
+
 </body>
 
 </html>

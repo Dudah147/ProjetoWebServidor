@@ -23,7 +23,8 @@ class ComposerStaticInit04d866d4aaeac854c43c22625d72ed66
     public static $classMap = array (
         'BootManagerTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/BootManagerTest.php',
         'ClassLoaderTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/ClassLoaderTest.php',
-        'Composer\\Autoload\\ComposerStaticInite1917fb294655298b98027287d109c69' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'ComposerAutoloaderInit04d866d4aaeac854c43c22625d72ed66' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'Composer\\Autoload\\ComposerStaticInit04d866d4aaeac854c43c22625d72ed66' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'ConexaoBanco' => __DIR__ . '/../..' . '/models/ConexaoBanco.php',
         'CsrfVerifierTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/CsrfVerifierTest.php',
