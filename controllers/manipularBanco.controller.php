@@ -6,16 +6,11 @@
         $dbase = "projetowebservidor";
         try{
             if($con = ConexaoBanco::get()){
-            $query = $con->prepare("USE {$dbase}");
-                if(!$query->execute()){
-                    $query= $con->prepare("CREATE DATABASE $dbase");
-                    if($query->execute()){
-                        criarTabelas();
-                    }else{
-                        throw new Exception('Não foi possível criar a base de dados');
-                    }
+                $query= $con->prepare("CREATE DATABASE $dbase");
+                if($query->execute()){
+                    criarTabelas();
                 }else{
-                    throw new Exception('Não foi possível executar o SQL de criação do banco');
+                    throw new Exception('Não foi possível criar a base de dados');
                 }
             }
         }catch (Exception $e) {
