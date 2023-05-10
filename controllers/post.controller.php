@@ -56,8 +56,8 @@ class PostController
 
             file_put_contents($arquivo, json_encode($json_carrinho, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
-            require("transforma_carrinho_json.controller.php");
-            header("Location: meus_pedidos?msg=finalizado");
+            require("transforma_carrinho_json.controller.php"); // reformular numa classe de transformação de json
+            header("Location: meus_pedidos?msg=finalizado"); // utilizar redirect do simple-router
         }
     }
 
