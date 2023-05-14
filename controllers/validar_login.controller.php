@@ -20,9 +20,4 @@ if (isset($arquivo)) {
             header("Location: pedido");
         }
     }
-    if ($flag == null) {
-        header("Location: login?error-login=notfound");
-    }
-} else {
-    header("Location: login?error-login=notfound");
 }

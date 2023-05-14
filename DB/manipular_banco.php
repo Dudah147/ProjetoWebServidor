@@ -2,11 +2,15 @@
     class ManipulacaoBanco{ 
         private $con;
 
-        function __construct(){
+        public function __construct(){
             $this->con = ConexaoBanco::get();
         }
 
-        function pesquisarUsuario($cpf){
+        public function removerDados($tabela, $param){
+            $sql="DELETE FROM {$tabela} WHERE {$param}";
+        } 
+    }
+        /* public function pesquisarUsuario($cpf){
             try {
                 if($this->con){
                     $sql = "SELECT * FROM usuarios WHERE cpf_usuario='".$cpf."'";
@@ -54,24 +58,15 @@
                     error_log($log . PHP_EOL, 3, './error/db_error.log');
                 }
             }
-        }
+        } 
         
-        function adicionarUsuario($cpf, $nome, $nascimento, $email, $senha){
+        public function inserirUsuario($cpf, $nome, $nascimento, $email, $senha){
             try {
                 if($this->con){
-                    if($this->pesquisarTabela('usuarios')){
-                        if(!$this->pesquisarUsuario($cpf)){ //Usuário ainda não cadastrado
-                            echo "a";
-                            $sql="INSERT INTO usuarios (cpf_usuario,nome_usuario,nasc_usuario,email_usuario,senha_usuario) 
-                            VALUES ('{$cpf}','{$nome}','{$nascimento}','{$email}','{$senha}');";
-                            if(mysqli_query($this->con, $sql)){
-                                echo "Inseriu";
-                            }else{
-                                echo "Não inseriu";
-                            }
-                        }else{
-                            throw new Exception("Usuário já cadastrado");
-                        }
+                    $sql="INSERT INTO usuarios (cpf_usuario,nome_usuario,nasc_usuario,email_usuario,senha_usuario) 
+                    VALUES ('{$cpf}','{$nome}','{$nascimento}','{$email}','{$senha}');";
+                    if(!mysqli_query($this->con, $sql)){
+                        throw new Exception("Não foi possível inserir o usuário!");
                     }
                 }
             } catch (Exception $e) {
@@ -79,18 +74,13 @@
                 error_log($log . PHP_EOL, 3, './error/db_error.log');
             }
         }
+
         function removerUsuario($cpf){
             try {
                 if($this->con){
-                    if($this->pesquisarTabela('usuarios')){
-                        if($this->pesquisarUsuario($cpf)){ //Usuário cadastrado
-                            $sql="DELETE FROM usuarios WHERE cpf_usuario = '{$cpf}'";
-                            if(!mysqli_query($this->con, $sql)){
-                                throw new Exception("Houve um erro ao deletar o usuário com CPF '{$cpf}'.");
-                            }
-                        }else{
-                            throw new Exception("Usuário com CPF '{$cpf}' não está cadastrado.");
-                        }
+                    $sql="DELETE FROM usuarios WHERE cpf_usuario = '{$cpf}'";
+                    if(!mysqli_query($this->con, $sql)){
+                        throw new Exception("Houve um erro ao deletar o usuário com CPF '{$cpf}'.");
                     }
                 }
             } catch (Exception $e) {
@@ -98,6 +88,7 @@
                 error_log($log . PHP_EOL, 3, './error/db_error.log');
             }
         }
+
         function adicionarEndereco($cpf,$cep,$rua,$bairro,$cidade,$estado,$numero){
             try {
                 if($this->con){
@@ -260,4 +251,4 @@
             }
         }
     }
-    
+    */
