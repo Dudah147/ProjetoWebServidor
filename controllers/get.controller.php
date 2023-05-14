@@ -168,4 +168,11 @@ class GetController
 
         require("views/cadastro.view.php");
     }
+
+    public function viewCadastroEndereco()
+    {
+        session_start();
+
+        require("views/cadastrar_endereco.view.php");
+    }
 }

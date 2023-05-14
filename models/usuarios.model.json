@@ -26,5 +26,12 @@
         "nascimento": "16121999",
         "email": "teste@email.com",
         "senha": "123456789"
+    },
+    {
+        "nome": null,
+        "cpf": null,
+        "nascimento": null,
+        "email": null,
+        "senha": null
     }
 ]

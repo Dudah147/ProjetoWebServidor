@@ -8,9 +8,18 @@
 </head>
 
 <body id="body">
-    <?php require "layout/header.view.php"; ?>
+    <?php require "layout/header.view.php"; 
+    
+    $msg = $_GET['msg'] ?? '';
+    if ($msg == 'campos') {
+        echo "<div id='feedback'><span>Preencha todos os campos</span><div></div></div>";
+    }
+    if ($msg == 'usuario_cadastrado') {
+        echo "<div id='feedback'><span>Usuário já cadastrado</span><div></div></div>";
+    }
+    ?>
 
-    <div id="container_cadastro">
+    <div id="container">
         <span id="text_cadastro">Cadastro</span>
         <hr id="underline">
         <div id="cadastro">
@@ -64,6 +73,9 @@
     <?php require("controllers/carrinho.controller.php"); ?>
 
     <?php require("controllers/usuario.controller.php"); ?>
+
+    <script type="text/javascript" src="JS/usuario.js"></script>
+    <script type="text/javascript" src="JS/carrinho.js"></script>
 </body>
 
 </html>

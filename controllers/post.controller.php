@@ -61,7 +61,23 @@ class PostController
         }
     }
 
-    public function cadastrarUsuario(){
-        require('controllers/validar_cadastro.controller.php');
+    public function cadastrarUsuario()
+    {
+        if (empty($_POST['nome']) || empty($_POST['cpf']) || empty($_POST['nascimento']) || empty($_POST['email']) || empty($_POST['senha'])) {
+            header('Location: cadastroUsuario?msg=campos');
+        } else {
+
+            require('controllers/validar_cadastro.controller.php');
+        }
+    }
+
+    public function cadastrarEndereco()
+    {
+        if (empty($_POST['cep']) || empty($_POST['rua']) || empty($_POST['bairro']) || empty($_POST['cidade']) || empty($_POST['estado']) || empty($_POST['numero'])) {
+            header('Location: cadastroEndereco?msg=campos');
+        } else {
+
+            require('controllers/validar_endereco.controller.php');
+        }
     }
 }

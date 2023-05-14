@@ -36,5 +36,31 @@
                 "total": 62.9
             }
         ]
+    },
+    {
+        "cpf": "11539299961",
+        "itens": [
+            {
+                "tamanho": {
+                    "tamanho": "Pequena",
+                    "preco": 34.9
+                },
+                "borda": {
+                    "borda": "Sem borda recheada",
+                    "preco": 0
+                },
+                "massa": {
+                    "massa": "Fina",
+                    "preco": 0
+                },
+                "sabores": [
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    }
+                ],
+                "total": 34.9
+            }
+        ]
     }
 ]
