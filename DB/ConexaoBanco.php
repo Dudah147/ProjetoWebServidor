@@ -1,5 +1,4 @@
 <?php 
-    #Apenas um talvez
     class ConexaoBanco{
         private static $instancia;
 
