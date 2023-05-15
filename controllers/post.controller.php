@@ -73,6 +73,8 @@ class PostController
 
     public function cadastrarEndereco()
     {
+        session_start();
+
         if (empty($_POST['cep']) || empty($_POST['rua']) || empty($_POST['bairro']) || empty($_POST['cidade']) || empty($_POST['estado']) || empty($_POST['numero'])) {
             header('Location: cadastroEndereco?msg=campos');
         } else {

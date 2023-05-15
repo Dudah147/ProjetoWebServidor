@@ -15,17 +15,20 @@
     if ($msg == 'campos') {
         echo "<div id='feedback'><span>Preencha todos os campos</span><div></div></div>";
     }
+    if ($msg == 'ja_cadastrado') {
+        echo "<div id='feedback'><span>Endereço já cadastrado</span><div></div></div>";
+    }
     ?>
 
     <div id="container">
         <span id="text_cadEnd">Cadastrar Endereço</span>
         <hr id="underline">
         <div id="cadEnd">
-            <?php if (!isset($_SESSION['cpf'])): ?>
+            <?php if (!isset($_SESSION['cpf'])) : ?>
                 <a href="login" style="font-size: 2rem;color: red; padding: 0; margin: 4rem;">
                     Faça login</a>
 
-            <?php else: ?>
+            <?php else : ?>
                 <form id="form" action="cadastrarEndereco" method="POST">
                     <div class="input-group">
                         <div class="input-box">

@@ -3,8 +3,8 @@
 
     if($con = ConexaoBanco::get()){
         if(isset($_SESSION['cpf'])){
-            $querry = $con->prepare("SELECT * FROM enderecos WHERE cpf='{$_SESSION['cpf']}' AND cep='{$_POST['cep']}'");
-            $array[] = $query->execute();
+            // $querry = $con->prepare("SELECT * FROM enderecos WHERE cpf='{$_SESSION['cpf']}' AND cep='{$_POST['cep']}'");
+            // $array[] = $query->execute();
             
             if(empty($array)){
                 $query = $con->prepare("INSERT INTO endereco (cpf_usuario, cidade, estado, numero, bairro, cep, rua) VALUES (:cpf_usuario, :cidade, :estado, :numero, :bairro, :cep, :rua)");
@@ -45,4 +45,3 @@
 
     file_put_contents($arquivo, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
  */
-?>
