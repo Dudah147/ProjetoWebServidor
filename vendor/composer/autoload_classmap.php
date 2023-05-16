@@ -8,9 +8,9 @@ $baseDir = dirname($vendorDir);
 return array(
     'BootManagerTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/BootManagerTest.php',
     'ClassLoaderTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/ClassLoaderTest.php',
-    'ComposerAutoloaderInit42e0b5bc2006fd159cc09a88e9c55ef4' => $vendorDir . '/composer/autoload_real.php',
+    'ComposerAutoloaderInit26773333c7d6b3cb638c4924ba1ba8ef' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
-    'Composer\\Autoload\\ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4' => $vendorDir . '/composer/autoload_static.php',
+    'Composer\\Autoload\\ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef' => $vendorDir . '/composer/autoload_static.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'ConexaoBanco' => $baseDir . '/DB/conexao_banco.php',
     'CsrfVerifierTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/CsrfVerifierTest.php',
@@ -92,10 +92,8 @@ return array(
     'RouterRewriteTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/RouterRewriteTest.php',
     'RouterRouteTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/RouterRouteTest.php',
     'RouterUrlTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/RouterUrlTest.php',
-    'SeedBanco' => $baseDir . '/DB/seed_banco.php',
     'SilentTokenProvider' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Security/SilentTokenProvider.php',
     'TestBootManager' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Managers/TestBootManager.php',
     'TestRouter' => $vendorDir . '/pecee/simple-router/tests/TestRouter.php',
     'Usuario' => $baseDir . '/models/usuarios.model.php',
-    'insereBanco' => $baseDir . '/controllers/transforma_endereco_json.controller.php',
 );

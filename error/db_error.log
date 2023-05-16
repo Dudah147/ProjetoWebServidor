@@ -10,3 +10,12 @@
 16.05.2023 02:50:48 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.tamanho' doesn't exist
 16.05.2023 02:50:48 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.item' doesn't exist
 16.05.2023 02:50:50 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.item_sabores' doesn't exist
+17.05.2023 12:19:21 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.enderecos' doesn't exist
+17.05.2023 12:19:21 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.usuarios' doesn't exist
+17.05.2023 12:19:21 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.pedidos' doesn't exist
+17.05.2023 12:19:21 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.sabores' doesn't exist
+17.05.2023 12:19:21 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.massa' doesn't exist
+17.05.2023 12:19:21 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.borda' doesn't exist
+17.05.2023 12:19:21 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.tamanho' doesn't exist
+17.05.2023 12:19:21 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.item' doesn't exist
+17.05.2023 12:19:21 - Erro ao desconectar: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetowebservidor.item_sabores' doesn't exist

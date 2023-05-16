@@ -3,7 +3,7 @@
         'name' => 'alexandre/projeto-web-servidor',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '33923f7295207b147781fecaae2d6cb9af28182a',
+        'reference' => '7224d50c08a5552b16184b85281f2b2b6d30d5ec',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'alexandre/projeto-web-servidor' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '33923f7295207b147781fecaae2d6cb9af28182a',
+            'reference' => '7224d50c08a5552b16184b85281f2b2b6d30d5ec',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

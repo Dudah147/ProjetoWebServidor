@@ -33,5 +33,12 @@
         "nascimento": null,
         "email": null,
         "senha": null
+    },
+    {
+        "nome": "Jeferson",
+        "cpf": "09430110942",
+        "nascimento": "17\/10\/1995",
+        "email": "jeferson@email.com",
+        "senha": "123456"
     }
 ]

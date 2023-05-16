@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4
+class ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -23,9 +23,9 @@ class ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4
     public static $classMap = array (
         'BootManagerTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/BootManagerTest.php',
         'ClassLoaderTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/ClassLoaderTest.php',
-        'ComposerAutoloaderInit42e0b5bc2006fd159cc09a88e9c55ef4' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'ComposerAutoloaderInit26773333c7d6b3cb638c4924ba1ba8ef' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
-        'Composer\\Autoload\\ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Composer\\Autoload\\ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'ConexaoBanco' => __DIR__ . '/../..' . '/DB/conexao_banco.php',
         'CsrfVerifierTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/CsrfVerifierTest.php',
@@ -107,20 +107,18 @@ class ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4
         'RouterRewriteTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/RouterRewriteTest.php',
         'RouterRouteTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/RouterRouteTest.php',
         'RouterUrlTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/RouterUrlTest.php',
-        'SeedBanco' => __DIR__ . '/../..' . '/DB/seed_banco.php',
         'SilentTokenProvider' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Security/SilentTokenProvider.php',
         'TestBootManager' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Managers/TestBootManager.php',
         'TestRouter' => __DIR__ . '/..' . '/pecee/simple-router/tests/TestRouter.php',
         'Usuario' => __DIR__ . '/../..' . '/models/usuarios.model.php',
-        'insereBanco' => __DIR__ . '/../..' . '/controllers/transforma_endereco_json.controller.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef::$classMap;
 
         }, null, ClassLoader::class);
     }

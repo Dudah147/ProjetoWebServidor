@@ -26,7 +26,7 @@ Router::post('/deslogar', 'PostController@deslogar');
 Router::get('/finalizar_pedido', 'GetController@viewFinalizarPedido');
 Router::post('/finalizarPedido', 'PostController@finalizarPedido');
 
-//meus pedudos
+//meus pedidos
 Router::get('/meus_pedidos', 'GetController@viewMeusPedidos');
 
 //cadastro de usuario
