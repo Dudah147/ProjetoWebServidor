@@ -1,26 +1,24 @@
 <?php
-$flag1 = null;
-$arquivo = 'models/enderecos.model.json';
 
-if (file_exists($arquivo)) {
+$bd = new ManipulacaoBanco();
 
-    fopen($arquivo, 'r');
-    $json = json_decode(file_get_contents($arquivo), true);
-    for ($i = 0; $i < count($json); $i++) {
-        if (($_POST['numero'] !== $json[$i]['numero']) || ($_POST['numero'] == $json[$i]['numero'] && $_POST['cep'] !== $json[$i]['cep'])) {
-            $flag1 = 1;
-        } else if ($_POST['numero'] == $json[$i]['numero'] && $_POST['cep'] == $json[$i]['cep'] && $_SESSION['cpf'] !== $json[$i]['cpf']) {
-            $flag1 = 1;
-        } else {
-            $flag1 = 0;
-            break;
-        }
-    }
-    if ($flag1 == 0) {
-        header("Location: cadastroEndereco?msg=ja_cadastrado");
-    } else {
-        require("controllers/transforma_endereco_json.controller.php");
-    }
+$array = $bd->selecionarDados("enderecos", "numero = {$_POST['numero']} and cep = '{$_POST['cep']}' and cpf_usuario = '{$_SESSION['cpf']}' ");
+
+if (empty($array)) {
+    $bd->insereDados([
+        'cpf_usuario' => $_SESSION['cpf'],
+        'cidade' => $_POST['cidade'],
+        'estado' => $_POST['estado'],
+        'numero' => $_POST['numero'],
+        'bairro' => $_POST['bairro'],
+        'cep' => $_POST['cep'],
+        'rua' => $_POST['rua']
+    ], "enderecos");
 } else {
-    require("controllers/transforma_endereco_json.controller.php");
+    header("Location: cadastroEndereco?msg=ja_cadastrado");
 }
+
+// if (($_POST['numero'] !== $json[$i]['numero']) || ($_POST['numero'] == $json[$i]['numero'] && $_POST['cep'] !== $json[$i]['cep'])) {
+//     $flag1 = 1;
+// } else if ($_POST['numero'] == $json[$i]['numero'] && $_POST['cep'] == $json[$i]['cep'] && $_SESSION['cpf'] !== $json[$i]['cpf']) {
+//     $flag1 = 1;

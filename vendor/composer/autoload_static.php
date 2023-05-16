@@ -24,9 +24,10 @@ class ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4
         'BootManagerTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/BootManagerTest.php',
         'ClassLoaderTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/ClassLoaderTest.php',
         'ComposerAutoloaderInit42e0b5bc2006fd159cc09a88e9c55ef4' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'ConexaoBanco' => __DIR__ . '/../..' . '/DB/ConexaoBanco.php',
+        'ConexaoBanco' => __DIR__ . '/../..' . '/DB/conexao_banco.php',
         'CsrfVerifierTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/CsrfVerifierTest.php',
         'CustomClassLoader' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/ClassLoader/CustomClassLoader.php',
         'CustomMiddlewareTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/CustomMiddlewareTest.php',
@@ -45,6 +46,7 @@ class ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4
         'InputHandlerTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/InputHandlerTest.php',
         'IpRestrictMiddleware' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Middleware/IpRestrictMiddleware.php',
         'LoadableRouteTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/LoadableRouteTest.php',
+        'ManipulacaoBanco' => __DIR__ . '/../..' . '/DB/manipular_banco.php',
         'MiddlewareLoadedException' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Exception/MiddlewareLoadedException.php',
         'MiddlewareTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/MiddlewareTest.php',
         'MyNamespace\\NSController' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/NSController.php',
@@ -105,10 +107,12 @@ class ComposerStaticInit42e0b5bc2006fd159cc09a88e9c55ef4
         'RouterRewriteTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/RouterRewriteTest.php',
         'RouterRouteTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/RouterRouteTest.php',
         'RouterUrlTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/RouterUrlTest.php',
+        'SeedBanco' => __DIR__ . '/../..' . '/DB/seed_banco.php',
         'SilentTokenProvider' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Security/SilentTokenProvider.php',
         'TestBootManager' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Managers/TestBootManager.php',
         'TestRouter' => __DIR__ . '/..' . '/pecee/simple-router/tests/TestRouter.php',
         'Usuario' => __DIR__ . '/../..' . '/models/usuarios.model.php',
+        'insereBanco' => __DIR__ . '/../..' . '/controllers/transforma_endereco_json.controller.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

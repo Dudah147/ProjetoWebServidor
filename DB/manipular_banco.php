@@ -1,15 +1,51 @@
 <?php
-    class ManipulacaoBanco{ 
-        private $con;
+class ManipulacaoBanco
+{
+    private $con;
 
-        public function __construct(){
-            $this->con = ConexaoBanco::get();
+    public function __construct()
+    {
+        $this->con = ConexaoBanco::get();
+        $this->con->prepare('USE `projetowebservidor`')->execute();
+    }
+
+    public function selecionarDados($tabela, $params = 0)
+    {
+        if ($params == 0) {
+            $sql = "SELECT * FROM $tabela";
+        } else {
+            $sql = "SELECT * FROM $tabela WHERE $params";
         }
 
-        public function removerDados($tabela, $param){
-            $sql="DELETE FROM {$tabela} WHERE {$param}";
-        } 
+        $query = $this->con->prepare($sql);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public function insereDados($params, $tabela)
+    {
+        $insert = '(';
+        $values = '(';
+        foreach ($params as $k => $v) {
+            $insert =  $insert . $k . ", ";
+            $values = $values . ":" . $k . ", ";
+        }
+
+        $insert = substr($insert, 0, (strlen($insert) - 2)) . ")";
+        $values = substr($values, 0, (strlen($values) - 2)) . ")";
+
+
+        $sql = "INSERT INTO $tabela $insert VALUES $values";
+        $query = $this->con->prepare($sql);
+
+        $query->execute($params);
+    }
+
+    public function removerDados($tabela, $param)
+    {
+        $sql = "DELETE FROM {$tabela} WHERE {$param}";
+    }
+}
         /* public function pesquisarUsuario($cpf){
             try {
                 if($this->con){
