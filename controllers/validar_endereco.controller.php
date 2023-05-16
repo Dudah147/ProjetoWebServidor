@@ -14,11 +14,8 @@ if (empty($array)) {
         'cep' => $_POST['cep'],
         'rua' => $_POST['rua']
     ], "enderecos");
+
+    header("Location: enderecos?msg=endereco_cadastrado");
 } else {
     header("Location: cadastroEndereco?msg=ja_cadastrado");
 }
-
-// if (($_POST['numero'] !== $json[$i]['numero']) || ($_POST['numero'] == $json[$i]['numero'] && $_POST['cep'] !== $json[$i]['cep'])) {
-//     $flag1 = 1;
-// } else if ($_POST['numero'] == $json[$i]['numero'] && $_POST['cep'] == $json[$i]['cep'] && $_SESSION['cpf'] !== $json[$i]['cpf']) {
-//     $flag1 = 1;

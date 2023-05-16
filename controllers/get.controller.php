@@ -2,9 +2,11 @@
 
 class GetController
 {
+    private $bd;
     public function __construct()
     {
         require "vendor/autoload.php";
+        $this->bd = new ManipulacaoBanco();
     }
 
     public function viewIndex()
@@ -19,37 +21,25 @@ class GetController
     {
         session_start();
 
-        $cardapio = [];
-        if ($con = ConexaoBanco::get()) {
+        //Selecionar os tamanhos
+        $tamanho = $this->bd->selecionarDados('tamanho');
 
-            //Selecionar os tamanhos
-            $query = $con->prepare("SELECT * FROM tamanho");
-            $query->execute();
-            $tamanho = $query->fetchAll(PDO::FETCH_OBJ);
+        //Selecionar as massas
+        $massa = $this->bd->selecionarDados('massa');
 
-            //Selecionar as massas
-            $query = $con->prepare("SELECT * FROM massa");
-            $query->execute();
-            $massa = $query->fetchAll(PDO::FETCH_OBJ);
+        //Selecionar borda
+        $bordas = $this->bd->selecionarDados('borda');
 
-            //Selecionar borda
-            $query = $con->prepare("SELECT * FROM borda");
-            $query->execute();
-            $bordas = $query->fetchAll(PDO::FETCH_OBJ);
+        //Selecionar sabores
+        $sabores = $this->bd->selecionarDados('sabores');
 
-            //Selecionar sabores
-            $query = $con->prepare("SELECT * FROM sabores");
-            $query->execute();
-            $sabores = $query->fetchAll(PDO::FETCH_OBJ);
-
-            //Adicionando valores ao cardapio
-            $cardapio = [
-                'massa' => $massa,
-                'tamanhos' => $tamanho,
-                'bordas' => $bordas,
-                'sabores' => $sabores
-            ];
-        }
+        //Adicionando valores ao cardapio
+        $cardapio = [
+            'massa' => $massa,
+            'tamanhos' => $tamanho,
+            'bordas' => $bordas,
+            'sabores' => $sabores
+        ];
 
         $cardapio = json_encode($cardapio);
 
@@ -60,12 +50,10 @@ class GetController
     {
         session_start();
 
-        require("models/cardapio.model.php");
-        $cardapio = json_decode($cardapio, true);
-        $tamanhos = $cardapio['tamanhos'];
-        $bordas = $cardapio['bordas'];
-        $massas = $cardapio['massa'];
-        $sabores = $cardapio['sabores'];
+        $tamanhos = $this->bd->selecionarDados('tamanho');
+        $bordas = $this->bd->selecionarDados('borda');
+        $massas = $this->bd->selecionarDados('massa');
+        $sabores = $this->bd->selecionarDados('sabores');
 
         require("views/pedido.view.php");
     }
@@ -76,17 +64,9 @@ class GetController
 
         if (isset($_SESSION['cpf'])) {
             $session = true;
-            $arquivo = "models/enderecos.model.json";
-            $enderecos = json_decode(file_get_contents($arquivo), true);
 
-            $enderecos_usuario = [];
-            $flag = false;
-            foreach ($enderecos as $e) {
-                if ($e['cpf'] == $_SESSION['cpf']) {
-                    $enderecos_usuario[] = $e;
-                    $flag = true;
-                }
-            }
+            $enderecos_usuario = $this->bd->selecionarDados('enderecos', "cpf_usuario = {$_SESSION['cpf']}");
+
             require("views/enderecos.view.php");
         } else {
             $session = false;
@@ -111,16 +91,7 @@ class GetController
     {
         session_start();
         //endereco
-        $arquivo = "models/enderecos.model.json";
-        $enderecos = json_decode(file_get_contents($arquivo), true);
-        $enderecos_usuario = [];
-        $flag = false;
-        foreach ($enderecos as $e) {
-            if ($e['cpf'] == $_SESSION['cpf']) {
-                $enderecos_usuario[] = $e;
-                $flag = true;
-            }
-        }
+        $enderecos_usuario = $this->bd->selecionarDados('enderecos', "cpf_usuario = {$_SESSION['cpf']}");
 
         //carrinho
         $arquivo = "models/carrinho.model.json";

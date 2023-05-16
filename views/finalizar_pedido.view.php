@@ -22,18 +22,18 @@
         <span id="text_finalPedido" class="fonte">Finalizar Pedido</span>
         <hr id="underline">
 
-        <?php if (!isset($_SESSION['cpf'])): ?>
+        <?php if (!isset($_SESSION['cpf'])) : ?>
             <a href="login" style="font-size: 2rem;color: red; padding: 0; margin: 4rem;">
                 Faça login</a>
 
-        <?php else: ?>
+        <?php else : ?>
 
             <form action="finalizarPedido" method="POST" id="finalPedido">
                 <span class="title">Confira seu pedido</span>
                 <div class="column info">
                     <hr>
                     <?php $total = 0;
-                    foreach ($carrinho_usuario['itens'] as $car):
+                    foreach ($carrinho_usuario['itens'] as $car) :
                         $total += $car['total']; ?>
 
                         <div class="itens_pedido row">
@@ -41,19 +41,19 @@
                                 <strong>
                                     <?= $car['tamanho']['tamanho'] ?>
                                 </strong>
-                                <?php foreach ($car['sabores'] as $sabor): ?>
+                                <?php foreach ($car['sabores'] as $sabor) : ?>
                                     <span>
                                         <?= $sabor['sabor'] ?>
                                     </span>
                                 <?php endforeach; ?>
 
-                                <?php if ($car['borda']['preco'] > 0): ?>
+                                <?php if ($car['borda']['preco'] > 0) : ?>
                                     <span>+ R$
                                         <?= $car['borda']['preco'] ?> Borda
                                         <?= $car['borda']['borda'] ?>
                                     </span>
                                 <?php endif; ?>
-                                <?php if ($car['massa']['preco'] > 0): ?>
+                                <?php if ($car['massa']['preco'] > 0) : ?>
                                     <span>+ R$
                                         <?= $car['massa']['preco'] ?> Massa
                                         <?= $car['massa']['massa'] ?>
@@ -76,11 +76,11 @@
                 <span class="title">Endereço</span>
                 <div class="column info">
                     <?php
-                    if (!$flag):
+                    if (empty($enderecos_usuario)) :
                         echo '<h2 style="margin: 3rem; color: gray;">Você não possui endereço cadastrado!</h2>';
 
-                    else:
-                        foreach ($enderecos_usuario as $endereco): ?>
+                    else :
+                        foreach ($enderecos_usuario as $endereco) : ?>
                             <div style="width: 80%">
                                 <label class="rad-label">
                                     <input type="radio" class="rad-input" name="endereco" value="<?= $endereco['id_endereco'] ?>">
@@ -116,7 +116,7 @@
                                 </label>
                             </div>
 
-                        <?php endforeach;
+                    <?php endforeach;
                     endif; ?>
 
                     <div class="row ou">

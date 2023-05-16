@@ -60,6 +60,31 @@
                     }
                 ],
                 "total": 34.9
+            },
+            {
+                "tamanho": {
+                    "tamanho": "Grande",
+                    "preco": 57.9
+                },
+                "borda": {
+                    "borda": "Chocolate Branco",
+                    "preco": 5
+                },
+                "massa": {
+                    "massa": "Pan",
+                    "preco": 10
+                },
+                "sabores": [
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    },
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    }
+                ],
+                "total": 72.9
             }
         ]
     }

@@ -14,8 +14,7 @@
     $msg = $_GET['msg'] ?? '';
     if ($msg == 'campos') {
         echo "<div id='feedback'><span>Preencha todos os campos</span><div></div></div>";
-    }
-    else if ($msg == 'login'){
+    } else if ($msg == 'login') {
         echo "<div id='feedback'><span>Faça login para continuar</span><div></div></div>";
     }
     ?>
@@ -35,31 +34,31 @@
                     <hr>
                     <div class="infos">
                         <?php foreach ($tamanhos as $tamanho) :
-                            if ($tamanho['quantSabor'] == 1) : ?>
+                            if ($tamanho['qtd_sabor'] == 1) : ?>
                                 <div class="row-infos">
-                                    <label class="rad-label" tamanho="<?= $tamanho['quantSabor'] ?>">
+                                    <label class="rad-label" tamanho="<?= $tamanho['qtd_sabor'] ?>">
                                         <input type="radio" class="rad-input" name="tamanho" value="<?= $tamanho['tamanho'] ?>">
                                         <div class="rad-design"></div>
                                         <div class="rad-text"><?= $tamanho['tamanho'] ?></div>
                                     </label>
                                     <div>
-                                        <span>a partir de R$ <strong style="color: orange;"><?= $tamanho['preco'] ?></strong></span>
+                                        <span>a partir de R$ <strong style="color: orange;"><?= $tamanho['preco_tamanho'] ?></strong></span>
                                     </div>
                                 </div>
-                                <span>Escolha até <?= $tamanho['quantSabor'] ?> sabor - <?= $tamanho['info'] ?></span>
+                                <span>Escolha até <?= $tamanho['qtd_sabor'] ?> sabor - <?= $tamanho['info_tamanho'] ?></span>
                                 <hr>
                             <?php else : ?>
                                 <div class="row-infos">
-                                    <label class="rad-label" tamanho="<?= $tamanho['quantSabor'] ?>">
+                                    <label class="rad-label" tamanho="<?= $tamanho['qtd_sabor'] ?>">
                                         <input type="radio" class="rad-input" name="tamanho" value="<?= $tamanho['tamanho'] ?>">
                                         <div class="rad-design"></div>
                                         <div class="rad-text"><?= $tamanho['tamanho'] ?></div>
                                     </label>
                                     <div>
-                                        <span>a partir de R$ <strong style="color: orange;"><?= $tamanho['preco'] ?></strong></span>
+                                        <span>a partir de R$ <strong style="color: orange;"><?= $tamanho['preco_tamanho'] ?></strong></span>
                                     </div>
                                 </div>
-                                <span>Escolha até <?= $tamanho['quantSabor'] ?> sabores - <?= $tamanho['info'] ?></span>
+                                <span>Escolha até <?= $tamanho['qtd_sabor'] ?> sabores - <?= $tamanho['info_tamanho'] ?></span>
                                 <hr>
                         <?php endif;
                         endforeach; ?>
@@ -74,7 +73,7 @@
                     <hr>
                     <div class="infos">
                         <?php foreach ($bordas as $borda) :
-                            if ($borda['preco'] > 0) : ?>
+                            if ($borda['preco_borda'] > 0) : ?>
                                 <div class="row-infos">
                                     <label class="rad-label">
                                         <input type="radio" class="rad-input" name="borda" value="<?= $borda['borda'] ?>">
@@ -82,7 +81,7 @@
                                         <div class="rad-text"><?= $borda['borda'] ?></div>
                                     </label>
                                     <div>
-                                        <span>adicional de R$ <strong style="color: orange;"><?= $borda['preco'] ?></strong></span>
+                                        <span>adicional de R$ <strong style="color: orange;"><?= $borda['preco_borda'] ?></strong></span>
                                     </div>
                                 </div>
                                 <hr>
@@ -107,7 +106,7 @@
                     <hr>
                     <div class="infos">
                         <?php foreach ($massas as $massa) :
-                            if ($massa['preco'] > 0) : ?>
+                            if ($massa['preco_massa'] > 0) : ?>
                                 <div class="row-infos">
                                     <label class="rad-label">
                                         <input type="radio" class="rad-input" name="massa" value="<?= $massa['massa'] ?>">
@@ -115,7 +114,7 @@
                                         <div class="rad-text"><?= $massa['massa'] ?></div>
                                     </label>
                                     <div>
-                                        <span>adicional de R$ <strong style="color: orange;"><?= $massa['preco'] ?></strong></span>
+                                        <span>adicional de R$ <strong style="color: orange;"><?= $massa['preco_massa'] ?></strong></span>
                                     </div>
                                 </div>
                                 <hr>
@@ -142,7 +141,7 @@
                     <hr>
                     <div class="infos">
                         <?php foreach ($sabores as $sabor) :
-                            if ($sabor['preco'] == 0) : ?>
+                            if ($sabor['preco_sabor'] == 0) : ?>
                                 <div class="sabor_info" style="margin: .5rem 1rem 0rem 1rem;">
                                     <div class="sabor">
                                         <div class="sabor">
@@ -152,14 +151,14 @@
                                                     <span style="color: black;margin: 0;">0</span>
                                                     <img src="img/mais.png" class="quantImg mais">
                                                 </div>
-                                                <span style="margin: 0 0 0 1rem; color: black;"><?= $sabor['sabor'] ?></span>
+                                                <span style="margin: 0 0 0 1rem; color: black;"><?= $sabor['sabores'] ?></span>
                                             </div>
                                         </div>
 
-                                        <span style="margin: 1rem 0;"><?= $sabor['info'] ?></span>
+                                        <span style="margin: 1rem 0;"><?= $sabor['info_sabor'] ?></span>
                                     </div>
-                                    <span style="border-color: red; color: red;"><?= $sabor['tipo'] ?></span>
-                                    <img src="<?= $sabor['img'] ?>" class="pizza_img">
+                                    <span style="border-color: red; color: red;"><?= $sabor['tipo_sabor'] ?></span>
+                                    <img src="<?= $sabor['imagem_sabor'] ?>" class="pizza_img">
                                 </div>
                                 <hr>
                             <?php else : ?>
@@ -172,17 +171,17 @@
                                                     <span style="color: black;margin: 0;">0</span>
                                                     <img src="img/mais.png" class="quantImg mais">
                                                 </div>
-                                                <span style="margin: 0 0 0 1rem; color: black;"><?= $sabor['sabor'] ?></span>
+                                                <span style="margin: 0 0 0 1rem; color: black;"><?= $sabor['sabores'] ?></span>
                                             </div>
                                         </div>
 
-                                        <span style="margin: 1rem 0;"><?= $sabor['info'] ?></span>
+                                        <span style="margin: 1rem 0;"><?= $sabor['info_sabor'] ?></span>
                                     </div>
                                     <div class="tipo_sabor">
-                                        <span style="border-color: red; color: red;"><?= $sabor['tipo'] ?></span>
-                                        <span>adicional de R$ <strong style="color: orange;"><?= $sabor['preco'] ?></strong></span>
+                                        <span style="border-color: red; color: red;"><?= $sabor['tipo_sabor'] ?></span>
+                                        <span>adicional de R$ <strong style="color: orange;"><?= $sabor['preco_sabor'] ?></strong></span>
                                     </div>
-                                    <img src="<?= $sabor['img'] ?>" class="pizza_img">
+                                    <img src="<?= $sabor['imagem_sabor'] ?>" class="pizza_img">
                                 </div>
                                 <hr>
                         <?php endif;

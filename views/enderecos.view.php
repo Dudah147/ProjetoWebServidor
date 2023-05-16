@@ -9,64 +9,70 @@
 
 <body id="body">
 
-    <?php require("layout/header.view.php"); ?>
+    <?php require("layout/header.view.php");
+
+    $msg = $_GET['msg'] ?? '';
+    if ($msg == 'endereco_cadastrado') {
+        echo "<div id='feedback' style='background-color: rgb(84, 190, 13)'><span>Endereço cadastrado com sucesso!</span><div style='background-color: green'></div></div>";
+    }
+    ?>
 
     <div id="container">
         <span id="text_endereco">Meus Endereços</span>
         <hr id="underline">
         <div id="enderecos">
 
-            <?php if ($session == false): ?>
-            <a href="login" style="font-size: 2rem;color: red; padding: 0; margin: 4rem;">
-                Faça login</a>
+            <?php if ($session == false) : ?>
+                <a href="login" style="font-size: 2rem;color: red; padding: 0; margin: 4rem;">
+                    Faça login</a>
 
-            <?php else: ?>
-            <a id='btn_cadastrarEnd' href='cadastroEndereco'>
-                <img src='img/mais.png' class='mais'>
-                <span>CADASTRAR ENDEREÇO</span>
-            </a>
-            <hr>
-            <div id='infos_enderecos'>
-                <?php
-                    if (!$flag):
+            <?php else : ?>
+                <a id='btn_cadastrarEnd' href='cadastroEndereco'>
+                    <img src='img/mais.png' class='mais'>
+                    <span>CADASTRAR ENDEREÇO</span>
+                </a>
+                <hr>
+                <div id='infos_enderecos'>
+                    <?php
+                    if (empty($enderecos_usuario)) :
                         echo '<h2 id="nao_possui" style="margin: 3rem; color: gray;">Você não possui endereço cadastrado!</h2>';
 
-                    else:
-                        foreach ($enderecos_usuario as $endereco): ?>
-                <div class='novoEnd'>
-                    <div class='row'>
-                        <div class='column'>
-                            <div class='row'>
-                                <span>CEP:
-                                    <?= $endereco['cep']; ?>
-                                </span>
-                                <span>Bairro:
-                                    <?= $endereco['bairro']; ?>
-                                </span>
+                    else :
+                        foreach ($enderecos_usuario as $endereco) : ?>
+                            <div class='novoEnd'>
+                                <div class='row'>
+                                    <div class='column'>
+                                        <div class='row'>
+                                            <span>CEP:
+                                                <?= $endereco['cep']; ?>
+                                            </span>
+                                            <span>Bairro:
+                                                <?= $endereco['bairro']; ?>
+                                            </span>
+                                        </div>
+                                        <div class='row'>
+                                            <span>Rua:
+                                                <?= $endereco['rua']; ?>
+                                            </span>
+                                            <span>N°:
+                                                <?= $endereco['numero']; ?>
+                                            </span>
+                                        </div>
+                                        <div class='row'>
+                                            <span>Cidade:
+                                                <?= $endereco['cidade']; ?>
+                                            </span>
+                                            <span>Estado:
+                                                <?= $endereco['estado']; ?>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- <img src='img/lixeira.png' class='lixeira'> -->
+                                </div>
                             </div>
-                            <div class='row'>
-                                <span>Rua:
-                                    <?= $endereco['rua']; ?>
-                                </span>
-                                <span>N°:
-                                    <?= $endereco['numero']; ?>
-                                </span>
-                            </div>
-                            <div class='row'>
-                                <span>Cidade:
-                                    <?= $endereco['cidade']; ?>
-                                </span>
-                                <span>Estado:
-                                    <?= $endereco['estado']; ?>
-                                </span>
-                            </div>
-                        </div>
-                        <img src='img/lixeira.png' class='lixeira'>
-                    </div>
-                </div>
-                <?php endforeach;
+                    <?php endforeach;
                     endif; ?>
-            </div>
+                </div>
             <?php endif; ?>
         </div>
     </div>
