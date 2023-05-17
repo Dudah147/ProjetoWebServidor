@@ -11,10 +11,8 @@ $verifica = false;
 if (isset($_SESSION['cpf'])) {
     foreach ($carrinho as $car) {
         if ($car['cpf'] == $_SESSION['cpf']) {
-
             $win = $car['itens'];
             $verifica = true;
-            break;
         }
     }
 }
