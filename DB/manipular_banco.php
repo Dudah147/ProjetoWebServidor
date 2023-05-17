@@ -16,7 +16,7 @@ class ManipulacaoBanco{
 
         $query = $this->con->prepare($sql);
         $query->execute();
-        return $query->fetchAll(PDO::FETCH_DEFAULT);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function insereDados($params, $tabela){

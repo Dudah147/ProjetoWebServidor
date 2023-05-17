@@ -14,7 +14,6 @@ if (empty($array)) {
         'cep' => $_POST['cep'],
         'rua' => $_POST['rua']
     ], "enderecos");
-
     header("Location: enderecos?msg=endereco_cadastrado");
 } else {
     header("Location: cadastroEndereco?msg=ja_cadastrado");
