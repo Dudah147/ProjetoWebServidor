@@ -14,8 +14,9 @@ if (isset($_SESSION['cpf'])) {
 
             $win = $car['itens'];
             $verifica = true;
-            break;
+           
         }
+        break;
     }
 }
 
