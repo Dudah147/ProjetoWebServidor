@@ -3,14 +3,12 @@ class ManipulacaoBanco
 {
     private $con;
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->con = ConexaoBanco::get();
         $this->con->prepare('USE `projetowebservidor`')->execute();
     }
 
-    public function selecionarDados($tabela, $params = 0)
-    {
+    public function selecionarDados($tabela, $params = 0){
         if ($params == 0) {
             $sql = "SELECT * FROM $tabela";
         } else {
@@ -22,8 +20,7 @@ class ManipulacaoBanco
         return $query->fetchAll(PDO::FETCH_DEFAULT);
     }
 
-    public function insereDados($params, $tabela)
-    {
+    public function insereDados($params, $tabela){
         $insert = '(';
         $values = '(';
         foreach ($params as $k => $v) {
@@ -41,8 +38,7 @@ class ManipulacaoBanco
         $query->execute($params);
     }
 
-    public function removerDados($tabela, $param)
-    {
+    public function removerDados($tabela, $param){
         $sql = "DELETE FROM {$tabela} WHERE {$param}";
     }
 }
