@@ -1,13 +1,5 @@
-[
-    {
-        "cpf": null,
-        "itens": [
-            {
-                "total": 0
-            }
-        ]
-    },
-    {
+{
+    "1": {
         "cpf": "12345678910",
         "itens": [
             {
@@ -37,7 +29,7 @@
             }
         ]
     },
-    {
+    "2": {
         "cpf": "11539299961",
         "itens": [
             {
@@ -87,5 +79,46 @@
                 "total": 72.9
             }
         ]
+    },
+    "3": {
+        "cpf": "11437990975",
+        "itens": [
+            {
+                "tamanho": {
+                    "tamanho": "Gigante",
+                    "preco": 70.9
+                },
+                "borda": {
+                    "borda": "Sem borda recheada",
+                    "preco": 0
+                },
+                "massa": {
+                    "massa": "Fina",
+                    "preco": 0
+                },
+                "sabores": [
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    },
+                    {
+                        "sabor": "Caipira",
+                        "preco": 0
+                    },
+                    {
+                        "sabor": "Calabresa",
+                        "preco": 0
+                    }
+                ],
+                "total": 70.9
+            }
+        ]
+    },
+    "0": {
+        "itens": [
+            {
+                "total": 0
+            }
+        ]
     }
-]
+}

@@ -1,5 +1,5 @@
 <?php
-$email = $_POST['email'] ?? '';
+/* $email = $_POST['email'] ?? '';
 $senha = $_POST['senha'] ?? '';
 $arquivo = "models/usuarios.model.json";
 
@@ -20,4 +20,15 @@ if (isset($arquivo)) {
             header("Location: pedido");
         }
     }
+} */
+
+$bd = new ManipulacaoBanco();
+
+$array = $bd->selecionarDados("usuarios", "email_usuario = '{$_POST['email']}' and senha_usuario = '{$_POST['senha']}'");
+
+
+if (empty($array)) {
+    header("Location: login?error-login=notfound");
+} else {
+    header("Location: pedido");
 }

@@ -9,7 +9,6 @@ return array(
     'BootManagerTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/BootManagerTest.php',
     'ClassLoaderTest' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/ClassLoaderTest.php',
     'ComposerAutoloaderInit26773333c7d6b3cb638c4924ba1ba8ef' => $vendorDir . '/composer/autoload_real.php',
-    'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef' => $vendorDir . '/composer/autoload_static.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'ConexaoBanco' => $baseDir . '/DB/conexao_banco.php',
@@ -96,4 +95,5 @@ return array(
     'TestBootManager' => $vendorDir . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Managers/TestBootManager.php',
     'TestRouter' => $vendorDir . '/pecee/simple-router/tests/TestRouter.php',
     'Usuario' => $baseDir . '/models/usuarios.model.php',
+    'ValidadorController' => $baseDir . '/controllers/validador.controller.php',
 );

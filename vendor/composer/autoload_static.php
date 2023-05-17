@@ -24,7 +24,6 @@ class ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef
         'BootManagerTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/BootManagerTest.php',
         'ClassLoaderTest' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/ClassLoaderTest.php',
         'ComposerAutoloaderInit26773333c7d6b3cb638c4924ba1ba8ef' => __DIR__ . '/..' . '/composer/autoload_real.php',
-        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'ConexaoBanco' => __DIR__ . '/../..' . '/DB/conexao_banco.php',
@@ -111,6 +110,7 @@ class ComposerStaticInit26773333c7d6b3cb638c4924ba1ba8ef
         'TestBootManager' => __DIR__ . '/..' . '/pecee/simple-router/tests/Pecee/SimpleRouter/Dummy/Managers/TestBootManager.php',
         'TestRouter' => __DIR__ . '/..' . '/pecee/simple-router/tests/TestRouter.php',
         'Usuario' => __DIR__ . '/../..' . '/models/usuarios.model.php',
+        'ValidadorController' => __DIR__ . '/../..' . '/controllers/validador.controller.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

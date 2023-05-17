@@ -40,5 +40,12 @@
         "nascimento": "17\/10\/1995",
         "email": "jeferson@email.com",
         "senha": "123456"
+    },
+    {
+        "nome": "Alexandre",
+        "cpf": "12345678941",
+        "nascimento": "16121999",
+        "email": "teste@email.com",
+        "senha": "123456"
     }
 ]

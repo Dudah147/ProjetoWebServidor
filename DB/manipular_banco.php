@@ -1,6 +1,5 @@
 <?php
-class ManipulacaoBanco
-{
+class ManipulacaoBanco{
     private $con;
 
     public function __construct(){
