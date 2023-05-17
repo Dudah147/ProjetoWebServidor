@@ -36,7 +36,6 @@ if (empty($array)) {
         $_SESSION['senha'] = $array[$i]['senha_usuario'];
         $_SESSION['cpf'] = $array[$i]['cpf_usuario'];
         $_SESSION['nome'] = $array[$i]['nome_usuario'];
-        echo $_SESSION['nome'];
     }
         header("Location: pedido");
 }
