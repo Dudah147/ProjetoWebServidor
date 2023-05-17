@@ -5,7 +5,8 @@ class PostController
 
     public function cadastrarLogin()
     {
-        require("controllers/validar_login.controller.php");
+        $login = new ValidadorController();
+        $login->valida_login($_POST['email'],$_POST['senha']);
     }
 
     public function deslogar()
@@ -63,23 +64,13 @@ class PostController
 
     public function cadastrarUsuario()
     {
-        if (empty($_POST['nome']) || empty($_POST['cpf']) || empty($_POST['nascimento']) || empty($_POST['email']) || empty($_POST['senha'])) {
-            header('Location: cadastroUsuario?msg=campos');
-        } else {
-
-            require('controllers/validar_cadastro.controller.php');
-        }
+        $cadatroUsuario = new ValidadorController();
+        $cadatroUsuario->valida_cadastro();
     }
 
     public function cadastrarEndereco()
     {
-        session_start();
-
-        if (empty($_POST['cep']) || empty($_POST['rua']) || empty($_POST['bairro']) || empty($_POST['cidade']) || empty($_POST['estado']) || empty($_POST['numero'])) {
-            header('Location: cadastroEndereco?msg=campos');
-        } else {
-
-            require('controllers/validar_endereco.controller.php');
-        }
+        $cadastroEndereco = new ValidadorController();
+        $cadastroEndereco->valida_endereco();
     }
 }

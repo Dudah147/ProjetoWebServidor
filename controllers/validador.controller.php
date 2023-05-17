@@ -14,59 +14,60 @@ class ValidadorController
 
     public function valida_login($email, $senha)
     {
-        $email = $_POST['email'] ?? '';
-        $senha = $_POST['senha'] ?? '';
-        $arquivo = "models/usuarios.model.json";
+        $array = $this->bd->selecionarDados("usuarios", "email_usuario = '{$email}' and senha_usuario = '{$senha}'");
 
-        session_start();
-
-        $flag = null;
-
-        if (isset($arquivo)) {
-            fopen($arquivo, 'r');
-            $json = json_decode(file_get_contents($arquivo), true);
-            for ($i = 0; $i < count($json); $i++) {
-                if ($email == $json[$i]['email'] && $senha == $json[$i]['senha']) {
-                    $_SESSION['logado'] = true;
-                    $_SESSION['senha'] = $json[$i]['senha'];
-                    $_SESSION['cpf'] = $json[$i]['cpf'];
-                    $_SESSION['nome'] = $json[$i]['nome'];
-                    $flag = true;
-                    header("Location: pedido");
-                }
+        if (empty($array)) {
+            header("Location: login?error-login=notfound");
+        } else {
+            session_start();
+            for ($i = 0; $i < sizeof($array); $i++) {
+                $_SESSION['logado'] = true;
+                $_SESSION['senha'] = $array[$i]['senha_usuario'];
+                $_SESSION['cpf'] = $array[$i]['cpf_usuario'];
+                $_SESSION['nome'] = $array[$i]['nome_usuario'];
             }
+            $this->validado = true;
+            header("Location: pedido");
         }
         return $this->validado;
     }
 
-    public function valida_cadastro($cpf, $email)
+    public function valida_cadastro()
     {
-        $arquivo = 'models/usuarios.model.json'; //modificar para conexão do banco
-        if (isset($arquivo)) {
-
-            fopen($arquivo, 'r');
-            $json = json_decode(file_get_contents($arquivo), true);
-            for ($i = 0; $i < count($json); $i++) {
-                if ($_POST['cpf'] !== $json[$i]['cpf'] || $_POST['email'] !== $json[$i]['email']) {
-                    $flag = 1;
-                } else {
-                    $flag = 0;
-                    break;
-                }
-            }
-            if ($flag == 0) {
-                header("Location: ./cadastroUsuario?msg=usuario_cadastrado");
+        if (empty($_POST['nome']) || empty($_POST['cpf']) || empty($_POST['nascimento']) || empty($_POST['email']) || empty($_POST['senha'])) {
+            header('Location: cadastroUsuario?msg=campos');
+        } else {
+            $array = $this->bd->selecionarDados("usuarios", "email_usuario = '{$_POST['email']}' and nome_usuario = '{$_POST['nome']}' and cpf_usuario = '{$_POST['cpf']}' ");
+            print_r($array);
+            
+            if (empty($array)) {
+                 $this->bd->insereDados([
+                    'cpf_usuario' => $_POST['cpf'],
+                    'nome_usuario' => $_POST['nome'],
+                    'senha_usuario' => $_POST['senha'],
+                    'email_usuario' => $_POST['email'],
+                    'nasc_usuario' => $_POST['nascimento']
+                ], "usuarios"); 
+                $this->validado=true;
+                header("Location: enderecos?msg=usuario_cadastrado");
             } else {
-                echo 'Cadastro realizado com sucesso!';
-                require("controllers/transforma_json.controller.php"); //modificar para conexão do banco
+                header("Location: cadastroUsuario?msg=ja_cadastrado");
             }
             return $this->validado;
         }
+
+       
     }
 
-    public function valida_endereco($cpf, $email)
+    public function valida_endereco()
     {
-        $array = $this->bd->selecionarDados("enderecos", "numero = {$_POST['numero']} and cep = '{$_POST['cep']}' and cpf_usuario = '{$_SESSION['cpf']}' ");
+
+        session_start();
+
+        if (empty($_POST['cep']) || empty($_POST['rua']) || empty($_POST['bairro']) || empty($_POST['cidade']) || empty($_POST['estado']) || empty($_POST['numero'])) {
+            header('Location: cadastroEndereco?msg=campos');
+        } else {
+            $array = $this->bd->selecionarDados("enderecos", "numero = {$_POST['numero']} and cep = '{$_POST['cep']}' and cpf_usuario = '{$_SESSION['cpf']}' ");
 
         if (empty($array)) {
             $this->bd->insereDados([
@@ -82,6 +83,8 @@ class ValidadorController
             header("Location: enderecos?msg=endereco_cadastrado");
         } else {
             header("Location: cadastroEndereco?msg=ja_cadastrado");
+        }
+        $this->validado=true; 
         }
         return $this->validado;
     }
