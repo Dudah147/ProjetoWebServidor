@@ -26,6 +26,27 @@
                     }
                 ],
                 "total": 62.9
+            },
+            {
+                "tamanho": {
+                    "tamanho": "Pequena",
+                    "preco": 34.9
+                },
+                "borda": {
+                    "borda": "Chocolate Branco",
+                    "preco": 5
+                },
+                "massa": {
+                    "massa": "Fina",
+                    "preco": 0
+                },
+                "sabores": [
+                    {
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    }
+                ],
+                "total": 39.9
             }
         ]
     },
