@@ -27,7 +27,9 @@
 
 
 ## Documentação:
-### Realizamos a instalação do XAMPP para conseguir utilizar o Apache e o MySQL. Será necessário rodar na linha de comando o seguinte comando: "php ./DB/seed_banco" para que seja possível inicializar o banco de dados (É necessário iniciar o php na pasta do projeto e os códigos de inicialização estão presentes no arquivo passado como parâmetro)
+### Realizamos a instalação do XAMPP para conseguir utilizar o Apache e o MySQL. Será necessário rodar na linha de comando os seguintes comandos: 
+- "php ./models/DB/seed_banco" para que seja possível inicializar o banco de dados (É necessário iniciar o php na pasta do projeto e os códigos de inicialização estão presentes no arquivo passado como parâmetro)
+- "composer install"
 
 ### Trabalho finalizado com sucesso!!:white_check_mark:
 
@@ -51,10 +53,13 @@
 ## Atividades:
 
 ### *Maria Eduarda*
-- 
-- 
-- 
-- 
+- Criação das rotas utilizando o package SimpleRouter;
+- Adequação ao padrão MVC das páginas;
+- Criação das classes GetController e PostController;
+- Criação da página de finalização de pedidos;
+- Criação da função genérica insert no BD;
+- Alteração de páginas que utilizavam JSON para usar os dados do BD;
+- Cadastro de pedido e endereço inserindo dados no BD.
 
 ### *Alexandre*
 - Construção do Banco de Dados `projetowebservidor`;
