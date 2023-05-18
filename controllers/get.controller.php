@@ -168,8 +168,6 @@ class GetController
                         ];
                     }
 
-                    print("<pre>" . print_r($itens, true) . "</pre>");
-
 
                     $pedidos_usuario[] = [
                         "id_pedido" => $pedido['id_pedido'],
