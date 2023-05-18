@@ -28,8 +28,8 @@
 
 ## Documentação:
 ### Realizamos a instalação do XAMPP para conseguir utilizar o Apache e o MySQL. Será necessário rodar na linha de comando os seguintes comandos: 
-- "php ./models/DB/seed_banco" para que seja possível inicializar o banco de dados (É necessário iniciar o php na pasta do projeto e os códigos de inicialização estão presentes no arquivo passado como parâmetro)
-- "composer install"
+- "php ./models/DB/seed_banco" - Para que seja possível inicializar o banco de dados (É necessário iniciar o php na pasta do projeto e os códigos de inicialização estão presentes no arquivo passado como parâmetro)
+- "composer install" - Necessário ter instalado na máquina o driver do composer
 
 ### Trabalho finalizado com sucesso!!:white_check_mark:
 
