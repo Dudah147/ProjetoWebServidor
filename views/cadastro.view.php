@@ -8,13 +8,13 @@
 </head>
 
 <body id="body">
-    <?php require "layout/header.view.php"; 
-    
+    <?php require "layout/header.view.php";
+
     $msg = $_GET['msg'] ?? '';
     if ($msg == 'campos') {
         echo "<div id='feedback'><span>Preencha todos os campos</span><div></div></div>";
     }
-    if ($msg == 'usuario_cadastrado') {
+    if ($msg == 'ja_cadastrado') {
         echo "<div id='feedback'><span>Usuário já cadastrado</span><div></div></div>";
     }
     ?>
