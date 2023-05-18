@@ -59,7 +59,6 @@ class PostController
             $this->cadastrar->cadastraEndereco();
             header("Location: enderecos?msg=endereco_cadastrado");
         }else {
-            //redirectTo("http://127.0.0.1/enderecos?msg=ja_cadastrado");
             header("Location: cadastroEndereco?msg=ja_cadastrado");
         }
     }
