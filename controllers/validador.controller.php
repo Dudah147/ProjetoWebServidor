@@ -37,19 +37,11 @@ class ValidadorController
         if (empty($_POST['nome']) || empty($_POST['cpf']) || empty($_POST['nascimento']) || empty($_POST['email']) || empty($_POST['senha'])) {
             header('Location: cadastroUsuario?msg=campos');
         } else {
-            $array = $this->bd->selecionarDados("usuarios", "email_usuario = '{$_POST['email']}' and nome_usuario = '{$_POST['nome']}' and cpf_usuario = '{$_POST['cpf']}' ");
+            $array = $this->bd->selecionarDados("usuarios", "email_usuario = '{$_POST['email']}' or cpf_usuario = '{$_POST['cpf']}' ");
             print_r($array);
             if (empty($array)) {
-                // $this->bd->insereDados([
-                //     'cpf_usuario' => $_POST['cpf'],
-                //     'nome_usuario' => $_POST['nome'],
-                //     'senha_usuario' => $_POST['senha'],
-                //     'email_usuario' => $_POST['email'],
-                //     'nasc_usuario' => $_POST['nascimento']
-                // ], "usuarios");
                 $this->validado = true;
-                // header("Location: login?msg=usuario_cadastrado");
-            }
+            } 
             return $this->validado;
         }
     }
@@ -212,7 +204,7 @@ class ValidadorController
             }
 
 
-            header("Location: meus_pedidos?msg=finalizado"); // utilizar redirect do simple-router
+            header("Location: meus_pedidos?msg=finalizado"); 
         }
     }
 }
