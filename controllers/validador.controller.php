@@ -37,7 +37,7 @@ class ValidadorController
         if (empty($_POST['nome']) || empty($_POST['cpf']) || empty($_POST['nascimento']) || empty($_POST['email']) || empty($_POST['senha'])) {
             header('Location: cadastroUsuario?msg=campos');
         } else {
-            $array = $this->bd->selecionarDados("usuarios", "email_usuario = '{$_POST['email']}' and nome_usuario = '{$_POST['nome']}' and cpf_usuario = '{$_POST['cpf']}' ");
+            $array = $this->bd->selecionarDados("usuarios", "email_usuario = '{$_POST['email']}' or cpf_usuario = '{$_POST['cpf']}' ");
             print_r($array);
             if (empty($array)) {
                 $this->validado = true;
