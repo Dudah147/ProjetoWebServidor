@@ -65,7 +65,7 @@
 - Testes das funcionalidades.
 
 ### *Jeferson* 
-- 
-- 
-- 
-- 
+- Criação de classe e métodos de validação;
+- Ajuste de classe de cadastro;
+- Adaptação classes post get para as novas classes adicionadas;
+- Teste das funcionalidades;

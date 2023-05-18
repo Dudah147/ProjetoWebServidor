@@ -3,9 +3,11 @@
 class PostController
 {
     private $validador;
+    private $cadastrar;
     public function __construct(){
         require "vendor/autoload.php";
         $this->validador = new ValidadorController();
+        $this->cadastrar = new CadastroController();
     }
     public function cadastrarLogin()
     {
@@ -43,11 +45,22 @@ class PostController
 
     public function cadastrarUsuario()
     {
-        $this->validador->valida_cadastro();
+        if($this->validador->valida_cadastro()){
+            $this->cadastrar->cadastraUsuario();
+            header("Location: login?msg=usuario_cadastrado");
+        }else {
+            header("Location: cadastroUsuario?msg=ja_cadastrado");
+        }
     }
 
     public function cadastrarEndereco()
     {
-        $this->validador->valida_endereco();
+        if($this->validador->valida_endereco()){
+            $this->cadastrar->cadastraEndereco();
+            header("Location: enderecos?msg=endereco_cadastrado");
+        }else {
+            //redirectTo("http://127.0.0.1/enderecos?msg=ja_cadastrado");
+            header("Location: cadastroEndereco?msg=ja_cadastrado");
+        }
     }
 }
