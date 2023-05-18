@@ -18,6 +18,8 @@
         echo "<div id='feedback'><span>Faça login para continuar</span><div></div></div>";
     } else if ($msg == 'pedido_add') {
         echo "<div id='feedback' style='background-color: rgb(84, 190, 13)'><span>Pedido adicionado ao carrinho</span><div style='background-color: green'></div></div>";
+    } else if ($msg == 'logado') {
+        echo "<div id='feedback' style='background-color: rgb(84, 190, 13)'><span>Logado com sucesso</span><div style='background-color: green'></div></div>";
     }
     ?>
     <div id="container">

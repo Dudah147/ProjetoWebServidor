@@ -27,7 +27,7 @@ class ValidadorController
                 $_SESSION['nome'] = $array[$i]['nome_usuario'];
             }
             $this->validado = true;
-            header("Location: pedido");
+            header("Location: pedido?msg=logado");
         }
         return $this->validado;
     }
@@ -49,7 +49,7 @@ class ValidadorController
                 // ], "usuarios");
                 $this->validado = true;
                 // header("Location: login?msg=usuario_cadastrado");
-            } 
+            }
             return $this->validado;
         }
     }
@@ -65,7 +65,7 @@ class ValidadorController
             $array = $this->bd->selecionarDados("enderecos", "numero = {$_POST['numero']} and cep = '{$_POST['cep']}' and cpf_usuario = '{$_SESSION['cpf']}' ");
             if (empty($array)) {
                 $this->validado = true;
-            } 
+            }
         }
         return $this->validado;
     }
