@@ -51,6 +51,10 @@ class ManipulacaoBanco
     public function removerDados($tabela, $param)
     {
         $sql = "DELETE FROM {$tabela} WHERE {$param}";
+
+        $query = $this->con->prepare($sql);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 }
         /* public function pesquisarUsuario($cpf){
