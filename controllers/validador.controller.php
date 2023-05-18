@@ -187,10 +187,10 @@ class ValidadorController
                 $json_carrinho = [];
             }
             $carrinho_usuario = [];
-            for ($i = 1; $i <= sizeof($json_carrinho); $i++) {
-                if ($json_carrinho["$i"]['cpf'] == $_SESSION['cpf']) {
-                    $carrinho_usuario = $json_carrinho["$i"];
-                    unset($json_carrinho["$i"]);
+            for ($i = 0; $i < sizeof($json_carrinho); $i++) {
+                if ($json_carrinho[$i]['cpf'] == $_SESSION['cpf']) {
+                    $carrinho_usuario = $json_carrinho[$i];
+                    unset($json_carrinho[$i]);
                 }
             }
 

@@ -20,7 +20,7 @@ function ver_detalhes_event() {
 }
 
 function abre_pedido(pedido) {
-
+    console.log(pedido)
     meus_pedidos.style.display = "none"
     const div_pedido = document.createElement("div")
     div_pedido.setAttribute("class", "div_pedido")
@@ -36,7 +36,7 @@ function abre_pedido(pedido) {
     for (item of pedido["itens"]) {
         div_pedido.innerHTML += `
             <div class="item">
-                <span>${item['tamanho']['tamanho']}</span>
+                <span>${item['tamanho']}</span>
                 <strong>R$ ${item['total']}</strong>
             </div>
         `

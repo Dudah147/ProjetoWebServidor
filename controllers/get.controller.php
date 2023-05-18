@@ -129,15 +129,56 @@ class GetController
         //         }
         //     }
         // }
-
-
+        $verifica = false;
+        $pedidos_usuario = [];
         if (isset($_SESSION['cpf'])) {
             $pedidos = $this->bd->selecionarDados('pedidos', "cpf_usuario = '{$_SESSION['cpf']}'");
 
-            if(!empty($pedidos)){
-                $sql = "";
-                $pedidos['itens'] = $this->bd->selecionarDados('pedidos', "cpf_usuario = '{$_SESSION['cpf']}'");
-                
+            if (!empty($pedidos)) {
+                foreach ($pedidos as $pedido) {
+
+                    $sql = "SELECT 
+                        i.id_item,
+                        b.borda,
+                        t.tamanho,
+                        m.massa,
+                        m.preco_massa + b.preco_borda + t.preco_tamanho as total
+                        FROM `item` i
+                        left join borda b on b.id_borda = i.id_borda
+                        left join tamanho t on t.id_tamanho = i.id_tamanho
+                        left join massa m on m.id_massa = i.id_massa
+                        WHERE id_pedido = {$pedido['id_pedido']};";
+
+                    $itens = $this->bd->selecionarDados("", "", $sql);
+
+                    $item_pedido = [];
+
+                    foreach ($itens as $item) {
+                        $sql = "select sum(s.preco_sabor) as total_sabor
+                        from item_sabores it
+                        left join sabores s on s.id_sabor = it.id_sabor
+                        LEFT join item i on i.id_item = it.id_item
+                        where i.id_item = {$item['id_item']}
+                        ";
+                        $total_sabor = $this->bd->selecionarDados("", "", $sql);
+
+                        $item_pedido[] = [
+                            "tamanho" => $item['tamanho'],
+                            "total" => $item['total'] + $total_sabor[0]['total_sabor']
+                        ];
+                    }
+
+                    print("<pre>" . print_r($itens, true) . "</pre>");
+
+
+                    $pedidos_usuario[] = [
+                        "id_pedido" => $pedido['id_pedido'],
+                        "cpf" => $pedido['cpf_usuario'],
+                        "valor_total" => $pedido['valor_total_pedido'],
+                        "data" => $pedido['data_pedido'],
+                        "itens" => $item_pedido
+                    ];
+                }
 
                 $verifica = true;
             }
