@@ -1,25 +1,34 @@
 <?php
-class ManipulacaoBanco{
+class ManipulacaoBanco
+{
     private $con;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->con = ConexaoBanco::get();
         $this->con->prepare('USE `projetowebservidor`')->execute();
     }
 
-    public function selecionarDados($tabela, $params = 0){
-        if ($params == 0) {
-            $sql = "SELECT * FROM $tabela";
+    public function selecionarDados($tabela, $params = 0, $personalizado = null)
+    {
+        if ($personalizado == null) {
+            if ($params == 0) {
+                $sql = "SELECT * FROM $tabela";
+            } else {
+                $sql = "SELECT * FROM $tabela WHERE $params";
+            }
         } else {
-            $sql = "SELECT * FROM $tabela WHERE $params";
+            $sql = $personalizado;
         }
+
 
         $query = $this->con->prepare($sql);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function insereDados($params, $tabela){
+    public function insereDados($params, $tabela)
+    {
         $insert = '(';
         $values = '(';
         foreach ($params as $k => $v) {
@@ -39,7 +48,8 @@ class ManipulacaoBanco{
         return $this->con->lastInsertId();
     }
 
-    public function removerDados($tabela, $param){
+    public function removerDados($tabela, $param)
+    {
         $sql = "DELETE FROM {$tabela} WHERE {$param}";
     }
 }

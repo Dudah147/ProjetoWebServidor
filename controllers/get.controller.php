@@ -109,24 +109,37 @@ class GetController
     public function viewMeusPedidos()
     {
         session_start();
-        $arquivo = "models/pedidos.model.json";
-        if (file_exists($arquivo)) {
-            $pedidos = json_decode(file_get_contents($arquivo), true);
-        } else {
-            $pedidos = [];
-        }
+        // $arquivo = "models/pedidos.model.json";
+        // if (file_exists($arquivo)) {
+        //     $pedidos = json_decode(file_get_contents($arquivo), true);
+        // } else {
+        //     $pedidos = [];
+        // }
 
 
-        $verifica = false;
-        $pedidos_usuario = [];
+        // $verifica = false;
+        // $pedidos_usuario = [];
+
+        // if (isset($_SESSION['cpf'])) {
+        //     foreach ($pedidos as $pedido) {
+        //         if ($pedido['cpf'] == $_SESSION['cpf']) {
+
+        //             $pedidos_usuario[] = $pedido;
+        //             $verifica = true;
+        //         }
+        //     }
+        // }
+
 
         if (isset($_SESSION['cpf'])) {
-            foreach ($pedidos as $pedido) {
-                if ($pedido['cpf'] == $_SESSION['cpf']) {
+            $pedidos = $this->bd->selecionarDados('pedidos', "cpf_usuario = '{$_SESSION['cpf']}'");
 
-                    $pedidos_usuario[] = $pedido;
-                    $verifica = true;
-                }
+            if(!empty($pedidos)){
+                $sql = "";
+                $pedidos['itens'] = $this->bd->selecionarDados('pedidos', "cpf_usuario = '{$_SESSION['cpf']}'");
+                
+
+                $verifica = true;
             }
         }
         require("views/meus_pedidos.view.php");
