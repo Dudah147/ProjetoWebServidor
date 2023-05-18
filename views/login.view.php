@@ -9,7 +9,19 @@
 
 <body id="body">
 
-    <?php require "layout/header.view.php"; ?>
+    <?php require "layout/header.view.php";
+    $msg = $_GET['msg'] ?? '';
+    if (isset($_GET['error'])) {
+        echo "<div id='feedback'><span>Não foi possível validar a sessão</span><div></div></div>";
+    }
+    if (isset($_GET['error-login'])) {
+        echo "<div id='feedback'><span>Usuário incorreto, tente novamente!</span><div></div></div>";
+    }
+    if ($msg == 'usuario_cadastrado') {
+        echo "<div id='feedback' style='background-color: rgb(84, 190, 13)'><span>Usuário cadastrado com sucesso. Faça Login!</span><div style='background-color: green'></div></div>";
+    }
+
+    ?>
 
     <div id="container">
         <span id="text_login">Login</span>

@@ -49,7 +49,7 @@ class ValidadorController
                     'nasc_usuario' => $_POST['nascimento']
                 ], "usuarios");
                 $this->validado = true;
-                header("Location: enderecos?msg=usuario_cadastrado");
+                header("Location: login?msg=usuario_cadastrado");
             } else {
                 header("Location: cadastroUsuario?msg=ja_cadastrado");
             }

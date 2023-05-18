@@ -17,6 +17,7 @@
     if ($msg == 'ja_cadastrado') {
         echo "<div id='feedback'><span>Usuário já cadastrado</span><div></div></div>";
     }
+    
     ?>
 
     <div id="container">
