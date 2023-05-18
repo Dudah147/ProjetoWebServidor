@@ -6,7 +6,7 @@ class PostController
     public function cadastrarLogin()
     {
         $login = new ValidadorController();
-        $login->valida_login($_POST['email'],$_POST['senha']);
+        $login->valida_login($_POST['email'], $_POST['senha']);
     }
 
     public function deslogar()
@@ -26,40 +26,16 @@ class PostController
     {
         session_start();
 
-        if (empty($_POST['tamanho']) || empty($_POST['borda']) || empty($_POST['massa']) || empty($_POST['sabores'])) {
-            header("Location: pedido?msg=campos");
-        } else {
-            if ($_SESSION['cpf']) {
-                require("transforma_carrinho_json.controller.php");
-                header("Location: pedido");
-            } else {
-                header("Location: pedido?msg=login");
-            }
-        }
+        $validarPedido = new ValidadorController();
+        $validarPedido->validarPedido();
     }
 
     public function finalizarPedido()
     {
-        if (!$_POST['endereco'] || !$_POST['forma_pagamento']) {
-            header('Location: finalizar_pedido?msg=campos');
-        } else {
-            //Remover pedido do carrinho
-            $arquivo = 'models/carrinho.model.json';
-            if (file_exists($arquivo)) {
-                $json_carrinho = json_decode(file_get_contents($arquivo), true);
-            } else {
-                $json_carrinho = [];
-            }
+        session_start();
 
-            $index = array_search($_SESSION['cpf'], $json_carrinho);
-            unset($json_carrinho[$index]);
-
-
-            file_put_contents($arquivo, json_encode($json_carrinho, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-
-            require("transforma_carrinho_json.controller.php"); // reformular numa classe de transformação de json
-            header("Location: meus_pedidos?msg=finalizado"); // utilizar redirect do simple-router
-        }
+        $finalizarPedido = new ValidadorController();
+        $finalizarPedido->validaFinalizarPedido();
     }
 
     public function cadastrarUsuario()

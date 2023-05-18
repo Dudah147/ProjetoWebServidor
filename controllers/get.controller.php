@@ -49,7 +49,6 @@ class GetController
     public function viewPedido()
     {
         session_start();
-
         $tamanhos = $this->bd->selecionarDados('tamanho');
         $bordas = $this->bd->selecionarDados('borda');
         $massas = $this->bd->selecionarDados('massa');
@@ -65,7 +64,7 @@ class GetController
         if (isset($_SESSION['cpf'])) {
             $session = true;
 
-            $enderecos_usuario = $this->bd->selecionarDados('enderecos', "cpf_usuario = {$_SESSION['cpf']}");
+            $enderecos_usuario = $this->bd->selecionarDados('enderecos', "cpf_usuario = '{$_SESSION['cpf']}'");
 
             require("views/enderecos.view.php");
         } else {
@@ -91,7 +90,7 @@ class GetController
     {
         session_start();
         //endereco
-        $enderecos_usuario = $this->bd->selecionarDados('enderecos', "cpf_usuario = {$_SESSION['cpf']}");
+        $enderecos_usuario = $this->bd->selecionarDados('enderecos', "cpf_usuario = '{$_SESSION['cpf']}'");
 
         //carrinho
         $arquivo = "models/carrinho.model.json";

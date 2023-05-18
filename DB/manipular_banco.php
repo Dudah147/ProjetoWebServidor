@@ -35,6 +35,8 @@ class ManipulacaoBanco{
         $query = $this->con->prepare($sql);
 
         $query->execute($params);
+
+        return $this->con->lastInsertId();
     }
 
     public function removerDados($tabela, $param){

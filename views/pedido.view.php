@@ -16,6 +16,8 @@
         echo "<div id='feedback'><span>Preencha todos os campos</span><div></div></div>";
     } else if ($msg == 'login') {
         echo "<div id='feedback'><span>Faça login para continuar</span><div></div></div>";
+    } else if ($msg == 'pedido_add') {
+        echo "<div id='feedback' style='background-color: rgb(84, 190, 13)'><span>Pedido adicionado ao carrinho</span><div style='background-color: green'></div></div>";
     }
     ?>
     <div id="container">
