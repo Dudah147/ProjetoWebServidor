@@ -27,7 +27,7 @@
 
 
 ## Documentação:
-### - Realizamos a instalação do XAMPP para conseguir utilizar o Apache. Será necessário rodar na linha de comando o seguinte comando: "php ./DB/seed_banco" para que seja possível inicializar o banco de dados (É necessário iniciar o php na pasta do projeto e os códigos de inicialização estão presentes no arquivo passado como parâmetro)
+### Realizamos a instalação do XAMPP para conseguir utilizar o Apache e o MySQL. Será necessário rodar na linha de comando o seguinte comando: "php ./DB/seed_banco" para que seja possível inicializar o banco de dados (É necessário iniciar o php na pasta do projeto e os códigos de inicialização estão presentes no arquivo passado como parâmetro)
 
 ### Trabalho finalizado com sucesso!!:white_check_mark:
 
