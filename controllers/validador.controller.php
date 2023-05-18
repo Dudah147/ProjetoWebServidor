@@ -39,20 +39,17 @@ class ValidadorController
         } else {
             $array = $this->bd->selecionarDados("usuarios", "email_usuario = '{$_POST['email']}' and nome_usuario = '{$_POST['nome']}' and cpf_usuario = '{$_POST['cpf']}' ");
             print_r($array);
-
             if (empty($array)) {
-                $this->bd->insereDados([
-                    'cpf_usuario' => $_POST['cpf'],
-                    'nome_usuario' => $_POST['nome'],
-                    'senha_usuario' => $_POST['senha'],
-                    'email_usuario' => $_POST['email'],
-                    'nasc_usuario' => $_POST['nascimento']
-                ], "usuarios");
+                // $this->bd->insereDados([
+                //     'cpf_usuario' => $_POST['cpf'],
+                //     'nome_usuario' => $_POST['nome'],
+                //     'senha_usuario' => $_POST['senha'],
+                //     'email_usuario' => $_POST['email'],
+                //     'nasc_usuario' => $_POST['nascimento']
+                // ], "usuarios");
                 $this->validado = true;
-                header("Location: login?msg=usuario_cadastrado");
-            } else {
-                header("Location: cadastroUsuario?msg=ja_cadastrado");
-            }
+                // header("Location: login?msg=usuario_cadastrado");
+            } 
             return $this->validado;
         }
     }
@@ -66,23 +63,9 @@ class ValidadorController
             header('Location: cadastroEndereco?msg=campos');
         } else {
             $array = $this->bd->selecionarDados("enderecos", "numero = {$_POST['numero']} and cep = '{$_POST['cep']}' and cpf_usuario = '{$_SESSION['cpf']}' ");
-
             if (empty($array)) {
-                $this->bd->insereDados([
-                    'cpf_usuario' => $_SESSION['cpf'],
-                    'cidade' => $_POST['cidade'],
-                    'estado' => $_POST['estado'],
-                    'numero' => $_POST['numero'],
-                    'bairro' => $_POST['bairro'],
-                    'cep' => $_POST['cep'],
-                    'rua' => $_POST['rua']
-                ], "enderecos");
-
-                header("Location: enderecos?msg=endereco_cadastrado");
-            } else {
-                header("Location: cadastroEndereco?msg=ja_cadastrado");
-            }
-            $this->validado = true;
+                $this->validado = true;
+            } 
         }
         return $this->validado;
     }
