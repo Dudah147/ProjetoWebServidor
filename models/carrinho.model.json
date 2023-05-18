@@ -1,1 +1,37 @@
-[]
+[
+    {
+        "cpf": "115.392.999-61",
+        "itens": [
+            {
+                "tamanho": {
+                    "id_tamanho": 2,
+                    "tamanho": "Grande",
+                    "preco": 57.9
+                },
+                "borda": {
+                    "id_borda": 5,
+                    "borda": "Chocolate Preto",
+                    "preco": 5
+                },
+                "massa": {
+                    "id_massa": 3,
+                    "massa": "Pan",
+                    "preco": 10
+                },
+                "sabores": [
+                    {
+                        "id_sabor": 1,
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    },
+                    {
+                        "id_sabor": 1,
+                        "sabor": "Alho e óleo",
+                        "preco": 0
+                    }
+                ],
+                "total": 72.9
+            }
+        ]
+    }
+]

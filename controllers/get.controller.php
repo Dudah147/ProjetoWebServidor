@@ -109,26 +109,7 @@ class GetController
     public function viewMeusPedidos()
     {
         session_start();
-        // $arquivo = "models/pedidos.model.json";
-        // if (file_exists($arquivo)) {
-        //     $pedidos = json_decode(file_get_contents($arquivo), true);
-        // } else {
-        //     $pedidos = [];
-        // }
 
-
-        // $verifica = false;
-        // $pedidos_usuario = [];
-
-        // if (isset($_SESSION['cpf'])) {
-        //     foreach ($pedidos as $pedido) {
-        //         if ($pedido['cpf'] == $_SESSION['cpf']) {
-
-        //             $pedidos_usuario[] = $pedido;
-        //             $verifica = true;
-        //         }
-        //     }
-        // }
         $verifica = false;
         $pedidos_usuario = [];
         if (isset($_SESSION['cpf'])) {

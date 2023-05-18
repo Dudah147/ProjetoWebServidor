@@ -15,7 +15,7 @@
 
     $msg = $_GET['msg'] ?? '';
     if ($msg == 'finalizado') {
-        echo "<div id='feedback' syle='background-color: greenyellow'><span>Pedido finalizado com sucesso</span><div syle='background-color: green'></div></div>";
+        echo "<div id='feedback' style='background-color: rgb(84, 190, 13)'><span>Pedido finalizado com sucesso!</span><div style='background-color: green'></div></div>";
     }
     ?>
 

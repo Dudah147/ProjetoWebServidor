@@ -124,7 +124,7 @@
                         <hr>
                     </div>
 
-                    <a id="CadastrarEnd" class="row">
+                    <a id="CadastrarEnd" class="row" href="cadastroEndereco">
                         <img src="img/endereco.png" alt="">
                         <span>Cadastrar Endereço</span>
                     </a>
