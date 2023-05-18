@@ -4,14 +4,15 @@ class PostController
 {
     private $validador;
     private $cadastrar;
-    public function __construct(){
+    public function __construct()
+    {
         require "vendor/autoload.php";
         $this->validador = new ValidadorController();
         $this->cadastrar = new CadastroController();
     }
     public function cadastrarLogin()
     {
-        $this->validador->valida_login($_POST['email'],$_POST['senha']);
+        $this->validador->valida_login($_POST['email'], $_POST['senha']);
     }
 
     public function deslogar()
@@ -31,34 +32,40 @@ class PostController
     {
         session_start();
 
-        $validarPedido = new ValidadorController();
-        $validarPedido->validarPedido();
+        if ($this->validador->validarPedido()) {
+            $this->cadastrar->cadastrarPedido();
+            header("Location: pedido?msg=pedido_add");
+        }
     }
 
     public function finalizarPedido()
     {
         session_start();
 
-        $finalizarPedido = new ValidadorController();
-        $finalizarPedido->validaFinalizarPedido();
+        if ($this->validador->validaFinalizarPedido()) {
+            $this->cadastrar->cadastrarFinalizarPedido();
+            header("Location: meus_pedidos?msg=finalizado");
+        } else {
+            header('Location: finalizar_pedido?msg=campos');
+        }
     }
 
     public function cadastrarUsuario()
     {
-        if($this->validador->valida_cadastro()){
+        if ($this->validador->valida_cadastro()) {
             $this->cadastrar->cadastraUsuario();
             header("Location: login?msg=usuario_cadastrado");
-        }else {
+        } else {
             header("Location: cadastroUsuario?msg=ja_cadastrado");
         }
     }
 
     public function cadastrarEndereco()
     {
-        if($this->validador->valida_endereco()){
+        if ($this->validador->valida_endereco()) {
             $this->cadastrar->cadastraEndereco();
             header("Location: enderecos?msg=endereco_cadastrado");
-        }else {
+        } else {
             header("Location: cadastroEndereco?msg=ja_cadastrado");
         }
     }
