@@ -2,11 +2,14 @@
 
 class PostController
 {
-
+    private $validador;
+    public function __construct(){
+        require "vendor/autoload.php";
+        $this->validador = new ValidadorController();
+    }
     public function cadastrarLogin()
     {
-        $login = new ValidadorController();
-        $login->valida_login($_POST['email'],$_POST['senha']);
+        $this->validador->valida_login($_POST['email'],$_POST['senha']);
     }
 
     public function deslogar()
@@ -64,13 +67,11 @@ class PostController
 
     public function cadastrarUsuario()
     {
-        $cadatroUsuario = new ValidadorController();
-        $cadatroUsuario->valida_cadastro();
+        $this->validador->valida_cadastro();
     }
 
     public function cadastrarEndereco()
     {
-        $cadastroEndereco = new ValidadorController();
-        $cadastroEndereco->valida_endereco();
+        $this->validador->valida_endereco();
     }
 }
