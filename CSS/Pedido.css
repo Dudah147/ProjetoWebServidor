@@ -7,6 +7,15 @@
 
 /* -- header -- */
 
+header a:hover {
+    color: orange;
+}
+
+header button:hover{
+    background-color: white !important;
+    transition: 0.4s;
+}
+
 body {
     box-sizing: border-box;
     margin: 0 auto;

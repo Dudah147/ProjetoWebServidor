@@ -125,19 +125,5 @@ function mudaQuantCar() {
 
 
 function finalizarPedido() {
-    let pai = this.parentNode
-    let btn_entregar = document.createElement("button")
-
-    this.remove()
-
-    btn_entregar.setAttribute("type", "button")
-    btn_entregar.textContent = "Entregar em casa"
-    btn_entregar.style = "background-color: orange; margin-bottom: 1rem; width: 60%"
-
-    pai.appendChild(btn_entregar)
-
-
-    btn_entregar.addEventListener("click", () => {
-        window.location.href = "finalizar_pedido";
-    })
+    window.location.href = "finalizar_pedido";
 }

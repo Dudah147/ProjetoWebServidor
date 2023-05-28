@@ -31,8 +31,8 @@
             </section>
             <br><br>
 
-            <div style="text-align: center;">
-                <a style="font-size: 10px;  ">Clique aqui e faça já seu pedido!</a>
+            <div style=" color: aliceblue; text-align: center;">
+                <a style="text-decoration: none;" href="pedido" id="a_pedidos">Clique aqui</a> e faça já seu pedido!
                 <br>
             </div>
 

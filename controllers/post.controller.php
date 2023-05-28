@@ -65,8 +65,6 @@ class PostController
         if ($this->validador->valida_endereco()) {
             $this->cadastrar->cadastraEndereco();
             header("Location: enderecos?msg=endereco_cadastrado");
-        } else {
-            header("Location: cadastroEndereco?msg=ja_cadastrado");
         }
     }
 }

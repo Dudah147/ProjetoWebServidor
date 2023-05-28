@@ -7,6 +7,15 @@
 
 /* -- header -- */
 
+header a:hover {
+    color: orange;
+}
+
+header button:hover{
+    background-color: white !important;
+    transition: 0.4s;
+}
+
 #feedback {
     position: fixed;
     top: 1rem;

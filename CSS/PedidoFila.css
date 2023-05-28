@@ -1,3 +1,12 @@
+header a:hover {
+    color: orange;
+}
+
+header button:hover {
+    background-color: white !important;
+    transition: 0.4s;
+}
+
 .destaques .container {
     display: flex;
     flex-wrap: wrap;
@@ -20,12 +29,12 @@
 }
 
 .destaques__card {
-    
+
     width: 200px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0px 5px 9px rgb(161, 161, 161);
-    
+
 }
 
 .destaque__imagem {
@@ -73,6 +82,7 @@
         width: 100%;
         flex-direction: column;
     }
+
     .destaques__card {
         width: 90%;
         margin: 1rem .5rem;
