@@ -29,21 +29,6 @@
         <div id="login">
             <div class="cadastro">
 
-                <?php
-                if (isset($_GET['error'])) {
-                    echo "Não foi possível validar a sessão";
-                }
-
-                if (isset($_GET['error-login'])) {
-                    if ($_GET['error-login'] == 'notfound') {
-                        echo "Usuário incorreto, tente novamente!";
-                    }
-                }
-
-                // if (isset($_GET['action'])) {
-                //     require("controllers/validar_login.controller.php");
-                // }
-                ?>
 
                 <div class="input-group">
 
