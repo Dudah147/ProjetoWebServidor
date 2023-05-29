@@ -7,9 +7,9 @@
         </h1>
 
         <div id="Header01" style=" justify-content: space-between; display: flex; flex-direction: row; ">
-            <a href="cardapio" style="padding-right: 20px;">cardápio</a>
-            <a href="/#promocoes" style="padding-right: 20px;">promoções</a>
-            <a href="/#contato" style="padding-right: 20px;">contato</a>
+            <a href="cardapio" style="padding-right: 20px;">Cardápio</a>
+            <a href="/#promocoes" style="padding-right: 20px;">Promoções</a>
+            <a href="/#contato" style="padding-right: 20px;">Contato</a>
             <button style="width: 120px; height: 40px; float: right; margin-top: 50px; background-color: gold; border: none;">
                 <a href="pedido" style="color: black;">Pedidos Online</a>
             </button>

@@ -36,16 +36,13 @@ document.querySelector('.busca').addEventListener('click', function (evt) {
             <div></div>`
 
             selectStreet.value = '';
-            selectStreet.disabled = false;
+            
 
             selectDistrict.value = '';
-            selectDistrict.disabled = false;
-
+            
             selectCity.value = '';
-            selectCity.disabled = false;
 
             selectState.value = '';
-            selectState.disabled = false;
         } else {
             selectStreet.value = jsonEndereco.logradouro;
             selectDistrict.value = jsonEndereco.bairro;
@@ -53,6 +50,11 @@ document.querySelector('.busca').addEventListener('click', function (evt) {
             selectCity.value = jsonEndereco.localidade;
             selectState.value = jsonEndereco.uf;
         }
+        selectStreet.disabled = false;
+        selectDistrict.disabled = false;
+        selectCity.disabled = false;
+        selectState.disabled = false;
+
     };
 
     xhr.open("GET", url, true);
