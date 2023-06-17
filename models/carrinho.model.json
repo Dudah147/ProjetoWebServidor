@@ -33,35 +33,5 @@
                 "total": 72.9
             }
         ]
-    },
-    {
-        "cpf": "12313",
-        "itens": [
-            {
-                "tamanho": {
-                    "id_tamanho": 1,
-                    "tamanho": "Pequena",
-                    "preco": 34.9
-                },
-                "borda": {
-                    "id_borda": 3,
-                    "borda": "Requeijão",
-                    "preco": 5
-                },
-                "massa": {
-                    "id_massa": 1,
-                    "massa": "Fina",
-                    "preco": 0
-                },
-                "sabores": [
-                    {
-                        "id_sabor": 2,
-                        "sabor": "Caipira",
-                        "preco": 0
-                    }
-                ],
-                "total": 39.9
-            }
-        ]
     }
 ]

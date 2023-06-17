@@ -7,11 +7,17 @@
 
 /* -- header -- */
 
+a {
+    color: aliceblue;
+    text-decoration: none;
+    padding-top: 60px;
+}
+
 header a:hover {
     color: orange;
 }
 
-header button:hover{
+header button:hover {
     background-color: white !important;
     transition: 0.4s;
 }
@@ -27,13 +33,6 @@ body {
 
 
 }
-
-a {
-    color: aliceblue;
-    text-decoration: none;
-    padding-top: 60px;
-}
-
 
 #container_img {
 
